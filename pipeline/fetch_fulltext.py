@@ -6,8 +6,15 @@ Sources, in the order tried per study: PMC efetch XML (flattened to text); Europ
 import json, os, re, html, subprocess, sys, urllib.request, glob
 OUT="data/pmc_fulltext"; os.makedirs(OUT,exist_ok=True)
 UA={"User-Agent":"Mozilla/5.0 (research; sociotechnical-matrix-assurance)"}
-def get(url):
-    return urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=120).read()
+import time
+def get(url, tries=6):
+    """NCBI allows three requests per second without a key and answers 429 above that; pace and back off."""
+    for i in range(tries):
+        try:
+            data=urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=120).read(); time.sleep(0.5); return data
+        except urllib.error.HTTPError as e:
+            if e.code==429 and i<tries-1: time.sleep(2*(i+1)); continue
+            raise
 def flatten(xml):
     t=re.sub(r"<[^>]+>"," ",xml); return html.unescape(re.sub(r"\s+"," ",t))
 def pdf_to_text(pdf_path,txt_path):
