@@ -1,0 +1,247 @@
+{
+ "study": {
+  "pmid": "42286747",
+  "pmc": "PMC13263951",
+  "doi": "10.1186/s13643-026-03228-4",
+  "title": "Using full agreement across multiple large language models for title-and-abstract screening in systematic reviews: a proof-of-concept",
+  "year": "2026",
+  "selection_route": "sampled",
+  "model_names": [
+   "GPT 4.0",
+   "Claude 3 Sonnet",
+   "Gemini Pro 1.0",
+   "GPT 3.5",
+   "Llama",
+   "GPT-4o",
+   "Llama 3.1",
+   "Phi 4"
+  ],
+  "task_note": "Title and abstract screening in which an automated decision is accepted only when three LLMs from different families assign the same label, evaluated on two new datasets from the authors' own unnamed review in preparation (471 calibration and 2,499 classified records out of 2,514) plus four datasets reanalysed from Li et al. and Hu et al."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "evidence-extractor-agent",
+ "sources_consulted": [
+  "data/pmc_fulltext/42286747_PMC13263951.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13263951/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13263951/supplementaryFiles",
+  "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-026-03228-4",
+  "https://link.springer.com/article/10.1186/s13643-026-03228-4"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Results, Table 2 column headings",
+   "quote": "Proportion with full agreement Precision Recall/Sensitivity Specificity F1 Accuracy Krippendorff’s alpha",
+   "note": "Named metrics are the full agreement rate, precision, recall or sensitivity, specificity, F1, accuracy and Krippendorff's alpha, each defined in a header row. Work saved over sampling is named in the text as the efficiency that full agreement trades away."
+  },
+  "E02": {
+   "status": "partial",
+   "location": "Results, A proposed workflow, Step 6, and Tables 1 to 3",
+   "quote": "In our case example, we started with 2514 records in total. Of these, 471 records were classified via human consensus in Steps 2 and 2b, while 1647 records received full agreement classification in Step 5.",
+   "note": "Six datasets are named with record counts (Bannach-Brown 2016 n=200, Meijboom 2021 n=132, Menon 2022 n=173, the GREP-Agent measles set n=1998, and the authors' own 471 and 2499 record sets). The gap is the review identity: the two new datasets come from the authors' own systematic review case study described only as in preparation, with no topic, question or field stated anywhere. Human-reference inclusion counts are recoverable only for the two new sets, from the cross-tabulations in Tables 3 and 4."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Table 3, and Table 4",
+   "quote": "Consensus-based screening decision: include Consensus-based screening decision: exclude Full agreement classification: include 49 4 Full agreement classification: exclude 1 348",
+   "note": "Prevalence is directly derivable from the cross-tabulations: 50 of 402 records (12.4 percent) were includes under the consensus reference, and 237 of 2049 (11.6 percent) under the single-reviewer reference. Prevalence is not derivable for the four reanalysed datasets, where only metrics and full-agreement proportions are given."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Step 6",
+   "quote": "Using this workflow, the total manual workload was reduced by over 70%: in a traditional approach, each of the 2514 records would have required classification by two human reviewers, resulting in 5028 manual classifications.",
+   "note": "End-to-end workload is counted in human classifications actually performed (1,458 against 5,028), not in per-record model metrics, and the sentence continues with the 1,458 figure. Wall-clock time and roughly 100 dollars of API cost are also reported."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Abstract, Conclusions, and A proposed workflow",
+   "quote": "A full agreement approach across three LLMs may offer a promising and conservative strategy for title-and-abstract screening in systematic reviews by automating concordant decisions while reserving human review for discordant cases.",
+   "note": "The role is a conservative partial automation, and the human residue is spelled out in two numbered points: reviewers dual-screen 10 to 20 percent of records to build the calibration benchmark, and at least one reviewer adjudicates every record without full agreement and makes the final decision there."
+  },
+  "E06": {
+   "status": "present",
+   "location": "Results, Step 6: resolving the remaining cases without full agreement",
+   "quote": "If the human reviewer disagrees with the LLM majority-classification, a second human reviewer is consulted to reach a final consensus.",
+   "note": "Two named routes are given for records the models do not agree on: default dual human review with consensus, or a hybrid route in which one human screens and the LLM majority vote acts as second reviewer, escalating to a second human on disagreement. In the worked example 120 of 396 discordant records went to the subject expert."
+  },
+  "E07": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "these requirements—although methodologically sound—can pose significant barriers for smaller research groups, research groups from low- and middle-income countries, or research groups in underfunded research areas from conducting systematic reviews",
+   "note": "The equity framing concerns who can afford dual human screening, naming low- and middle-income country and underfunded research groups, and the stated aim is to lower that barrier. Separately the limitations name non-English records as a setting where the approach is untested, and the Gemini content filter is shown to refuse records on sensitive topics, which is a concrete differential-exclusion mechanism."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Abstract, Methods",
+   "quote": "This approach was examined across six datasets to assess its effectiveness.",
+   "note": "The design plans evaluation across six review datasets from different topics and source studies, which is the topic subgroup check, and each is scored on the same metric set so the full agreement rate can be compared across contexts."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Table 2",
+   "quote": "Reanalysis of Li et al., 2024 [ 48 ] GPT 3.5; GPT 4.0; Llama Meijboom 2021 0.57 (75 of 132 titles and abstracts) 0,64 1,00 0,72 0,78 0,81 0,62",
+   "note": "Tables 1 and 2 report precision, recall, specificity, F1, accuracy and Krippendorff's alpha separately for each of the six datasets, for both the majority-vote and the full-agreement rule, and Fig. 1 plots the per-dataset differences."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched Tables 1 to 4, Fig. 1, the workflow steps and Supplementary Table S1 for any metric split by record language, country, region or implementation setting. None exists. The Discussion concedes the gap directly, stating that further evaluation across additional review topics, disciplines, implementation settings and non-English records is needed."
+  },
+  "E09": {
+   "status": "present",
+   "location": "Results, Step 4",
+   "quote": "If the key performance metrics for records with full agreement are too low (e.g., Krippendorff’s alpha < 0.8, F1-score < 0.9), the LLMs do not classify the calibration sample with sufficient consistency, making the approach unsuitable for the given review context.",
+   "note": "The acceptable-error threshold is explicit and the norm it follows is cited: the Introduction and Step 2 state that agreement coefficients above 0.8 are generally considered acceptable, with four citations, and the same bar is applied to human reviewers before they are allowed to proceed."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for survey, interview, questionnaire, usability, acceptability, satisfaction, focus group and self-reported burden. Three reviewers took part and their interrater reliability was measured twice (Krippendorff's alpha 0.48, then 0.82 after training), and reviewer conferences were held to recalibrate criteria, but no reviewer was asked for a view on the LLM workflow and the workload saving is computed from counts rather than reported by users."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Introduction, LLMs in systematic reviews",
+   "quote": "because they generate plausible outputs from learned statistical patterns rather than applying explicit methodological rules, they may hallucinate, fabricate, or over-infer information, omit relevant studies or details, and misrepresent or oversimplify source content",
+   "note": "Named failure modes are hallucination, fabrication, over-inference, omission of relevant studies, oversimplification, low precision with high recall, weak inter-model agreement, and content-moderation refusal, the last of which was observed in the study itself."
+  },
+  "E12": {
+   "status": "present",
+   "location": "Results, Step 6, and Discussion",
+   "quote": "To resolve these cases, the methodologist (Reviewer 2) created a new file containing only the 396 remaining records, including the title and abstract text but excluding LLM classifications.",
+   "note": "The human adjudicator is deliberately blinded to the model labels before deciding, which is a direct design mitigation against anchoring on the machine output. The stop criterion is a second guard, described as preventing the workflow from being treated as appropriate by default, and the hybrid second-reviewer option is flagged by the authors themselves as controversial. Automation bias and alert fatigue are never named as such."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Discussion and conclusion",
+   "quote": "The approach is therefore best understood not as a replacement for reviewer judgment, but as a conservative model for selectively automating those screening decisions for which full agreement across models is achieved.",
+   "note": "Scope limits are stated in three numbered limitations: dependence on prompt calibration, lower efficiency where eligibility criteria are ambiguous or abstracts heterogeneous, and limited generalisability beyond six datasets, with non-English records and other disciplines named as untested."
+  },
+  "E14": {
+   "status": "partial",
+   "location": "Results, Step 3, and Data availability",
+   "quote": "To ensure replicability, we outline one possible step-by-step implementation using Google Sheets.",
+   "note": "The workflow itself is published in full in the article, as six numbered steps with a flow diagram and the exact tools named, under a DOI. Nothing else is deposited: there is no repository, no code, no prompt text, the only supplementary file is a table of prior studies, and the data availability statement says the datasets are available from the corresponding author on reasonable request."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Results, Step 4",
+   "quote": "Ideally, these LLMs should come from different model families, as LLMs from distinct architectures often produce different classification decisions, even when provided with the same input (see [ 48 , 59 ]).",
+   "note": "The rationale for using several models from different families is argued from cited prior evidence on inter-model disagreement, and the Introduction reanalyses 30 prior single-LLM results plus four multi-LLM results to motivate moving past a single model."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Results, Step 2 and Step 2b",
+   "quote": "Two hundred forty-nine of all 2514 records were independently reviewed by three reviewers: an expert in the field, a methodologist without subject-matter expertise, and a research assistant.",
+   "note": "The reference standard is three-reviewer independent screening with consensus, and its reliability is reported and acted on: Krippendorff's alpha of 0.48 on the first 249 records triggered retraining and criteria refinement, and a further 222 records reached 0.82 before consensus was fixed for all 471. The supplementary 2,049-record analysis uses a single reviewer instead, which the authors explicitly say is not a consensus benchmark."
+  },
+  "E17": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text for temperature, top_p, max tokens, seed, structured output, JSON schema, sampling and any API parameter. There are zero occurrences of any of them. The access route is itself the reason: the models were driven through the Chrome spreadsheet plugins GPT for Sheets and Docs, Claude for Sheets and AI Assist for Gemini, which do not surface or report decoding settings, and the Discussion concedes that platform-specific constraints threaten reproducibility."
+  },
+  "E18": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the article body, both figure captions, the data availability statement and Supplementary Material 1 (fetched: it contains only Supplementary Table S1, an overview and reanalysis of prior single-LLM studies, and no prompt). The prompt is referred to repeatedly, said to occupy Column A of the spreadsheet and to have taken 22 iterations to calibrate, but neither the initial nor the final prompt text appears anywhere, and the data are available only on request."
+  },
+  "E19": {
+   "status": "not_applicable",
+   "location": "not applicable because E18 is absent",
+   "note": "The prompt text is not published in the paper, its supplement or any repository, so whether it offered an uncertainty or escalation option cannot be checked. The workflow does route model disagreement to a human, but that is an architecture-level property, not a property of the prompt."
+  },
+  "E20": {
+   "status": "partial",
+   "location": "Results, Step 3",
+   "quote": "Using the refined inclusion and exclusion criteria from Step 2 or Step 2b, the next step is to formulate a clear prompt instructing the LLM (via API) to classify each record in the calibration sample as either “potentially relevant” or “irrelevant”.",
+   "note": "The workflow requires that the model be given the review's own criteria, and it goes further than most by making the criteria be recalibrated against human interrater reliability before they are translated into a prompt. What is missing is the criteria themselves: no eligibility criteria are reproduced for the authors' case study or for any of the four reanalysed datasets, so what the models were actually told cannot be inspected."
+  },
+  "E21": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the stop criterion, the prompt calibration loop, the decision rule and the discussion for any statement that sensitivity or recall is prioritised over precision in this study's configuration. The opposite holds: the calibration loop iterates until Krippendorff's alpha and F1 exceed 0.8, the stop criterion uses alpha and F1, and the design is described as prioritising robustness over maximal automation. The Introduction notes only that recall is often prioritised in systematic reviews generally, citing other work, and criticises single-LLM approaches precisely for buying recall with precision."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for contamination, leakage, memorisation, knowledge cutoff, training data overlap, and publication date against model release. Zero occurrences. Four of the six datasets are reanalyses of published studies whose labels are public, which is a live memorisation risk that is never raised. The nearest statement concerns limited transparency about proprietary training data, but it is framed as an auditability problem for tracing outputs, not as a threat to the validity of the evaluation."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Results, Step 5",
+   "quote": "Notably, Gemini Pro 1.0 refused to classify 15 records due to the presence of sensitive terms such as “incest,” “pedophilia,” and “child trafficking”. This suggests that content filtering prevented the model from processing such requests.",
+   "note": "Known failure modes are documented at length in the Introduction, and one platform failure mode, content-moderation refusal, was observed in the wild and reported with a count and the triggering terms. It was observed rather than tested: no hallucination probe, no injection attempt, no adversarial or planted records, and no check of whether the models invented eligibility reasoning, which the forced binary output would in any case have hidden."
+  },
+  "E24": {
+   "status": "partial",
+   "location": "Results, Step 3, and Discussion",
+   "quote": "In our case example, achieving an F1-score of 0.85 and a Krippendorff’s alpha of 0.83 took 22 iterations on the initial prompt, which we consider rather extreme.",
+   "note": "Twenty-two prompt variants were built and each scored on F1 and Krippendorff's alpha, and the same final prompt was then run across three model families, which is a cross-model check. It is optimisation rather than robustness testing: the iterations fit the prompt to the calibration sample, no per-variant result is reported, no wording-sensitivity analysis is presented, and no record was screened twice under the same prompt to measure run-to-run stability."
+  },
+  "E25": {
+   "status": "partial",
+   "location": "Using full agreement across multiple LLMs section, and Results Step 1",
+   "quote": "Fortunately, the raw data used in the analyses by [ 48 ] and [ 33 ] are publicly available.",
+   "note": "Provenance is documented for the four reanalysed datasets by citation to Li et al. and Hu et al., and the limitations document the small evidence base. For the two new datasets almost nothing is documented: the review is unnamed and in preparation, and no databases, search strategy, date range, discipline or eligibility criteria are given for the 2,514 records, with the data held by the corresponding author on request."
+  },
+  "E26": {
+   "status": "partial",
+   "location": "Introduction, LLMs in systematic reviews",
+   "quote": "These task-level errors are further complicated by the limited transparency of many proprietary systems, including incomplete information about their training data, which makes it difficult to trace how specific outputs were generated",
+   "note": "Model transparency is discussed explicitly and the reliance on proprietary general-purpose models is named in the Discussion as a reproducibility risk alongside version changes and content-moderation behaviour. It falls short because no model card or system card is cited for GPT 4.0, Claude 3 Sonnet or Gemini Pro 1.0, and transparency did not shape the model choice, which turned on model-family diversity and off-the-shelf availability."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Results, Step 4",
+   "quote": "Next, we instructed Claude 3 Sonnet to process each row individually, retrieving information from Columns A, B, and C and writing its classification decision in Column F. Similarly, Gemini Pro 1.0 processed the same data and recorded its classification in Column G.",
+   "note": "Named versions are given for all three models (GPT 4.0, Claude 3 Sonnet, Gemini Pro 1.0), which is more than a bare family name. Missing are a dated API snapshot or build identifier, any run date for the screening, and any statement of which underlying model the three Chrome plugins actually routed to. The Discussion names version change as an unaddressed threat to reproducibility."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Results, Step 5",
+   "quote": "In our case example, we return to the.csv file from Step 1, which contains the titles and abstracts of all 2514 unique articles.",
+   "note": "The whole deduplicated record set of one real review was screened at its natural prevalence of about 12 percent, with no balancing or subsetting, through commercial APIs driven from spreadsheet plugins, which is exactly the access route the paper proposes for non-technical review teams. The four reanalysed datasets are smaller sets curated by the original studies."
+  },
+  "E29": {
+   "status": "partial",
+   "location": "Results, Supplementary validation analysis, and Tables 3 and 4",
+   "quote": "As shown in Table 4 , the full agreement classifications deviated from the single-reviewer reference decisions in only 46 of 2049 cases. Notably, only two relevant records were falsely excluded by the LLMs.",
+   "note": "Errors are enumerated in two full cross-tabulations (5 of 402 with one false negative, 46 of 2049 with two false negatives), and the Meijboom retrospective analyses a whole dataset where the approach would have failed. No individual misclassified record is examined, no reason is offered for any false negative or false positive, and the forced binary output means no model rationale exists to inspect."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Results, Step 3",
+   "quote": "The Chrome browser and the Chrome extensions “GPT for Sheets and Docs”, “Claude for Sheets”, and “AI Assist for Gemini in Sheets and Docs”.",
+   "note": "The environment is described in unusual operational detail: a free Google account, Google Sheets, API keys for the three vendors, the three named Chrome extensions, a credit card for API billing, the column layout of the spreadsheet, and the note that Python or R could do the same for more technical teams."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion and conclusion",
+   "quote": "First, the performance of the proposed workflow depends substantially on prompt design and prompt calibration. In our case example, 22 prompt iterations were required before the predefined performance thresholds were met.",
+   "note": "Three numbered limitations cover prompt dependence, variable efficiency where criteria are ambiguous, and limited generalisability, and a fourth paragraph adds version changes, content-moderation behaviour and platform constraints as threats to reproducibility over time."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Discussion and conclusion",
+   "quote": "In that dataset, the performance of the full agreement approach remained below the predefined thresholds, with both Krippendorff’s alpha and the F1-score failing to reach the required levels.",
+   "note": "Worst case is analysed rather than averaged away: the Meijboom 2021 dataset is singled out as the one where the approach fails its own thresholds and would have been abandoned after Step 4, and Table 2 exposes the tail across datasets, with the full agreement rate as low as 0.57 and precision as low as 0.64. The individual missed records are counted (one and two false negatives) but never described."
+  },
+  "E33": {
+   "status": "present",
+   "location": "Abstract, Methods, and Results Step 4",
+   "quote": "Additionally, a stop criterion was introduced to ensure that LLM-based classification is only applied when predefined performance thresholds are met.",
+   "note": "This is the strongest field in the record: a rule that is fixed before the large-scale run, evaluated on a calibration sample, and carries an explicit no-go branch back to manual screening, demonstrated retrospectively on the Meijboom dataset. Two caveats: the thresholds are offered as examples that teams may vary, and the Step 3 loop uses 0.8 for F1 while the Step 4 stop criterion uses 0.9, so the numbers are not internally consistent."
+  },
+  "E34": {
+   "status": "partial",
+   "location": "Using full agreement across multiple LLMs section",
+   "quote": "One-tailed paired t-tests comparing the metrics in Tables 1 and 2 yield p -values < 0.05, confirming a statistically significant improvement.",
+   "note": "The only uncertainty quantification is a significance test of the paired difference between the two aggregation rules across six datasets, backed by Wilcoxon and sign tests. No headline metric carries an interval: every precision, recall, specificity, F1, accuracy and Krippendorff's alpha in Tables 1 to 4 is a bare point estimate, some computed on as few as 75 or 106 records, and the phrase confidence interval does not appear in the article."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Results, Step 5",
+   "quote": "The process required several hours and incurred a cost of approximately $100 in token usage.",
+   "note": "Monetary compute cost is disclosed twice, about 100 dollars for the 2,043 large-scale records and a low two-digit dollar figure for the 22-iteration prompt calibration, with wall-clock time of several hours. No energy figure, no carbon estimate and no token count are given, and the words energy and carbon do not appear in the article."
+  }
+ }
+}

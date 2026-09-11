@@ -1,0 +1,251 @@
+{
+ "study": {
+  "pmid": "42059529",
+  "pmc": "PMC13133002",
+  "doi": "10.1177/07067437261445767",
+  "title": "Novel Abstract Screening Algorithm Using Delphi-Inspired Large Language Model Consensus for Systematic Reviews in Psychiatry",
+  "year": "2026",
+  "selection_route": "sampled",
+  "model_names": [
+   "Gemma 3 12B",
+   "Qwen 3 8B",
+   "Granite 3.2 8B",
+   "Llama 3.1 8B",
+   "Ministral 2410 8B"
+  ],
+  "task_note": "Title and abstract screening by a five-model Delphi consensus ensemble that teaches a logistic regression classifier, tested against the published abstract-stage labels of three psychiatry systematic reviews on autism biomarkers, ADHD methylphenidate treatment and PTSD trajectories."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "evidence-extractor-agent",
+ "sources_consulted": [
+  "data/pmc_fulltext/42059529_PMC13133002.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13133002/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles",
+  "https://osf.io/vk4be/overview",
+  "https://api.osf.io/v2/nodes/vk4be/",
+  "https://api.osf.io/v2/nodes/vk4be/files/osfstorage/",
+  "https://github.com/CLEF-TAR/tar",
+  "https://github.com/asreview/synergy-dataset"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, Statistical Analysis",
+   "quote": "Performance of the various non-LLM, single-LLM, and LLM–Delphi workflows was reported with standard metrics, including precision, recall, descriptive counts of positive and negative classifications, as well as the Work Saved over Sampling at Recall = 95% metric (WSS@95%).",
+   "note": "Recall is the primary metric, WSS@95% the secondary. Supplemental Appendices 6 and 7 add precision, F1, specificity and the four confusion cells."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Methods, Datasets",
+   "quote": "After removing 10 duplicates and 10 random seed example abstracts, 4,745 remained for validation. In this dataset, 1,660 abstracts (35%) were labelled relevant by the authors for full-text review.",
+   "note": "Three named reviews: Parellada et al. (ASD, 4,745 records), Storebo et al. via CLEF-TAR 2019 (ADHD, 2,901 records, 283 relevant) and van de Schoot et al. via SYNERGY (PTSD, 4,463 records, 311 relevant). The counts drift between sections: the abstract and Appendix 6 use 4,745 / 1,655, 2,891 / 278 and 4,453 / 306, the Methods use 1,660, 2,901 / 283 and 4,463 / 311."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Methods, Datasets",
+   "quote": "The first was a Cochrane review from Storebø et al. 22 on attention-deficit hyperactivity disorder (ADHD) treatment from the 2019 CLEF-TAR competition, 23 yielding a dataset of 2,901 abstracts, of which 283 were relevant (10%).",
+   "note": "Prevalence is printed for all three datasets: 35 percent for ASD, 10 percent for ADHD and 7 percent for PTSD, and prevalence is used explicitly to explain the differences in work saved."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Primary validation dataset",
+   "quote": "These metrics translate to a further 38.1% reduction in manual screening compared to unaided sequential evaluation, at the same benchmark of 95% recall (i.e., WSS@95%).",
+   "note": "WSS@95% is a workload reduction metric reported for all three datasets (38.1, 17.3 and 18.5 percent), alongside a 34.6 percent workload reduction at the observed recall and a wall-clock run time of about 20 hours for 4,745 abstracts."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Abstract, Background, and Discussion",
+   "quote": "Large language models (LLMs) may reduce the burden associated with performing systematic reviews by prescreening abstracts from a literature search for eligibility for inclusion in full-text review.",
+   "note": "The role is an automated prescreening or preranking step before human full-text review. What stays human is stated in the Statistical Analysis section, where precision is defined by the work reviewers must still do to manually screen and exclude the model's false positives."
+  },
+  "E06": {
+   "status": "partial",
+   "location": "Methods, Abstract Filtering Workflow Description",
+   "quote": "A limited safety-net mechanism vetoes any LLM- or probability-threshold-based decisions that markedly contradict the embedding-based similarity to the eligibility criteria in order to reduce hallucinations and random errors.",
+   "note": "The workflow specifies escalation and override rules in detail, but only between its own automated components: a 75 percent Delphi consensus threshold across the five models, an embedding-based safety-net veto, and return of undecided records to the boundary pool. No procedure is given for a human disagreeing with, auditing or overriding the workflow's output, and humans see only the records the workflow labels positive, so its false negatives are never put to a human."
+  },
+  "E07": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "The misinterpretation of abstracts with negative findings (which may lack typical numeric cues) as narrative reviews or commentaries is also concerning, as this will exacerbate publication bias if these negative results systematically fail to pass through automated screening algorithms.",
+   "note": "Study types at risk of differential exclusion are named (negative-finding studies, underpowered exploratory pilot studies), and a separate paragraph names underrepresentation of research in vulnerable populations as a training-data risk with prompt-level and ensemble-diversity mitigations."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Methods, Datasets",
+   "quote": "For secondary validation, two additional psychiatry datasets were reconstructed from widely referenced systematic review-screening datasets, chosen due to their size and availability of abstract-stage labelling.",
+   "note": "The design plans a primary validation on one review topic and secondary validation on two further review topics chosen for contrasting prevalence, plus a planned per-model comparison of the five ensemble members against the Delphi ensemble and three non-LLM baselines."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Secondary validation datasets, and Supplement Appendices 6 and 7",
+   "quote": "In the two secondary validation datasets reconstructed from the reviews of Storebø et al. and van de Schoot et al., the recall metric was similar (100.0% and 96.4%), but the work saved metrics were lower (17.3% and 18.5% WSS@95%, respectively)",
+   "note": "Appendix 6 tabulates precision, recall, F1, TP, FP, TN, FN and WSS@95% for every model on every one of the three review topics; Appendix 7 does the same for the three non-LLM baselines."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched Methods, Results and Supplemental Appendices 6 to 9 for any metric broken out by record language, country, region or care setting. The ADHD criteria explicitly admit records of any language and the ASD criteria restrict to English, yet no result is reported by language or by source database, and no region or setting stratum appears anywhere."
+  },
+  "E09": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "We hypothesized that if the workflow can capture at least 95% of the researcher-identified relevant abstracts while meaningfully reducing the number of abstracts to be screened, it could be valuable for integration into routine usage.",
+   "note": "The target is at least 95 percent recall, set by the authors and justified in the preceding paragraph by reference to published human interrater reliability of 0.6 to 0.9, which they argue makes perfect recall an unrealistic standard."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for survey, interview, questionnaire, usability, acceptability, user study, focus group and self-reported workload. The Introduction cites published evidence on human rater fatigue and interrater reliability, but no reviewer or user of this workflow was asked anything; the evaluation is entirely retrospective against existing labels."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "In abstract screening, hallucination can lead to misidentification of study components or overextension of details, directly causing false positives and negatives.",
+   "note": "Named failure modes are hallucination, missed eligible abstracts, self-reinforcing hallucination over long automated runs, and systematic exclusion of negative-finding studies."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "These active-learning tools are computationally efficient, and the human labeller helps them maintain strong anchoring to the eligibility criteria, which is an advantage against our workflow's potential for self-reinforcing LLM hallucinations in longer automated runs.",
+   "note": "The discussion does treat the removal of the human as a failure surface, naming loss of criterion anchoring and self-reinforcing hallucination, and the design answers it with the embedding safety net and the five-model ensemble. What is missing is the other direction: human over-reliance on the model's output, automation bias and alert fatigue among the reviewers who screen the workflow's positives are never addressed, even though the workflow hands them a set that is only 9 to 54 percent precise."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Conclusions, and Discussion",
+   "quote": "Our workflow is optimized for privacy-focused local deployment avoiding costly cloud-based solutions. As a preranking or prescreening step, it can save substantial time while providing excellent recall and reasoning trails.",
+   "note": "Scope limits are stated in the Discussion: validation on a limited number of review datasets, and eligibility criteria for highly specialised domains that may defeat generic LLMs and may require a staged screening approach."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Data Availability Statement, and Supplement Appendices 1 to 5",
+   "quote": "However, we provide details of the workflow logic, configurations, and LLM prompts in the methods, schematic figure, and supplements to facilitate independent reproduction.",
+   "note": "The prompt and the full workflow specification are published in the supplement under the article DOI, which satisfies the prompt-or-workflow branch of the definition. The code itself is deliberately withheld: the same statement says the codebase is not publicly available due to ongoing intellectual property considerations, so the published artefact cannot be executed."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "Using five LLM agents from different architectures to enrich and reassess a common prompt should minimize the detrimental impact of any one model's hallucination or training biases.",
+   "note": "Supplement Appendix 1 adds the selection rationale: the models were intentionally drawn from different architectures and vendors to maximise diversity, and were sized to fit a 16 GB consumer GPU. Each model is cited to its technical report or model card."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Datasets",
+   "quote": "The workflow was first validated using the systematic review by Parellada et al. 21 on nonsyndromic autism spectrum disorder (ASD) biomarkers, which was chosen as it published complete abstract-stage screening data in its supplements.",
+   "note": "The reference standard is the original reviewers' abstract-stage relevance labels, with full-text inclusion available for the ASD review. Provenance is named for all three: the Parellada supplements, the CLEF-TAR 2019 release of the Storebo Cochrane review, and the SYNERGY release of van de Schoot et al. The limitations concede that these human labels can contain inconsistencies or rest on privileged information absent from the abstract."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Supplement: Appendix 1, section 2 LLM escalation (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles ; https://doi.org/10.1177/07067437261445767)",
+   "quote": "To fit within the 16GB video card memory limit, 8-bit quantized versions of the 8B models, and the 4-bit (Q4_K_M) version of the 12B Gemma 3 model were used. Temperature of 0 was used for all models to minimize run-to-run variation in results .",
+   "note": "Temperature, quantisation and a strict JSON output schema are all reported. Appendix 5 shows the enforced structured output, and the classifier thresholds (0.9 and 0.1), the 75 percent consensus threshold, the five-round cap, the batch size of up to 50 and 10 K-means clusters are all given. No top_p, max tokens or seed is reported."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Supplement: Appendix 5, The LLM prompt used in the experiment (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles ; https://doi.org/10.1177/07067437261445767)",
+   "quote": "You are assisting with systematic review abstract screening. Please decide if the given abstract meets the eligibility criteria. Use the eligibility criteria and examples to guide your decision.",
+   "note": "Appendix 5 gives the whole prompt skeleton including the JSON response schema and the Delphi round-two continuation block. Slots for the criteria, the few-shot examples and the abstract are marked in square brackets, and the criteria that fill them are reproduced in full in Appendices 2 to 4."
+  },
+  "E19": {
+   "status": "present",
+   "location": "Supplement: Appendix 5, response schema (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles ; https://doi.org/10.1177/07067437261445767)",
+   "quote": "\"label\": \"yes\" | \"no\" | \"uncertain\",",
+   "note": "The enforced response schema carries an explicit uncertain label alongside a 0 to 1 confidence score and a five-sentence rationale, and the workflow returns undecided records to the boundary pool for reassessment. The criteria in Appendices 2 to 4 also instruct the model to default to yes when any required element is missing or ambiguous. The prompt does not, however, tell the model to defer to a human, and an uncertain verdict escalates to another model round rather than to a person."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, Abstract Filtering Workflow Description, and Supplement Appendices 2 to 4",
+   "quote": "The workflow begins with the manual specification ( Supplemental Appendices 2–4 ) of the eligibility criteria, their query-style paraphrases, and identifying five positive and five negative abstracts.",
+   "note": "Appendices 2 to 4 reproduce the full verbose criteria and five paraphrases per dataset. They are the review's own criteria but reworked: each appendix labels them as synthesized from details in the systematic review rather than copied verbatim from it."
+  },
+  "E21": {
+   "status": "present",
+   "location": "Methods, Statistical Analysis",
+   "quote": "This metric relates to the amount of unnecessary work that must be done to manually screen and exclude any false positive identification from the model's output, which is of lower priority than recall for document screening.",
+   "note": "Recall is declared the primary metric and precision explicitly subordinate. The prompt criteria in Appendices 2 to 4 open with an instruction to prioritise sensitivity and err toward inclusion, and to default to yes when anything is ambiguous."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and all nine supplemental appendices for contamination, leakage, memorisation, knowledge cutoff, training data overlap and publication date versus model release. Nothing appears. The risk is live and unaddressed: the three benchmark reviews were published in 2018, 2018 and 2023, and two of the three datasets are long-standing public benchmark corpora (CLEF-TAR 2019 and SYNERGY) that plausibly sit in the training data of models released in 2024 and 2025. The only training-data discussion concerns societal bias, not memorisation."
+  },
+  "E23": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "Post-hoc review revealed some hallucination errors such as LLMs overextending trivial text in the abstract.",
+   "note": "Hallucination is the documented failure mode and it is tested empirically: the Delphi transcripts for all 50 ASD false negatives were examined and sorted into three quantified misclassification themes, and the five-model ensemble is evaluated against each single model as the mitigation. Prompt injection, specious plausibility and misuse are neither documented nor tested."
+  },
+  "E24": {
+   "status": "partial",
+   "location": "Supplement: Appendix 1, section 3 LLM prompt (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles ; https://doi.org/10.1177/07067437261445767)",
+   "quote": "The randomized selection of few-shot examples improve diversity in research methods and writing styles, which outperformed manually synthesized set of static examples.",
+   "note": "One prompt-construction variant is reported as having been compared (randomised few-shot examples against a static hand-built set) but the claim is asserted with no numbers, no test and no appendix table. No wording-sensitivity analysis is reported, and repeat-run consistency was not measured: temperature was fixed at 0 specifically to suppress run-to-run variation, and every headline figure comes from a single run."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Datasets",
+   "quote": "Unlike the complete ASD dataset, however, these additional datasets were reconstructed post hoc by third parties and thus could not capture the entire corpus that the original authors screened (capturing 22% and 72% of the original total records, respectively).",
+   "note": "Source, collection route and limitation are all documented: the Parellada supplements for ASD, CLEF-TAR 2019 for ADHD and SYNERGY plus the authors' own OSF release for PTSD, with the deduplication and seed removal stated and the incompleteness of the two reconstructions quantified. The three sources were fetched and all three resolve."
+  },
+  "E26": {
+   "status": "present",
+   "location": "References, items 28 to 32",
+   "quote": "mistralai/Ministral-8B-Instruct-2410 · Hugging Face [accessed 30 November 2025].",
+   "note": "Every ensemble member is cited to its own documentation: Hugging Face model cards for Llama 3.1 8B Instruct and Ministral 8B Instruct 2410, technical reports for Gemma 3 and Qwen 3, and the IBM release announcement for Granite 3.2. Transparency also drives model choice, since all five are open weights and run locally."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Supplement: Appendix 1, section 2 LLM escalation (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles ; https://doi.org/10.1177/07067437261445767)",
+   "quote": "To fit within the 16GB video card memory limit, 8-bit quantized versions of the 8B models, and the 4-bit (Q4_K_M) version of the 12B Gemma 3 model were used.",
+   "note": "Family, size and quantisation are pinned for all five models, and two exact Hugging Face identifiers with access dates of 30 November 2025 are cited. What is missing is the run date of the experiments, an exact checkpoint or revision for Gemma, Qwen and Granite, and internal consistency: the Methods name Gemma 3 8B while Appendix 1 and the results tables in Appendix 6 name Gemma 3 12B, and the Results text calls the best single model Gemma 3 12B."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Discussion, Strengths",
+   "quote": "The models integrated into the workflow are all open-source, and the entire workflow can run on a private, local workstation with a single 16 GB GPU without relying on cloud-based solutions.",
+   "note": "The primary ASD validation screens the complete retrieved corpus of a real review (4,745 records after removing 10 duplicates and 10 seed examples) at its natural 35 percent prevalence, under the local deployment route the authors intend for practice. The two secondary datasets are weaker on this point, being third-party reconstructions covering only 22 and 72 percent of the original corpora."
+  },
+  "E29": {
+   "status": "present",
+   "location": "Results, Missed Abstracts",
+   "quote": "Examination of the Delphi records for the 50 false negatives from the ASD dataset suggested three misclassification themes. The most common reason (26/50) was the overemphasis of keywords related to genetic or metabolic biomarkers.",
+   "note": "The error analysis is both quantitative and qualitative: all 50 false negatives are classified into three themes with counts (26, 17 and 7), and the Delphi round statistics break down the 576 records that needed more than one round into 72 percent correct, 23 percent false positive and 5 percent false negative."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Supplement: Appendix 1, opening paragraph (https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13133002/supplementaryFiles ; https://doi.org/10.1177/07067437261445767)",
+   "quote": "The LLM-Delphi abstract screening workflow was coded in Python and was validated to run with optimal performance on single-GPU workstations (NVIDIA GeForce 5070 Ti, 5060 Ti, or 4060 Ti, 16GB VRAM, as little as 32GB system RAM).",
+   "note": "Named GPUs, VRAM and RAM, local inference rather than a cloud API, Python, batch sizes of up to 50 abstracts, 10 K-means clusters and 96 iterations are all described. There is no integration with existing screening software, which the Discussion flags as future comparative work against ASReview, Rayyan, AbstrackR and DistillerSR."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "However, since human-labelled datasets can still contain occasional labelling inconsistencies or rely on heuristics or privileged information not explicit in the abstract, expecting 100% recall may be impractical, even with the best models and workflows.",
+   "note": "The limitations paragraph names validation on few datasets, difficulty with highly specialised eligibility criteria, noisy human reference labels, the absence of a human anchor against self-reinforcing hallucination, and the underpowered Delphi versus majority-vote comparison."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Results, Missed Abstracts",
+   "quote": "The two consequential false negatives 35 , 36 ultimately included among the 264 abstracts for full-text data extraction were also of this type.",
+   "note": "The missed studies are characterised individually and by cause: the two that would actually have changed the review are cited by reference number, and all 50 ASD false negatives are assigned a reason. Worst-case performance across datasets is also visible, with recall of 96.4 percent on PTSD and a single-model floor of 70.9 percent on ADHD."
+  },
+  "E33": {
+   "status": "partial",
+   "location": "Introduction",
+   "quote": "We hypothesized that if the workflow can capture at least 95% of the researcher-identified relevant abstracts while meaningfully reducing the number of abstracts to be screened, it could be valuable for integration into routine usage.",
+   "note": "An a priori hypothesis does link a 95 percent recall threshold to a judgement about routine adoption, which is more than most screening evaluations offer. It falls short of a decision rule because there is no registration or protocol, no no-go branch or limited-deployment condition, and the second half of the criterion, meaningfully reducing the number of abstracts to screen, carries no number, so the 17.3 percent work saved on ADHD cannot be scored against it."
+  },
+  "E34": {
+   "status": "partial",
+   "location": "Methods, LLM-Delphi Comparison to Single-LLM and Non-LLM Workflows",
+   "quote": "The starting set of 10 seed examples was bootstrap resampled 100 times to establish confidence intervals, including one run with the same starting seed examples (i.e., run #100) as the LLM agent experiments.",
+   "note": "Uncertainty is quantified only for the comparators. The non-LLM baselines get bootstrap confidence intervals over 100 seed resamples and Figure 3 shows standard error bars for the mean of the five single-LLM runs, but the headline LLM-Delphi numbers (97.0 percent recall, 54.2 percent precision, 38.1 percent WSS@95%) are point estimates from one deterministic run with no interval, so the comparison of the ensemble against its baselines is between an interval and a point."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Results, Primary validation dataset",
+   "quote": "On the ASD dataset, the workflow screened all 4,745 abstracts in approximately 20 h, or 96 iterations.",
+   "note": "Compute is disclosed as run time (about 20 hours for 4,745 abstracts, 96 iterations) on named consumer GPUs with 16 GB of VRAM, and cost avoidance relative to cloud models is a stated design goal. No energy figure, no carbon estimate, no token or FLOP accounting and no monetary total are reported, and the 20 hour figure is given for one dataset only."
+  }
+ }
+}

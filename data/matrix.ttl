@@ -1,0 +1,715 @@
+@prefix stm: <https://gov.tesseract.academy/def/sociotechnical-matrix#> .
+@prefix stmd: <https://gov.tesseract.academy/id/sociotechnical-matrix/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Cell text: Cam Rincon and Rumman Chowdhury, Sociotechnical evaluation matrix, Ada Lovelace Institute, 8 September 2026, CC BY-NC 4.0.
+# Verifiability classes and rationales: Fabio Rovai, Tesseract Academy, 11 September 2026.
+
+stmd:matrix a stm:Matrix ; rdfs:label "Sociotechnical evaluation matrix (Ada Lovelace Institute and NICE, 2026)" ;
+  dcterms:source <https://www.adalovelaceinstitute.org/resource/sociotechnical-evaluation-matrix/> ; dcterms:creator "Cam Rincon", "Rumman Chowdhury" ; dcterms:publisher "Ada Lovelace Institute" ; dcterms:issued "2026-09-08"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> .
+
+stmd:stage-Deployment a stm:LifecycleStage ; rdfs:label "Deployment" .
+stmd:stage-Design a stm:LifecycleStage ; rdfs:label "Design" .
+stmd:stage-Development a stm:LifecycleStage ; rdfs:label "Development" .
+stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution a stm:LifecycleColumn ; rdfs:label "Deployment environment testing, access controls, and security design and execution" .
+stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution a stm:LifecycleColumn ; rdfs:label "Metrics, thresholds, and evaluation design and execution" .
+stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution a stm:LifecycleColumn ; rdfs:label "System monitoring, error analysis, and incident response design and execution" .
+stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution a stm:LifecycleColumn ; rdfs:label "Systemic and environmental impact evaluation design and execution" .
+stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution a stm:LifecycleColumn ; rdfs:label "Transparency, documentation, and communication design and execution" .
+stmd:column-Design-Governance-assurance-and-lifecycle-management-design a stm:LifecycleColumn ; rdfs:label "Governance, assurance, and lifecycle management design" .
+stmd:column-Design-Human-AI-workflow-design a stm:LifecycleColumn ; rdfs:label "Human–AI workflow design" .
+stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design a stm:LifecycleColumn ; rdfs:label "Participation, legitimacy, and stakeholder engagement design" .
+stmd:column-Design-Use-case-and-task-definition a stm:LifecycleColumn ; rdfs:label "Use case and task definition" .
+stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation a stm:LifecycleColumn ; rdfs:label "Data sources extraction/ procurement and dataset curation" .
+stmd:column-Development-Model-choice-and-configuration a stm:LifecycleColumn ; rdfs:label "Model choice and configuration" .
+stmd:column-Development-Prompting-and-decision-rules-design a stm:LifecycleColumn ; rdfs:label "Prompting and decision rules design" .
+stmd:criterion-Accountability-and-responsibility a stm:Criterion ; rdfs:label "Accountability and responsibility" .
+stmd:criterion-Equity-distribution-and-discriminatory-non-harm a stm:Criterion ; rdfs:label "Equity, distribution, and discriminatory non-harm" .
+stmd:criterion-Failure-modes-and-risk-management a stm:Criterion ; rdfs:label "Failure modes and risk management" .
+stmd:criterion-Governance-and-lifecycle-assurance a stm:Criterion ; rdfs:label "Governance and lifecycle assurance" .
+stmd:criterion-Human-oversight-and-control a stm:Criterion ; rdfs:label "Human oversight and control" .
+stmd:criterion-Participation-and-legitimacy a stm:Criterion ; rdfs:label "Participation and legitimacy" .
+stmd:criterion-Professional-judgement-and-work a stm:Criterion ; rdfs:label "Professional judgement and work" .
+stmd:criterion-Systemic-and-environmental-impacts a stm:Criterion ; rdfs:label "Systemic and environmental impacts" .
+stmd:criterion-Technical-performance-and-validity a stm:Criterion ; rdfs:label "Technical performance and validity" .
+stmd:criterion-Transparency-and-documentation a stm:Criterion ; rdfs:label "Transparency and documentation" .
+
+stmd:field-E01 a stm:EvidenceField ; rdfs:label "metrics_named" ; stm:fieldDefinition "Screening performance metrics are named (sensitivity or recall, specificity, precision, accuracy, F1, workload saved)." .
+stmd:field-E02 a stm:EvidenceField ; rdfs:label "benchmark_dataset_identified" ; stm:fieldDefinition "The evaluation dataset is identified: which review(s), how many records, how many included by the human reference." .
+stmd:field-E03 a stm:EvidenceField ; rdfs:label "prevalence_reported" ; stm:fieldDefinition "Inclusion prevalence (included records over total) is reported or directly derivable from reported counts." .
+stmd:field-E04 a stm:EvidenceField ; rdfs:label "workflow_level_metric" ; stm:fieldDefinition "At least one end-to-end workflow metric is reported: time saved, workload reduction, cost, or recall after the human step, not only per-record model metrics." .
+stmd:field-E05 a stm:EvidenceField ; rdfs:label "role_statement" ; stm:fieldDefinition "The intended role of the model is stated (sole screener, second reviewer, triage or pre-screen) together with what remains a human decision." .
+stmd:field-E06 a stm:EvidenceField ; rdfs:label "disagreement_handling" ; stm:fieldDefinition "How model versus human disagreements, overrides or escalations are handled in the proposed workflow is stated." .
+stmd:field-E07 a stm:EvidenceField ; rdfs:label "affected_groups_or_equity" ; stm:fieldDefinition "The study names populations, languages, settings or study types at risk of differential exclusion, or states an equity goal for screening." .
+stmd:field-E08a a stm:EvidenceField ; rdfs:label "subgroup_check_designed" ; stm:fieldDefinition "The evaluation design includes a planned check of performance by subgroup, language, setting or study type." .
+stmd:field-E08b a stm:EvidenceField ; rdfs:label "subgroup_results_reported" ; stm:fieldDefinition "Performance or error rates are reported disaggregated by at least one subgroup (topic, study type, population, language, source)." .
+stmd:field-E08c a stm:EvidenceField ; rdfs:label "language_region_results" ; stm:fieldDefinition "Performance is measured across records in different languages or from different regions or settings." .
+stmd:field-E09 a stm:EvidenceField ; rdfs:label "acceptable_error_defined" ; stm:fieldDefinition "An acceptable error or target threshold (for example minimum sensitivity) is stated together with who set it or the norm it follows." .
+stmd:field-E10 a stm:EvidenceField ; rdfs:label "user_perspective_evidence" ; stm:fieldDefinition "Reviewer, user or professional perspectives are collected as evidence (survey, interview, usability or workload assessment)." .
+stmd:field-E11 a stm:EvidenceField ; rdfs:label "failure_modes_identified" ; stm:fieldDefinition "Critical failure modes are named (missed eligible studies, hallucinated eligibility reasoning, over-confident exclusion, inconsistency across runs)." .
+stmd:field-E12 a stm:EvidenceField ; rdfs:label "interaction_failure_checks" ; stm:fieldDefinition "Over-reliance, automation bias or alert fatigue in the human and model workflow is addressed in the design or discussed with a mitigation." .
+stmd:field-E13 a stm:EvidenceField ; rdfs:label "intended_use_scope" ; stm:fieldDefinition "Intended use and non-intended use or scope limits of the screening approach are stated." .
+stmd:field-E14 a stm:EvidenceField ; rdfs:label "code_or_workflow_published" ; stm:fieldDefinition "Code, prompts or the workflow are published in a repository or supplement with a stable reference (URL, DOI, commit or version)." .
+stmd:field-E15 a stm:EvidenceField ; rdfs:label "model_prior_evidence" ; stm:fieldDefinition "A rationale or prior evidence for the choice of model is given." .
+stmd:field-E16 a stm:EvidenceField ; rdfs:label "ground_truth_provenance" ; stm:fieldDefinition "The reference standard is defined (for example dual independent human screening or final review inclusion) and its provenance stated." .
+stmd:field-E17 a stm:EvidenceField ; rdfs:label "config_reported" ; stm:fieldDefinition "Decoding or constraint parameters are reported (temperature, top_p, max tokens, seed, structured output)." .
+stmd:field-E18 a stm:EvidenceField ; rdfs:label "prompt_text_published" ; stm:fieldDefinition "The verbatim prompt or prompts are available in the paper, supplement or repository." .
+stmd:field-E19 a stm:EvidenceField ; rdfs:label "prompt_reinforces_human_authority" ; stm:fieldDefinition "The prompt includes an uncertainty, unsure or escalation option, or instructs deference to human review. Not applicable when E18 is absent." .
+stmd:field-E20 a stm:EvidenceField ; rdfs:label "eligibility_criteria_stated" ; stm:fieldDefinition "The eligibility criteria supplied to the model are the review's own criteria and are stated or reproduced." .
+stmd:field-E21 a stm:EvidenceField ; rdfs:label "recall_prioritised" ; stm:fieldDefinition "The configuration, threshold or decision rule explicitly prioritises sensitivity or recall over precision." .
+stmd:field-E22 a stm:EvidenceField ; rdfs:label "leakage_contamination_addressed" ; stm:fieldDefinition "Data leakage or training contamination is discussed (model knowledge cutoff versus review date, memorisation of included studies) with a mitigation or an explicit limitation." .
+stmd:field-E23 a stm:EvidenceField ; rdfs:label "known_failure_modes_tested" ; stm:fieldDefinition "Known LLM failure modes (hallucination, prompt injection, specious plausibility, misuse) are documented and at least one is tested." .
+stmd:field-E24 a stm:EvidenceField ; rdfs:label "prompt_robustness_tested" ; stm:fieldDefinition "Prompt robustness is tested: prompt variants, wording sensitivity, or repeat-run consistency." .
+stmd:field-E25 a stm:EvidenceField ; rdfs:label "data_provenance_documented" ; stm:fieldDefinition "Dataset source, collection method and limitations are documented (a data card equivalent)." .
+stmd:field-E26 a stm:EvidenceField ; rdfs:label "model_card_referenced" ; stm:fieldDefinition "A model card, system card or equivalent documentation for the chosen model is cited, or model transparency is explicitly considered in model choice." .
+stmd:field-E27 a stm:EvidenceField ; rdfs:label "model_version_pinned" ; stm:fieldDefinition "An exact model version identifier and the access or run date are reported." .
+stmd:field-E28 a stm:EvidenceField ; rdfs:label "realistic_conditions" ; stm:fieldDefinition "The evaluation uses the complete record set of a real review (not a curated or balanced subset) under the access route intended for practice." .
+stmd:field-E29 a stm:EvidenceField ; rdfs:label "error_analysis" ; stm:fieldDefinition "A systematic error analysis of misclassifications is reported (quantitative or qualitative)." .
+stmd:field-E30 a stm:EvidenceField ; rdfs:label "test_environment_described" ; stm:fieldDefinition "The test environment is described (API or user interface, batching, integration with screening software)." .
+stmd:field-E31 a stm:EvidenceField ; rdfs:label "limitations_and_failure_modes_documented" ; stm:fieldDefinition "A limitations section documents failure modes and uncertainties." .
+stmd:field-E32 a stm:EvidenceField ; rdfs:label "worst_case_analysis" ; stm:fieldDefinition "Missed eligible studies are characterised (which studies, why) or tail and worst-case performance is reported, not only averages." .
+stmd:field-E33 a stm:EvidenceField ; rdfs:label "decision_rule_prespecified" ; stm:fieldDefinition "A pre-specified decision rule links metrics to a go, no-go or limited-deployment decision." .
+stmd:field-E34 a stm:EvidenceField ; rdfs:label "confidence_intervals" ; stm:fieldDefinition "Confidence intervals or another uncertainty measure are reported for headline metrics." .
+stmd:field-E35 a stm:EvidenceField ; rdfs:label "energy_cost_reported" ; stm:fieldDefinition "Energy, compute or environmental cost is measured and disclosed." .
+
+stmd:cell-DES-B6 a stm:Cell ; rdfs:label "DES-B6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Does the task specification support clear success metrics, realistic test conditions, and appropriate benchmarks for the intended domain?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "A task specification with named metrics, test conditions and a benchmark dataset is an artefact a feasibility study publishes."
+  ; stm:settledBy stmd:field-E01, stmd:field-E02 .
+
+stmd:cell-DES-C6 a stm:Cell ; rdfs:label "DES-C6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Are metrics defined at workflow level (e.g. end‑to‑end accuracy, safety, timeliness), not just per‑call model metrics?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "A workflow-level metric (time or workload saved, recall after the human step) is either reported or not."
+  ; stm:settledBy stmd:field-E04 .
+
+stmd:cell-DES-D6 a stm:Cell ; rdfs:label "DES-D6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Do technical evaluations feed into a broader end-to-end design, development and deployment lifcycle assurance framework (incorporating assurance practices such as risk assessments, audits, impact assessments) rather than stand alone?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Whether the evaluation feeds a lifecycle assurance framework is settled by the organisation's assurance records, not by the study." .
+
+stmd:cell-DES-E6 a stm:Cell ; rdfs:label "DES-E6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Does the development of the system and evaluation methods incorporate evidence throughout the lifecycle about real‑world use and impacts to the particular context of deployment gathered from stakeholders, including impacted individuals and communities impacted by the system?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Incorporation of stakeholder evidence is settled by engagement records held by the organisation." .
+
+stmd:cell-DES-B7 a stm:Cell ; rdfs:label "DES-B7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Is the LLM framed as assistive, advisory, or autonomous, and are explicit boundaries set on decisions that must remain with humans?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "The study states the intended role of the model and what stays with humans, or it does not."
+  ; stm:settledBy stmd:field-E05 .
+
+stmd:cell-DES-C7 a stm:Cell ; rdfs:label "DES-C7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Has a process for humans to override, question, or escalate AI outputs been designed and are high‑risk cases always human‑checked?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Override, disagreement and escalation handling is part of the published workflow design."
+  ; stm:settledBy stmd:field-E06 .
+
+stmd:cell-DES-D7 a stm:Cell ; rdfs:label "DES-D7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Are there clear governance points where humans can pause, adjust, or stop deployment based on new evidence?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Governance pause and stop points live in stage-gate records." .
+
+stmd:cell-DES-E7 a stm:Cell ; rdfs:label "DES-E7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Are oversight mechanisms designed with input from those who will rely on or be affected by the system?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Whether oversight was designed with affected people is an engagement record." .
+
+stmd:cell-DES-B8 a stm:Cell ; rdfs:label "DES-B8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals identified and documented for scoping the task, approving deployment, and being answerable for harms from mis‑specification or misuse?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Named accountable roles for scoping and approval are an organisational RACI, not a publication." .
+
+stmd:cell-DES-C8 a stm:Cell ; rdfs:label "DES-C8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and RACI for AI‑assisted decisions clearly identified and documented, including responsibility when humans follow or ignore AI suggestions?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "RACI for AI-assisted decisions is an organisational record." .
+
+stmd:cell-DES-D8 a stm:Cell ; rdfs:label "DES-D8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are responsibilities for governance (boards, committees, risk owners, auditors) defined, resourced and documented?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Governance body responsibilities and resourcing are organisational records." .
+
+stmd:cell-DES-E8 a stm:Cell ; rdfs:label "DES-E8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are stakeholders involved in clarifying what roles should be responsible for what, and how accountability should operate?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Stakeholder involvement in defining accountability is an engagement record." .
+
+stmd:cell-DES-B9 a stm:Cell ; rdfs:label "DES-B9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Has it been validated that the use case and task definition algn with the reasonable expectations and potential equity concerns of impacted stakeholders? Does the task definition identify groups who may be disproportionately affected or excluded, and set equity goals accordingly?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Naming groups at risk of differential exclusion and setting an equity goal is a statement the study either makes or omits."
+  ; stm:settledBy stmd:field-E07 .
+
+stmd:cell-DES-C9 a stm:Cell ; rdfs:label "DES-C9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Does the workflow include checks to detect systematic disadvantages (e.g. repeated negative decisions affecting specific groups)? Does it incorporate processes that encourage active user judgment and the application of system outputs in consideration of the greater use case context and how this may disproportionally impact certain groups?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "A designed check for systematic disadvantage is part of the evaluation design."
+  ; stm:settledBy stmd:field-E08a .
+
+stmd:cell-DES-D9 a stm:Cell ; rdfs:label "DES-D9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Does governance explicitly consider equity, non-discrimination, rights, and societal impacts?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Governance consideration of equity is a governance document." .
+
+stmd:cell-DES-E9 a stm:Cell ; rdfs:label "DES-E9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Are protected or high‑risk groups identified and proportionally included in stakeholder engagement processes to shaping evaluation criteria and mitigations?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Composition of engagement participants is an engagement record." .
+
+stmd:cell-DES-B10 a stm:Cell ; rdfs:label "DES-B10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "How is domain expertise used to define what “good” performance and acceptable error look like, and where judgement is non‑delegable?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Who defined acceptable error and non-delegable decisions is stated in a protocol or not."
+  ; stm:settledBy stmd:field-E09 .
+
+stmd:cell-DES-C10 a stm:Cell ; rdfs:label "DES-C10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are assessments for how the workflow reshapes expertise, autonomy, and workload, and are de‑skilling and over-reliance explicitly addressed?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "A workforce impact assessment is an organisational record." .
+
+stmd:cell-DES-D10 a stm:Cell ; rdfs:label "DES-D10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are professional bodies or standards‑setting organisations involved where relevant to the domain?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Involvement of professional bodies is an engagement record." .
+
+stmd:cell-DES-E10 a stm:Cell ; rdfs:label "DES-E10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are professional and user perspectives treated as evidence for evaluation and governance, not only technical metrics?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Whether user or professional perspectives were collected as evidence is visible in the study's methods."
+  ; stm:settledBy stmd:field-E10 .
+
+stmd:cell-DES-B11 a stm:Cell ; rdfs:label "DES-B11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are critical failure modes from task mis‑specification (e.g. dangerous omissions, misleading advice) identified and prioritised?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Critical failure modes are either enumerated in the study or not."
+  ; stm:settledBy stmd:field-E11 .
+
+stmd:cell-DES-C11 a stm:Cell ; rdfs:label "DES-C11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Does the workflow incorporate checks to detect and mitigate interaction-level failure modes such as cognitive and judgmental biases by end users , over-reliance, and alert fatigue?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Checks for over-reliance and automation bias are part of the published design or absent."
+  ; stm:settledBy stmd:field-E12 .
+
+stmd:cell-DES-D11 a stm:Cell ; rdfs:label "DES-D11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are there mechanisms to identify risks accross the design, development, and deployment lifecycle with plans for re‑evaluation and adaptation?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Lifecycle risk identification with re-evaluation plans is a risk-management record." .
+
+stmd:cell-DES-E11 a stm:Cell ; rdfs:label "DES-E11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Do engagement processes surface context‑specific failure modes and harms that technical tests miss?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Failure modes surfaced by engagement are engagement records." .
+
+stmd:cell-DES-B12 a stm:Cell ; rdfs:label "DES-B12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Is the task definition embedded in risk/impact assessments with clear stage gates (pilot, shadow testing, scale‑up/descoping)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Stage gates in risk and impact assessments are governance records." .
+
+stmd:cell-DES-C12 a stm:Cell ; rdfs:label "DES-C12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Is the workflow embedded in a staged design, development, and deployment plan incorporating feasibility, shadow testing, and controlled rollout with exit ramps?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Shadow testing and controlled rollout plans are governance records." .
+
+stmd:cell-DES-D12 a stm:Cell ; rdfs:label "DES-D12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Is there an end-to-end design development and deployment lifecycle plan (design, feasibility, pilots, deployment, monitoring, retirement) aligned with AI assurance best practice?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "An end-to-end lifecycle plan is a governance record." .
+
+stmd:cell-DES-E12 a stm:Cell ; rdfs:label "DES-E12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Are participatory activities tied into formal governance and assurance (e.g. committees, review cycles)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Linkage of participation to formal governance is a governance record." .
+
+stmd:cell-DES-B13 a stm:Cell ; rdfs:label "DES-B13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Is intended use, non‑intended uses, and scope documented in model/system cards or similar artefacts?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Intended use, non-intended use and scope statements are documentation artefacts."
+  ; stm:settledBy stmd:field-E13 .
+
+stmd:cell-DES-C13 a stm:Cell ; rdfs:label "DES-C13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are workflow rules, routing logic, and QA steps identified, documented and version‑controlled for auditability?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Version-controlled workflow rules and code are either published or not."
+  ; stm:settledBy stmd:field-E14 .
+
+stmd:cell-DES-D13 a stm:Cell ; rdfs:label "DES-D13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are governance decisions, rationales, and conditions for use documented and revisitably recorded?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Governance decision logs are organisational records." .
+
+stmd:cell-DES-E13 a stm:Cell ; rdfs:label "DES-E13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are engagement processes and outputs documented (who participated, what changed as a result)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Engagement documentation is an organisational record." .
+
+stmd:cell-DES-B14 a stm:Cell ; rdfs:label "DES-B14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Have users and affected stakeholders been involved in the decision to adopt an LLM for this use? If so, have they been involved in framing the problem and acceptable outcomes?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Stakeholder involvement in the adoption decision is an engagement record." .
+
+stmd:cell-DES-C14 a stm:Cell ; rdfs:label "DES-C14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Have users and affected stakeholders been involved in co‑design and iterative refinement of the workflow?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Co-design records are engagement records." .
+
+stmd:cell-DES-D14 a stm:Cell ; rdfs:label "DES-D14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are external stakeholders (regulators, civil society, affected communities) engaged in proportional oversight and decision-making?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "External oversight arrangements are governance records." .
+
+stmd:cell-DES-E14 a stm:Cell ; rdfs:label "DES-E14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are there ongoing channels for feedback, contestation, and appeals by affected stakeholders?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Feedback and appeal channels are organisational mechanisms with records." .
+
+stmd:cell-DES-B15 a stm:Cell ; rdfs:label "DES-B15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Use-case-and-task-definition ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Has the potential for it to, if scaled, materially change institutional practices, markers, or ethe environment been analysed?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "A systemic impact analysis is an organisational document." .
+
+stmd:cell-DES-C15 a stm:Cell ; rdfs:label "DES-C15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Human-AI-workflow-design ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Could this workflow, at scale, shift labour patterns, access to services, or institutional power dynamics, and is that considered?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Labour and access impact analysis at scale is an organisational document." .
+
+stmd:cell-DES-D15 a stm:Cell ; rdfs:label "DES-D15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Governance-assurance-and-lifecycle-management-design ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Does governance consider longer‑term systemic issues (e.g. sectoral dependence on vendors, cumulative environmental impact)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Vendor dependence and environmental governance are governance records." .
+
+stmd:cell-DES-E15 a stm:Cell ; rdfs:label "DES-E15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Design ; stm:inColumn stmd:column-Design-Participation-legitimacy-and-stakeholder-engagement-design ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "How does stakeholder involvement enhance legitimacy of the product?" ;
+  stm:verifiabilityClass stm:Attestation ; stm:classRationale "Whether involvement enhances legitimacy is a judgement no artefact settles." .
+
+stmd:cell-DEV-B6 a stm:Cell ; rdfs:label "DEV-B6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Are datasets representative, reliable, and suitable for the task; are prevalence, class imbalance, and domain shift handled in evaluation design?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Dataset identity, size and inclusion prevalence are reported or not."
+  ; stm:settledBy stmd:field-E02, stmd:field-E03 .
+
+stmd:cell-DEV-C6 a stm:Cell ; rdfs:label "DEV-C6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Is there evidence that the chosen model performs adequately on comparable tasks, domains, and input modalities?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Prior evidence for the model choice is cited or not."
+  ; stm:settledBy stmd:field-E15 .
+
+stmd:cell-DEV-D6 a stm:Cell ; rdfs:label "DEV-D6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Are prompts and decision rules validated empirically for the target tasks, and are thresholds calibrated against robust ground truth?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Ground truth provenance and threshold calibration against it are stated in the methods."
+  ; stm:settledBy stmd:field-E16 .
+
+stmd:cell-DEV-B7 a stm:Cell ; rdfs:label "DEV-B7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Can humans inspect, contextualise, or correct data‑driven outputs, and are there processes to flag problematic training/eval data?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Processes for humans to flag problematic data are organisational processes." .
+
+stmd:cell-DEV-C7 a stm:Cell ; rdfs:label "DEV-C7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Can model behaviour be constrained (e.g. temperature, tools, guardrails) to ensure humans retain effective control?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Decoding and constraint parameters are reported or not."
+  ; stm:settledBy stmd:field-E17 .
+
+stmd:cell-DEV-D7 a stm:Cell ; rdfs:label "DEV-D7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Do prompts explicitly reinforce human authority (e.g. escalation instructions, uncertainty signalling) rather than encourage automation bias?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Whether the prompt signals uncertainty or escalation is checkable only if the prompt text is published."
+  ; stm:settledBy stmd:field-E19 .
+
+stmd:cell-DEV-B8 a stm:Cell ; rdfs:label "DEV-B8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals identified and documented as being responsible for data selection, labelling, quality control, and compliance (including third‑party data providers)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Roles for data selection and quality control are organisational records." .
+
+stmd:cell-DEV-C8 a stm:Cell ; rdfs:label "DEV-C8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are responsibilities between base‑model provider, integrator, and deploying organisation deleneated and documented across the lifecycle?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Provider, integrator and deployer responsibility allocation is a contractual or governance record." .
+
+stmd:cell-DEV-D8 a stm:Cell ; rdfs:label "DEV-D8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals responsible for prompt and rule design, and those accountable for errors induced by prompt wording or decision thresholds identified and documented?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Accountability for prompt design errors is an organisational record." .
+
+stmd:cell-DEV-B9 a stm:Cell ; rdfs:label "DEV-B9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Are minority or high‑risk groups adequately represented, and are differential error rates and harms examined by subgroup?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Subgroup error rates are reported or not."
+  ; stm:settledBy stmd:field-E08b .
+
+stmd:cell-DEV-C9 a stm:Cell ; rdfs:label "DEV-C9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Does model choice disproportionately disadvantage certain languages, regions, or user groups, and is this measured?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Performance by language or region is measured or not."
+  ; stm:settledBy stmd:field-E08c .
+
+stmd:cell-DEV-D9 a stm:Cell ; rdfs:label "DEV-D9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Are prompts reviewed for bias (e.g. language that may systematically exclude or misinterpret certain groups or contexts)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "A prompt bias review is a process record." .
+
+stmd:cell-DEV-B10 a stm:Cell ; rdfs:label "DEV-B10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Do data choices respect professional standards (e.g. evidentiary hierarchies, relevance to practice)?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Whether the eligibility criteria given to the model are the review's own criteria is visible in the methods."
+  ; stm:settledBy stmd:field-E20 .
+
+stmd:cell-DEV-C10 a stm:Cell ; rdfs:label "DEV-C10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Does configuration align with domain norms (e.g. conservative behaviour where safety‑critical decisions are involved)?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Whether the configuration prioritises sensitivity, the domain norm for screening, is checkable against the reported setup."
+  ; stm:settledBy stmd:field-E21 .
+
+stmd:cell-DEV-D10 a stm:Cell ; rdfs:label "DEV-D10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are prompts co‑designed with professionals so that outputs match their epistemic standards and workflows?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Co-design of prompts with professionals is a process record." .
+
+stmd:cell-DEV-B11 a stm:Cell ; rdfs:label "DEV-B11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are data‑related failure modes (e.g. outdated data, biased samples, leakage) explicitly identified and mitigated?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Leakage and contamination are discussed and mitigated, or not."
+  ; stm:settledBy stmd:field-E22 .
+
+stmd:cell-DEV-C11 a stm:Cell ; rdfs:label "DEV-C11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are known failure modes (hallucination, prompt injection, specious plausibility, abuse) documented and stress‑tested?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Known failure modes are documented and stress-tested, or not."
+  ; stm:settledBy stmd:field-E23 .
+
+stmd:cell-DEV-D11 a stm:Cell ; rdfs:label "DEV-D11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are failure modes from prompting (e.g. brittle performance, adversarial prompts, over‑confident exclusions) systematically tested?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Prompt robustness testing is reported or not."
+  ; stm:settledBy stmd:field-E24 .
+
+stmd:cell-DEV-B12 a stm:Cell ; rdfs:label "DEV-B12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Are data risks integrated into DPIAs/AIAs and organisational risk registers, with plans for re‑assessment?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Integration into DPIAs and risk registers is a governance record." .
+
+stmd:cell-DEV-C12 a stm:Cell ; rdfs:label "DEV-C12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Is model selection tied to a risk tier with corresponding assurance requirements (e.g. external audit, formal approval)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Risk-tier assignment is a governance record." .
+
+stmd:cell-DEV-D12 a stm:Cell ; rdfs:label "DEV-D12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Are prompt/rule changes subject to governance (approvals, testing, rollback plans) as part of lifecycle assurance?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Change governance for prompts is a governance record." .
+
+stmd:cell-DEV-B13 a stm:Cell ; rdfs:label "DEV-B13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are data provenance, collection methods, and limitations documented in data cards, registers, or similar tools?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Data provenance and limitations documentation is present or absent."
+  ; stm:settledBy stmd:field-E25 .
+
+stmd:cell-DEV-C13 a stm:Cell ; rdfs:label "DEV-C13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Have models with high degrees of transparency and explainability been considered for this use case? Are system/model cards available with training data summaries, evaluation results, and change logs?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Availability of a model card or equivalent for the chosen model is checkable."
+  ; stm:settledBy stmd:field-E26 .
+
+stmd:cell-DEV-D13 a stm:Cell ; rdfs:label "DEV-D13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are all prompt and decision‑rule versions logged and documented for audit and reproducibility?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Verbatim prompt text plus a pinned model version and date are either published or not."
+  ; stm:settledBy stmd:field-E18, stmd:field-E27 .
+
+stmd:cell-DEV-B14 a stm:Cell ; rdfs:label "DEV-B14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Have affected stakeholders been consulted on data use, especially for sensitive or high‑risk data?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Consultation on data use is an engagement record." .
+
+stmd:cell-DEV-C14 a stm:Cell ; rdfs:label "DEV-C14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are users and domain experts involved in evaluating trade‑offs between alternative models/configurations?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Expert involvement in model trade-offs is a process record." .
+
+stmd:cell-DEV-D14 a stm:Cell ; rdfs:label "DEV-D14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are users or affected stakeholders able to propose changes or flag concerns about prompts and thresholds?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Channels for flagging prompt concerns are organisational mechanisms." .
+
+stmd:cell-DEV-B15 a stm:Cell ; rdfs:label "DEV-B15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Data-sources-extraction-procurement-and-dataset-curation ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Do data practices risk systemic harms (e.g. surveillance, chilling effects, environmental load of storage/processing)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Systemic harm analysis of data practices is an organisational document." .
+
+stmd:cell-DEV-C15 a stm:Cell ; rdfs:label "DEV-C15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Model-choice-and-configuration ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Does dependence on this model/provider create lock‑in, concentration of power, or high environmental cost, and is that managed?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Lock-in and concentration management is a governance record." .
+
+stmd:cell-DEV-D15 a stm:Cell ; rdfs:label "DEV-D15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Development ; stm:inColumn stmd:column-Development-Prompting-and-decision-rules-design ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Could prompt/rule design, if reused elsewhere, have wider systemic effects (e.g. normalising certain framings, exclusionary language)?" ;
+  stm:verifiabilityClass stm:Attestation ; stm:classRationale "Speculative systemic effects of reused prompt designs are a judgement no artefact settles." .
+
+stmd:cell-DEP-B6 a stm:Cell ; rdfs:label "DEP-B6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Are metrics conceptually valid for what they claim to measure (e.g. safety, quality, fairness), and tested under realistic conditions?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Metric definitions and realistic test conditions are visible in the methods."
+  ; stm:settledBy stmd:field-E01, stmd:field-E28 .
+
+stmd:cell-DEP-C6 a stm:Cell ; rdfs:label "DEP-C6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Is there a plan for systematic error analysis (quantitative and qualitative), including clustering failures and exploring causes?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "A systematic error analysis is reported or not."
+  ; stm:settledBy stmd:field-E29 .
+
+stmd:cell-DEP-D6 a stm:Cell ; rdfs:label "DEP-D6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Are tests run in environments that reflect real deployment conditions, including integration with other systems?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "The test environment and integration conditions are described or not."
+  ; stm:settledBy stmd:field-E30 .
+
+stmd:cell-DEP-E6 a stm:Cell ; rdfs:label "DEP-E6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Do evaluations consider how technical performance interacts with broader systemic outcomes (e.g. misinformation, labour markets)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Analysis of interaction with systemic outcomes is an organisational document." .
+
+stmd:cell-DEP-F6 a stm:Cell ; rdfs:label "DEP-F6" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Technical-performance-and-validity ;
+  stm:question "Is enough technical detail published (or available internally) to interpret performance claims and limitations?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Reporting completeness sufficient to interpret claims is checkable against the publication."
+  ; stm:settledBy stmd:field-E31, stmd:field-E27 .
+
+stmd:cell-DEP-B7 a stm:Cell ; rdfs:label "DEP-B7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Do thresholds reflect what humans and institutions consider acceptable risk and residual error in practice?" ;
+  stm:verifiabilityClass stm:Attestation ; stm:classRationale "Whether thresholds reflect institutional risk appetite is a judgement; the stated rationale is only a proxy." .
+
+stmd:cell-DEP-C7 a stm:Cell ; rdfs:label "DEP-C7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Can humans easily report suspected errors, and are they supported and protected in challenging AI outputs?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Error reporting mechanisms and protections are organisational records." .
+
+stmd:cell-DEP-D7 a stm:Cell ; rdfs:label "DEP-D7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Are access controls and permissions designed so that human supervisors can meaningfully oversee use and intervene?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Access control design is a configuration record." .
+
+stmd:cell-DEP-E7 a stm:Cell ; rdfs:label "DEP-E7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Are humans given tools and authority to mitigate systemic harms that become visible over time?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Tools and authority for mitigating systemic harm are organisational arrangements." .
+
+stmd:cell-DEP-F7 a stm:Cell ; rdfs:label "DEP-F7" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Human-oversight-and-control ;
+  stm:question "Are users given clear explanations of what the system does and does not do, and how they can exercise control?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "User-facing explanations are internal documentation." .
+
+stmd:cell-DEP-B8 a stm:Cell ; rdfs:label "DEP-B8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals responsible for setting and approving thresholds, and protocols for how trade‑offs between metrics (e.g. sensitivity vs precision) identified, documented, and revisited?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Threshold ownership and trade-off protocols are governance records." .
+
+stmd:cell-DEP-C8 a stm:Cell ; rdfs:label "DEP-C8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals that owns incident triage, remediation, and communication with affected individuals or organisation identified, resourced and documented?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Incident ownership is a governance record." .
+
+stmd:cell-DEP-D8 a stm:Cell ; rdfs:label "DEP-D8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals accountable for secure configuration, access governance, and compliance with sectoral rules in the deployment environment identified and documented?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Security accountability is a governance record." .
+
+stmd:cell-DEP-E8 a stm:Cell ; rdfs:label "DEP-E8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals responsible for monitoring and addressing systemic or cross‑organisational impacts identified, resourced, and documented?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Systemic impact monitoring roles are governance records." .
+
+stmd:cell-DEP-F8 a stm:Cell ; rdfs:label "DEP-F8" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Accountability-and-responsibility ;
+  stm:question "Are roles and individuals responsible for documentation quality and for communicating changes to stakeholders identified, resourced, and documented?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Documentation ownership is a governance record." .
+
+stmd:cell-DEP-B9 a stm:Cell ; rdfs:label "DEP-B9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Are metrics disaggregated (e.g. by group, region, task type) to detect disparate impacts and distributional harms?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Disaggregated metrics are reported or not."
+  ; stm:settledBy stmd:field-E08b .
+
+stmd:cell-DEP-C9 a stm:Cell ; rdfs:label "DEP-C9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Are error impacts analysed across groups to identify disproportionate burdens on marginalised populations/ protected groups?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Error impact analysis across groups is reported or not."
+  ; stm:settledBy stmd:field-E08b .
+
+stmd:cell-DEP-D9 a stm:Cell ; rdfs:label "DEP-D9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Do access patterns or deployment contexts expose particular groups to higher risk (e.g. low‑resource settings, constrained alternatives)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Deployment-context risk exposure analysis is an organisational document." .
+
+stmd:cell-DEP-E9 a stm:Cell ; rdfs:label "DEP-E9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Are distributional impacts across populations, regions, and ecosystems mapped and monitored?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Distributional impact mapping is an organisational monitoring record." .
+
+stmd:cell-DEP-F9 a stm:Cell ; rdfs:label "DEP-F9" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Equity-distribution-and-discriminatory-non-harm ;
+  stm:question "Is documentation accessible and understandable to diverse groups, including non‑experts and affected communities?" ;
+  stm:verifiabilityClass stm:Attestation ; stm:classRationale "Whether documentation is understandable to diverse groups is a judgement no artefact settles." .
+
+stmd:cell-DEP-B10 a stm:Cell ; rdfs:label "DEP-B10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Do thresholds align with domain professional norms (e.g. prioritising recall in safety‑critical contexts)?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Whether thresholds prioritise recall in a safety-critical screening context is checkable."
+  ; stm:settledBy stmd:field-E21 .
+
+stmd:cell-DEP-C10 a stm:Cell ; rdfs:label "DEP-C10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are professionals trained and empowered to recognise when to distrust the tool and revert to alternative methods?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Training records are organisational records." .
+
+stmd:cell-DEP-D10 a stm:Cell ; rdfs:label "DEP-D10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are expectations placed on professionals for monitoring, escalation, and safe use clearly stated and resourced?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Stated and resourced expectations on professionals are organisational records." .
+
+stmd:cell-DEP-E10 a stm:Cell ; rdfs:label "DEP-E10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are professional communities involved in assessing long‑term implications for their field?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Professional community involvement is an engagement record." .
+
+stmd:cell-DEP-F10 a stm:Cell ; rdfs:label "DEP-F10" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Professional-judgement-and-work ;
+  stm:question "Are professionals provided with guidance, training materials, and documentation aligned with their practice needs?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Guidance and training materials are internal documentation." .
+
+stmd:cell-DEP-B11 a stm:Cell ; rdfs:label "DEP-B11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are worst‑case and edge scenarios evaluated, not only averages (e.g. tail risks, rare but severe harms)?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Worst-case and tail analysis is reported or not."
+  ; stm:settledBy stmd:field-E32 .
+
+stmd:cell-DEP-C11 a stm:Cell ; rdfs:label "DEP-C11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are emerging failure modes (e.g. new jailbreaks, misuse patterns) anticipated via red‑teaming and scenario exercises? Are impact assessments incorporated throughout deployment?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Red-teaming and scenario exercises are process records." .
+
+stmd:cell-DEP-D11 a stm:Cell ; rdfs:label "DEP-D11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are environment‑specific risks (prompt injection, data exfiltration, integration failures) assessed and mitigated?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Environment-specific security assessment is a security record." .
+
+stmd:cell-DEP-E11 a stm:Cell ; rdfs:label "DEP-E11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Are systemic failure scenarios (e.g. widespread adoption amplifying particular harms) explored and mitigated?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Systemic failure scenario analysis is an organisational document." .
+
+stmd:cell-DEP-F11 a stm:Cell ; rdfs:label "DEP-F11" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Failure-modes-and-risk-management ;
+  stm:question "Does documentation describe known failure modes, uncertainties, and appropriate risk mitigations?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Documented failure modes and uncertainties are present or absent in the publication."
+  ; stm:settledBy stmd:field-E31 .
+
+stmd:cell-DEP-B12 a stm:Cell ; rdfs:label "DEP-B12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Are metrics linked to lifecycle decisions (go/no‑go, limited deployment, remediation plans, descoping)?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "A pre-specified decision rule linking metrics to go or no-go is stated or not."
+  ; stm:settledBy stmd:field-E33 .
+
+stmd:cell-DEP-C12 a stm:Cell ; rdfs:label "DEP-C12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Is monitoring integrated into organisational risk management, with triggers for re‑evaluation or rollback?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Monitoring triggers are risk-management records." .
+
+stmd:cell-DEP-D12 a stm:Cell ; rdfs:label "DEP-D12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Is deployment tied to an explicit risk tier with corresponding assurance, audit, and review mechanisms?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Risk-tier linkage is a governance record." .
+
+stmd:cell-DEP-E12 a stm:Cell ; rdfs:label "DEP-E12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Are systemic and environmental risks integrated into organisational and sectoral governance (e.g. regulators, industry bodies)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Sectoral governance integration is a governance record." .
+
+stmd:cell-DEP-F12 a stm:Cell ; rdfs:label "DEP-F12" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Governance-and-lifecycle-assurance ;
+  stm:question "Are transparency artefacts (model cards, data cards, impact assessments, registers) maintained over time?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Maintenance of transparency artefacts over time is a versioned organisational record." .
+
+stmd:cell-DEP-B13 a stm:Cell ; rdfs:label "DEP-B13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are evaluation methods and results reported with uncertainties, limitations, and confidence intervals, not just headline scores?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Confidence intervals and uncertainty are reported or not."
+  ; stm:settledBy stmd:field-E34 .
+
+stmd:cell-DEP-C13 a stm:Cell ; rdfs:label "DEP-C13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are logs, incident reports, and post‑mortems documented and, where appropriate, shared internally or publicly?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Logs, incident reports and post-mortems are organisational records." .
+
+stmd:cell-DEP-D13 a stm:Cell ; rdfs:label "DEP-D13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are environment and configuration documented (e.g. system diagrams, dependency lists, threat models)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Environment and configuration documentation is a deployment record." .
+
+stmd:cell-DEP-E13 a stm:Cell ; rdfs:label "DEP-E13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are environmental costs (energy, hardware, lifecycle) measured and disclosed where feasible?" ;
+  stm:verifiabilityClass stm:EvaluationArtefact ; stm:classRationale "Energy and compute cost is measured and disclosed or not."
+  ; stm:settledBy stmd:field-E35 .
+
+stmd:cell-DEP-F13 a stm:Cell ; rdfs:label "DEP-F13" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Transparency-and-documentation ;
+  stm:question "Are logs and decision traces sufficient to reconstruct and audit important decisions or outcomes? Are the development process and system outcomes communicated in a way that is accessible and understandable to impacted individuals and groups?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Decision-trace logging is a deployment record; the accessibility part is a judgement." .
+
+stmd:cell-DEP-B14 a stm:Cell ; rdfs:label "DEP-B14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Have stakeholders been asked which outcomes and errors matter to them and how these should be measured?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Stakeholder input on which errors matter is an engagement record." .
+
+stmd:cell-DEP-C14 a stm:Cell ; rdfs:label "DEP-C14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are affected stakeholders involved in incident review or consulted on appropriate remediation for serious harms?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Stakeholder involvement in incident review is an engagement record." .
+
+stmd:cell-DEP-D14 a stm:Cell ; rdfs:label "DEP-D14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Have frontline staff and impacted users been consulted on whether deployment conditions feel safe and trustworthy?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Frontline consultation is an engagement record." .
+
+stmd:cell-DEP-E14 a stm:Cell ; rdfs:label "DEP-E14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are communities and civil society groups engaged in discussions about long‑term societal impacts?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Civil society engagement is an engagement record." .
+
+stmd:cell-DEP-F14 a stm:Cell ; rdfs:label "DEP-F14" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Participation-and-legitimacy ;
+  stm:question "Are there mechanisms for public or stakeholder feedback on documentation and transparency practices?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Feedback mechanisms on documentation are organisational mechanisms." .
+
+stmd:cell-DEP-B15 a stm:Cell ; rdfs:label "DEP-B15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Metrics-thresholds-and-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Do metric choices or incentives risk gaming, superficial optimisation, or other systemic distortions?" ;
+  stm:verifiabilityClass stm:Attestation ; stm:classRationale "Whether metric choices risk gaming is a judgement no artefact settles." .
+
+stmd:cell-DEP-C15 a stm:Cell ; rdfs:label "DEP-C15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-System-monitoring-error-analysis-and-incident-response-design-and-execution ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Are cumulative effects of errors (trust erosion, chilling effects, environmental cost of retraining and patching) considered?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Consideration of cumulative effects is an organisational document." .
+
+stmd:cell-DEP-D15 a stm:Cell ; rdfs:label "DEP-D15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Deployment-environment-testing-access-controls-and-security-design-and-execution ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Could deployment architecture create systemic vulnerabilities (e.g. single points of failure, cross‑system cascades, energy intensity)?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "Architecture vulnerability assessment is a security record." .
+
+stmd:cell-DEP-E15 a stm:Cell ; rdfs:label "DEP-E15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Systemic-and-environmental-impact-evaluation-design-and-execution ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Is there a plan for de‑scaling, decommissioning, or alternative solutions if systemic or environmental harms are judged too great?" ;
+  stm:verifiabilityClass stm:GovernanceRecord ; stm:classRationale "A decommissioning plan is a governance record." .
+
+stmd:cell-DEP-F15 a stm:Cell ; rdfs:label "DEP-F15" ; stm:partOf stmd:matrix ;
+  stm:inStage stmd:stage-Deployment ; stm:inColumn stmd:column-Deployment-Transparency-documentation-and-communication-design-and-execution ; stm:hasCriterion stmd:criterion-Systemic-and-environmental-impacts ;
+  stm:question "Does the overall communication strategy risk over‑selling capabilities or obscuring systemic downsides (e.g. labour or environmental costs)?" ;
+  stm:verifiabilityClass stm:Attestation ; stm:classRationale "Whether communication over-sells is a judgement no artefact settles." .

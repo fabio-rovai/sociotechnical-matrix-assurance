@@ -1,0 +1,693 @@
+{
+ "classes": {
+  "A": "evaluation artefact: evidence a published evaluation or feasibility study should itself carry",
+  "B": "governance record: evidence that exists only as organisational documents or records an auditor could inspect",
+  "C": "attestation: a judgement of adequacy, legitimacy or alignment that no artefact settles"
+ },
+ "classified_by": "Fabio Rovai, Tesseract Academy, 11 September 2026; one rationale per cell, open to challenge by issue",
+ "cells": {
+  "DES-B6": {
+   "class": "A",
+   "fields": [
+    "E01",
+    "E02"
+   ],
+   "rationale": "A task specification with named metrics, test conditions and a benchmark dataset is an artefact a feasibility study publishes."
+  },
+  "DES-C6": {
+   "class": "A",
+   "fields": [
+    "E04"
+   ],
+   "rationale": "A workflow-level metric (time or workload saved, recall after the human step) is either reported or not."
+  },
+  "DES-D6": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Whether the evaluation feeds a lifecycle assurance framework is settled by the organisation's assurance records, not by the study."
+  },
+  "DES-E6": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Incorporation of stakeholder evidence is settled by engagement records held by the organisation."
+  },
+  "DES-B7": {
+   "class": "A",
+   "fields": [
+    "E05"
+   ],
+   "rationale": "The study states the intended role of the model and what stays with humans, or it does not."
+  },
+  "DES-C7": {
+   "class": "A",
+   "fields": [
+    "E06"
+   ],
+   "rationale": "Override, disagreement and escalation handling is part of the published workflow design."
+  },
+  "DES-D7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Governance pause and stop points live in stage-gate records."
+  },
+  "DES-E7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Whether oversight was designed with affected people is an engagement record."
+  },
+  "DES-B8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Named accountable roles for scoping and approval are an organisational RACI, not a publication."
+  },
+  "DES-C8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "RACI for AI-assisted decisions is an organisational record."
+  },
+  "DES-D8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Governance body responsibilities and resourcing are organisational records."
+  },
+  "DES-E8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Stakeholder involvement in defining accountability is an engagement record."
+  },
+  "DES-B9": {
+   "class": "A",
+   "fields": [
+    "E07"
+   ],
+   "rationale": "Naming groups at risk of differential exclusion and setting an equity goal is a statement the study either makes or omits."
+  },
+  "DES-C9": {
+   "class": "A",
+   "fields": [
+    "E08a"
+   ],
+   "rationale": "A designed check for systematic disadvantage is part of the evaluation design."
+  },
+  "DES-D9": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Governance consideration of equity is a governance document."
+  },
+  "DES-E9": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Composition of engagement participants is an engagement record."
+  },
+  "DES-B10": {
+   "class": "A",
+   "fields": [
+    "E09"
+   ],
+   "rationale": "Who defined acceptable error and non-delegable decisions is stated in a protocol or not."
+  },
+  "DES-C10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "A workforce impact assessment is an organisational record."
+  },
+  "DES-D10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Involvement of professional bodies is an engagement record."
+  },
+  "DES-E10": {
+   "class": "A",
+   "fields": [
+    "E10"
+   ],
+   "rationale": "Whether user or professional perspectives were collected as evidence is visible in the study's methods."
+  },
+  "DES-B11": {
+   "class": "A",
+   "fields": [
+    "E11"
+   ],
+   "rationale": "Critical failure modes are either enumerated in the study or not."
+  },
+  "DES-C11": {
+   "class": "A",
+   "fields": [
+    "E12"
+   ],
+   "rationale": "Checks for over-reliance and automation bias are part of the published design or absent."
+  },
+  "DES-D11": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Lifecycle risk identification with re-evaluation plans is a risk-management record."
+  },
+  "DES-E11": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Failure modes surfaced by engagement are engagement records."
+  },
+  "DES-B12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Stage gates in risk and impact assessments are governance records."
+  },
+  "DES-C12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Shadow testing and controlled rollout plans are governance records."
+  },
+  "DES-D12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "An end-to-end lifecycle plan is a governance record."
+  },
+  "DES-E12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Linkage of participation to formal governance is a governance record."
+  },
+  "DES-B13": {
+   "class": "A",
+   "fields": [
+    "E13"
+   ],
+   "rationale": "Intended use, non-intended use and scope statements are documentation artefacts."
+  },
+  "DES-C13": {
+   "class": "A",
+   "fields": [
+    "E14"
+   ],
+   "rationale": "Version-controlled workflow rules and code are either published or not."
+  },
+  "DES-D13": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Governance decision logs are organisational records."
+  },
+  "DES-E13": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Engagement documentation is an organisational record."
+  },
+  "DES-B14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Stakeholder involvement in the adoption decision is an engagement record."
+  },
+  "DES-C14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Co-design records are engagement records."
+  },
+  "DES-D14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "External oversight arrangements are governance records."
+  },
+  "DES-E14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Feedback and appeal channels are organisational mechanisms with records."
+  },
+  "DES-B15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "A systemic impact analysis is an organisational document."
+  },
+  "DES-C15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Labour and access impact analysis at scale is an organisational document."
+  },
+  "DES-D15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Vendor dependence and environmental governance are governance records."
+  },
+  "DES-E15": {
+   "class": "C",
+   "fields": [],
+   "rationale": "Whether involvement enhances legitimacy is a judgement no artefact settles."
+  },
+  "DEV-B6": {
+   "class": "A",
+   "fields": [
+    "E02",
+    "E03"
+   ],
+   "rationale": "Dataset identity, size and inclusion prevalence are reported or not."
+  },
+  "DEV-C6": {
+   "class": "A",
+   "fields": [
+    "E15"
+   ],
+   "rationale": "Prior evidence for the model choice is cited or not."
+  },
+  "DEV-D6": {
+   "class": "A",
+   "fields": [
+    "E16"
+   ],
+   "rationale": "Ground truth provenance and threshold calibration against it are stated in the methods."
+  },
+  "DEV-B7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Processes for humans to flag problematic data are organisational processes."
+  },
+  "DEV-C7": {
+   "class": "A",
+   "fields": [
+    "E17"
+   ],
+   "rationale": "Decoding and constraint parameters are reported or not."
+  },
+  "DEV-D7": {
+   "class": "A",
+   "fields": [
+    "E19"
+   ],
+   "rationale": "Whether the prompt signals uncertainty or escalation is checkable only if the prompt text is published."
+  },
+  "DEV-B8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Roles for data selection and quality control are organisational records."
+  },
+  "DEV-C8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Provider, integrator and deployer responsibility allocation is a contractual or governance record."
+  },
+  "DEV-D8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Accountability for prompt design errors is an organisational record."
+  },
+  "DEV-B9": {
+   "class": "A",
+   "fields": [
+    "E08b"
+   ],
+   "rationale": "Subgroup error rates are reported or not."
+  },
+  "DEV-C9": {
+   "class": "A",
+   "fields": [
+    "E08c"
+   ],
+   "rationale": "Performance by language or region is measured or not."
+  },
+  "DEV-D9": {
+   "class": "B",
+   "fields": [],
+   "rationale": "A prompt bias review is a process record."
+  },
+  "DEV-B10": {
+   "class": "A",
+   "fields": [
+    "E20"
+   ],
+   "rationale": "Whether the eligibility criteria given to the model are the review's own criteria is visible in the methods."
+  },
+  "DEV-C10": {
+   "class": "A",
+   "fields": [
+    "E21"
+   ],
+   "rationale": "Whether the configuration prioritises sensitivity, the domain norm for screening, is checkable against the reported setup."
+  },
+  "DEV-D10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Co-design of prompts with professionals is a process record."
+  },
+  "DEV-B11": {
+   "class": "A",
+   "fields": [
+    "E22"
+   ],
+   "rationale": "Leakage and contamination are discussed and mitigated, or not."
+  },
+  "DEV-C11": {
+   "class": "A",
+   "fields": [
+    "E23"
+   ],
+   "rationale": "Known failure modes are documented and stress-tested, or not."
+  },
+  "DEV-D11": {
+   "class": "A",
+   "fields": [
+    "E24"
+   ],
+   "rationale": "Prompt robustness testing is reported or not."
+  },
+  "DEV-B12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Integration into DPIAs and risk registers is a governance record."
+  },
+  "DEV-C12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Risk-tier assignment is a governance record."
+  },
+  "DEV-D12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Change governance for prompts is a governance record."
+  },
+  "DEV-B13": {
+   "class": "A",
+   "fields": [
+    "E25"
+   ],
+   "rationale": "Data provenance and limitations documentation is present or absent."
+  },
+  "DEV-C13": {
+   "class": "A",
+   "fields": [
+    "E26"
+   ],
+   "rationale": "Availability of a model card or equivalent for the chosen model is checkable."
+  },
+  "DEV-D13": {
+   "class": "A",
+   "fields": [
+    "E18",
+    "E27"
+   ],
+   "rationale": "Verbatim prompt text plus a pinned model version and date are either published or not."
+  },
+  "DEV-B14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Consultation on data use is an engagement record."
+  },
+  "DEV-C14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Expert involvement in model trade-offs is a process record."
+  },
+  "DEV-D14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Channels for flagging prompt concerns are organisational mechanisms."
+  },
+  "DEV-B15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Systemic harm analysis of data practices is an organisational document."
+  },
+  "DEV-C15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Lock-in and concentration management is a governance record."
+  },
+  "DEV-D15": {
+   "class": "C",
+   "fields": [],
+   "rationale": "Speculative systemic effects of reused prompt designs are a judgement no artefact settles."
+  },
+  "DEP-B6": {
+   "class": "A",
+   "fields": [
+    "E01",
+    "E28"
+   ],
+   "rationale": "Metric definitions and realistic test conditions are visible in the methods."
+  },
+  "DEP-C6": {
+   "class": "A",
+   "fields": [
+    "E29"
+   ],
+   "rationale": "A systematic error analysis is reported or not."
+  },
+  "DEP-D6": {
+   "class": "A",
+   "fields": [
+    "E30"
+   ],
+   "rationale": "The test environment and integration conditions are described or not."
+  },
+  "DEP-E6": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Analysis of interaction with systemic outcomes is an organisational document."
+  },
+  "DEP-F6": {
+   "class": "A",
+   "fields": [
+    "E31",
+    "E27"
+   ],
+   "rationale": "Reporting completeness sufficient to interpret claims is checkable against the publication."
+  },
+  "DEP-B7": {
+   "class": "C",
+   "fields": [],
+   "rationale": "Whether thresholds reflect institutional risk appetite is a judgement; the stated rationale is only a proxy."
+  },
+  "DEP-C7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Error reporting mechanisms and protections are organisational records."
+  },
+  "DEP-D7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Access control design is a configuration record."
+  },
+  "DEP-E7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Tools and authority for mitigating systemic harm are organisational arrangements."
+  },
+  "DEP-F7": {
+   "class": "B",
+   "fields": [],
+   "rationale": "User-facing explanations are internal documentation."
+  },
+  "DEP-B8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Threshold ownership and trade-off protocols are governance records."
+  },
+  "DEP-C8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Incident ownership is a governance record."
+  },
+  "DEP-D8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Security accountability is a governance record."
+  },
+  "DEP-E8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Systemic impact monitoring roles are governance records."
+  },
+  "DEP-F8": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Documentation ownership is a governance record."
+  },
+  "DEP-B9": {
+   "class": "A",
+   "fields": [
+    "E08b"
+   ],
+   "rationale": "Disaggregated metrics are reported or not."
+  },
+  "DEP-C9": {
+   "class": "A",
+   "fields": [
+    "E08b"
+   ],
+   "rationale": "Error impact analysis across groups is reported or not."
+  },
+  "DEP-D9": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Deployment-context risk exposure analysis is an organisational document."
+  },
+  "DEP-E9": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Distributional impact mapping is an organisational monitoring record."
+  },
+  "DEP-F9": {
+   "class": "C",
+   "fields": [],
+   "rationale": "Whether documentation is understandable to diverse groups is a judgement no artefact settles."
+  },
+  "DEP-B10": {
+   "class": "A",
+   "fields": [
+    "E21"
+   ],
+   "rationale": "Whether thresholds prioritise recall in a safety-critical screening context is checkable."
+  },
+  "DEP-C10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Training records are organisational records."
+  },
+  "DEP-D10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Stated and resourced expectations on professionals are organisational records."
+  },
+  "DEP-E10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Professional community involvement is an engagement record."
+  },
+  "DEP-F10": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Guidance and training materials are internal documentation."
+  },
+  "DEP-B11": {
+   "class": "A",
+   "fields": [
+    "E32"
+   ],
+   "rationale": "Worst-case and tail analysis is reported or not."
+  },
+  "DEP-C11": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Red-teaming and scenario exercises are process records."
+  },
+  "DEP-D11": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Environment-specific security assessment is a security record."
+  },
+  "DEP-E11": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Systemic failure scenario analysis is an organisational document."
+  },
+  "DEP-F11": {
+   "class": "A",
+   "fields": [
+    "E31"
+   ],
+   "rationale": "Documented failure modes and uncertainties are present or absent in the publication."
+  },
+  "DEP-B12": {
+   "class": "A",
+   "fields": [
+    "E33"
+   ],
+   "rationale": "A pre-specified decision rule linking metrics to go or no-go is stated or not."
+  },
+  "DEP-C12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Monitoring triggers are risk-management records."
+  },
+  "DEP-D12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Risk-tier linkage is a governance record."
+  },
+  "DEP-E12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Sectoral governance integration is a governance record."
+  },
+  "DEP-F12": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Maintenance of transparency artefacts over time is a versioned organisational record."
+  },
+  "DEP-B13": {
+   "class": "A",
+   "fields": [
+    "E34"
+   ],
+   "rationale": "Confidence intervals and uncertainty are reported or not."
+  },
+  "DEP-C13": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Logs, incident reports and post-mortems are organisational records."
+  },
+  "DEP-D13": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Environment and configuration documentation is a deployment record."
+  },
+  "DEP-E13": {
+   "class": "A",
+   "fields": [
+    "E35"
+   ],
+   "rationale": "Energy and compute cost is measured and disclosed or not."
+  },
+  "DEP-F13": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Decision-trace logging is a deployment record; the accessibility part is a judgement."
+  },
+  "DEP-B14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Stakeholder input on which errors matter is an engagement record."
+  },
+  "DEP-C14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Stakeholder involvement in incident review is an engagement record."
+  },
+  "DEP-D14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Frontline consultation is an engagement record."
+  },
+  "DEP-E14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Civil society engagement is an engagement record."
+  },
+  "DEP-F14": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Feedback mechanisms on documentation are organisational mechanisms."
+  },
+  "DEP-B15": {
+   "class": "C",
+   "fields": [],
+   "rationale": "Whether metric choices risk gaming is a judgement no artefact settles."
+  },
+  "DEP-C15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Consideration of cumulative effects is an organisational document."
+  },
+  "DEP-D15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "Architecture vulnerability assessment is a security record."
+  },
+  "DEP-E15": {
+   "class": "B",
+   "fields": [],
+   "rationale": "A decommissioning plan is a governance record."
+  },
+  "DEP-F15": {
+   "class": "C",
+   "fields": [],
+   "rationale": "Whether communication over-sells is a judgement no artefact settles."
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "rules_applied_across_all_records": {
+  "E12": "present only when a mechanism targets human anchoring on model output or over-reliance is discussed with a named mitigation",
+  "E14": "present only when code, prompts or workflow are deposited in a repository or supplement; prompts printed in the article body alone are partial",
+  "E19": "present only with an explicit unsure or uncertain output option or deference to human review; resolve-toward-inclusion instructions are partial; unverifiable prompt text caps the field at partial",
+  "E23": "present only when a named failure mode (hallucination, prompt injection, specious plausibility, misuse) is both documented and tested; run-to-run inconsistency alone is partial",
+  "E35": "monetary API cost or run time without energy, carbon or token figures is partial; nothing measured is absent"
+ },
+ "changes": [
+  {
+   "pmid": "40119675",
+   "field": "E19",
+   "from": "present",
+   "to": "partial",
+   "rule": "Consistency rule for E19: present only when the prompt offers an explicit unsure, uncertain or maybe output, or instructs deference to human review. An instruction to lean towards inclusion under uncertainty is a decision bias, scored partial, as it was for PMID 41626985.",
+   "quote_kept": "If there is any uncertainty if an article fulfils the inclusion criteria, but the abstract appears relevant to the title of the systematic review, lean towards including the article, as long as no exclusion criteria are met.",
+   "date": "2026-09-11"
+  },
+  {
+   "pmid": "41023870",
+   "field": "E12",
+   "from": "present",
+   "to": "partial",
+   "rule": "Consistency rule for E12: present only when a mechanism targets human anchoring on model output (blinding, independent human decision) or over-reliance is discussed with a named mitigation. Human verification of model positives is a precision workflow, not an over-reliance mitigation.",
+   "quote_kept": "We do not manually verify the negative annotations made by the LLM, and therefore cannot correct for false-positive samples. Therefore, the LLM must demonstrate high recall and strong generalization capabilities.",
+   "date": "2026-09-11"
+  }
+ ]
+}

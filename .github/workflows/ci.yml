@@ -1,0 +1,16 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install rdflib==7.6.0 pyshacl==0.40.1
+      - run: python3 pipeline/extract_cells.py
+      - run: python3 pipeline/build_matrix_ttl.py
+      - run: python3 pipeline/build_shapes.py
+      - run: python3 tests/test_known_answers.py
+      - run: python3 pipeline/build_report.py
+      - run: git diff --exit-code -- REPORT.md data/verdicts.json || (echo "REPORT.md or verdicts drifted from the data; regenerate and commit" && exit 1)

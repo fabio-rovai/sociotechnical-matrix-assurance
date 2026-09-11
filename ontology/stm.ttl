@@ -1,0 +1,61 @@
+@prefix stm: <https://gov.tesseract.academy/def/sociotechnical-matrix#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://gov.tesseract.academy/def/sociotechnical-matrix> a owl:Ontology ;
+  rdfs:label "Sociotechnical Matrix Assurance vocabulary"@en ;
+  rdfs:comment "A small OWL 2 vocabulary for stating which cells of a sociotechnical evaluation matrix can be evidenced from artefacts, which need organisational records, and which are attestations, and for recording per-study evidence against the artefact class. The matrix questions themselves are the work of Cam Rincon and Rumman Chowdhury (Ada Lovelace Institute, 2026, CC BY-NC 4.0) and are reproduced in data/matrix.ttl under that licence with attribution."@en ;
+  dcterms:creator "Fabio Rovai, Tesseract Academy" ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+  owl:versionInfo "0.1.0" .
+
+# Classes
+stm:Matrix a owl:Class ; rdfs:label "Evaluation matrix"@en ; rdfs:comment "A published matrix of evaluation questions arranged by criterion and lifecycle stage."@en .
+stm:LifecycleStage a owl:Class ; rdfs:label "Lifecycle stage"@en ; rdfs:comment "Design, development or deployment."@en .
+stm:LifecycleColumn a owl:Class ; rdfs:label "Lifecycle column"@en ; rdfs:comment "A sub-stage column of the matrix, for example prompting and decision rules design."@en .
+stm:Criterion a owl:Class ; rdfs:label "Sociotechnical criterion"@en ; rdfs:comment "One of the cross-cutting criteria that form the rows of the matrix."@en .
+stm:Cell a owl:Class ; rdfs:label "Matrix cell"@en ; rdfs:comment "One question at the intersection of a criterion and a lifecycle column."@en .
+stm:VerifiabilityClass a owl:Class ; rdfs:label "Verifiability class"@en ; rdfs:comment "Whether a cell is settled by an evaluation artefact, by a governance record, or by attestation alone."@en .
+stm:EvidenceField a owl:Class ; rdfs:label "Evidence field"@en ; rdfs:comment "A named, checkable property of a published evaluation whose presence settles one or more artefact-class cells."@en .
+stm:Study a owl:Class ; rdfs:label "Evaluation study"@en ; rdfs:comment "A published evaluation of a large language model for a task, here title and abstract screening."@en .
+stm:EvaluationRecord a owl:Class ; rdfs:label "Evaluation record"@en ; rdfs:comment "The set of evidence items extracted from one study against the evidence fields."@en .
+stm:EvidenceItem a owl:Class ; rdfs:label "Evidence item"@en ; rdfs:comment "One dated observation that a study does or does not carry one evidence field, with the location and quote that support it."@en .
+stm:CellVerdict a owl:Class ; rdfs:label "Cell verdict"@en ; rdfs:comment "The computed result for one cell against one evaluation record."@en .
+
+# Verifiability class individuals
+stm:EvaluationArtefact a stm:VerifiabilityClass ; rdfs:label "A: evaluation artefact"@en ; skos:definition "Evidence a published evaluation or feasibility study should itself carry."@en .
+stm:GovernanceRecord a stm:VerifiabilityClass ; rdfs:label "B: governance record"@en ; skos:definition "Evidence that exists only as organisational documents or records an auditor could inspect, never a publication."@en .
+stm:Attestation a stm:VerifiabilityClass ; rdfs:label "C: attestation"@en ; skos:definition "A judgement of adequacy, legitimacy or alignment that no artefact settles."@en .
+
+# Object properties
+stm:inStage a owl:ObjectProperty ; rdfs:label "in stage"@en ; rdfs:domain stm:Cell ; rdfs:range stm:LifecycleStage .
+stm:inColumn a owl:ObjectProperty ; rdfs:label "in column"@en ; rdfs:domain stm:Cell ; rdfs:range stm:LifecycleColumn .
+stm:hasCriterion a owl:ObjectProperty ; rdfs:label "has criterion"@en ; rdfs:domain stm:Cell ; rdfs:range stm:Criterion .
+stm:partOf a owl:ObjectProperty ; rdfs:label "part of"@en ; rdfs:domain stm:Cell ; rdfs:range stm:Matrix .
+stm:verifiabilityClass a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:label "verifiability class"@en ; rdfs:domain stm:Cell ; rdfs:range stm:VerifiabilityClass .
+stm:settledBy a owl:ObjectProperty ; rdfs:label "settled by"@en ; rdfs:comment "An evidence field whose presence is required for the cell to count as evidenced. Only artefact-class cells carry this property."@en ; rdfs:domain stm:Cell ; rdfs:range stm:EvidenceField .
+stm:aboutStudy a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:label "about study"@en ; rdfs:domain stm:EvaluationRecord ; rdfs:range stm:Study .
+stm:hasEvidence a owl:ObjectProperty ; rdfs:label "has evidence"@en ; rdfs:domain stm:EvaluationRecord ; rdfs:range stm:EvidenceItem .
+stm:field a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:label "field"@en ; rdfs:domain stm:EvidenceItem ; rdfs:range stm:EvidenceField .
+stm:forCell a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:label "for cell"@en ; rdfs:domain stm:CellVerdict ; rdfs:range stm:Cell .
+stm:forRecord a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:label "for record"@en ; rdfs:domain stm:CellVerdict ; rdfs:range stm:EvaluationRecord .
+
+# Datatype properties
+stm:question a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:label "question"@en ; rdfs:domain stm:Cell ; rdfs:range xsd:string .
+stm:classRationale a owl:DatatypeProperty ; rdfs:label "class rationale"@en ; rdfs:domain stm:Cell ; rdfs:range xsd:string .
+stm:fieldDefinition a owl:DatatypeProperty ; rdfs:label "field definition"@en ; rdfs:domain stm:EvidenceField ; rdfs:range xsd:string .
+stm:status a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:label "status"@en ; rdfs:comment "One of present, partial, absent, not_applicable."@en ; rdfs:domain stm:EvidenceItem ; rdfs:range xsd:string .
+stm:quote a owl:DatatypeProperty ; rdfs:label "quote"@en ; rdfs:domain stm:EvidenceItem ; rdfs:range xsd:string .
+stm:location a owl:DatatypeProperty ; rdfs:label "location"@en ; rdfs:domain stm:EvidenceItem ; rdfs:range xsd:string .
+stm:extractedOn a owl:DatatypeProperty ; rdfs:label "extracted on"@en ; rdfs:domain stm:EvaluationRecord ; rdfs:range xsd:date .
+stm:extractedBy a owl:DatatypeProperty ; rdfs:label "extracted by"@en ; rdfs:domain stm:EvaluationRecord ; rdfs:range xsd:string .
+stm:pmid a owl:DatatypeProperty ; rdfs:label "PubMed identifier"@en ; rdfs:domain stm:Study ; rdfs:range xsd:string .
+stm:pmcid a owl:DatatypeProperty ; rdfs:label "PubMed Central identifier"@en ; rdfs:domain stm:Study ; rdfs:range xsd:string .
+stm:doi a owl:DatatypeProperty ; rdfs:label "DOI"@en ; rdfs:domain stm:Study ; rdfs:range xsd:string .
+stm:selectionRoute a owl:DatatypeProperty ; rdfs:label "selection route"@en ; rdfs:comment "How the study entered the set: sampled (from the recorded PubMed query) or report_referenced (added because the Ada Lovelace Institute report alludes to it)."@en ; rdfs:domain stm:Study ; rdfs:range xsd:string .
+stm:verdict a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:label "verdict"@en ; rdfs:comment "One of evidenced, partially_evidenced, not_evidenced."@en ; rdfs:domain stm:CellVerdict ; rdfs:range xsd:string .
+stm:computedBy a owl:DatatypeProperty ; rdfs:label "computed by"@en ; rdfs:domain stm:CellVerdict ; rdfs:range xsd:string .

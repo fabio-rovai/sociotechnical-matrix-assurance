@@ -1,0 +1,241 @@
+{
+ "study": {
+  "pmid": "39151163",
+  "pmc": "PMC11364944",
+  "doi": "10.2196/52758",
+  "title": "Human-Comparable Sensitivity of Large Language Models in Identifying Eligible Studies Through Title and Abstract Screening: 3-Layer Strategy Using GPT-3.5 and GPT-4 for Systematic Reviews",
+  "year": "2024",
+  "selection_route": "sampled",
+  "model_names": ["GPT-3.5 Turbo (gpt-3.5-turbo-0125)", "GPT-4 Turbo preview (gpt-4-0125-preview)"],
+  "task_note": "A 3-layer prompt chain over research design, target population, and intervention and control was run with GPT-3.5 and GPT-4 across the complete record sets of two of the authors' own bipolar disorder systematic reviews, 1381 and 3146 records, with the human screening decisions of four evaluators as the reference standard."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-opus-5-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/39151163_PMC11364944.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11364944/",
+  "https://www.jmir.org/2024/1/e52758",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11364944/supplementaryFiles"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, Data Analysis",
+   "quote": "We assessed the inclusion or exclusion decisions made by each human evaluator (before consensus was reached) against those determined by GPT-3.5 or GPT-4, focusing on sensitivity and specificity",
+   "note": "Sensitivity and specificity are defined by formula in the same section. Precision, F1 and workload saved are not reported."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Abstract, Methods; and Methods, Process of Screening and Prompt Engineering, Table 1",
+   "quote": "We conducted screenings on 2 of our previous systematic reviews related to the treatment of bipolar disorder, with 1381 records from the first review and 3146 from the second",
+   "note": "Both source reviews are cited, Takeshima et al 2020 and Maruki et al 2022. Table 1 gives records screened, records taken to full text, 30 and 96, and records in quantitative synthesis, 6 and 9."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Methods, Process of Screening and Prompt Engineering",
+   "quote": "Of these, 30 records were targeted for a full-text assessment, and eventually 6 records (encompassing 6 studies) were selected for meta-analysis",
+   "note": "Prevalence is not stated as a proportion but is directly derivable from reported counts: 30 of 1381 records, about 2.2%, in the first review and 96 of 3146, about 3.1%, in the second."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Time and Cost Required for Screenings",
+   "quote": "The screening for these 2 studies incurred a total cost of US $59, with US $4 for calls to GPT-3.5 and US $55 for calls to GPT-4",
+   "note": "The same section reports about 110 records per minute per layer and an actual elapsed time of about 1 hour and about 2 hours for the two reviews, spread over 3 days because of daily API call limits."
+  },
+  "E05": {
+   "status": "partial",
+   "location": "Abstract, Conclusions",
+   "quote": "Our 3-layer screening method with GPT-4 demonstrated acceptable level of sensitivity and specificity that supports its practical application in systematic review screenings",
+   "note": "The role, a title and abstract screener whose included records go forward to human full-text assessment, is implied by the design and the paper discusses the risk of losing human expert verification, but the paper never states which decisions remain human or whether the model replaces one reviewer of a duplicate pair."
+  },
+  "E06": {
+   "status": "partial",
+   "location": "Methods, Data Analysis",
+   "quote": "For records eligible for full-text assessment but excluded by either GPT-3.5 or GPT-4, we reviewed the title and the abstract to assess whether the exclusion decision was justified",
+   "note": "Model versus human disagreements were adjudicated by the authors during evaluation, and every adjudicated record is listed in Multimedia Appendix 2, but no rule is given for handling, escalating or overriding disagreements in a deployed workflow."
+  },
+  "E07": {
+   "status": "present",
+   "location": "Results, Results of the Paper by Maruki et al",
+   "quote": "although the records involved bipolar disorder, they did not match the selection criteria due to the presence of comorbidities (one record had generalized anxiety disorder, and the other had alcohol dependence)",
+   "note": "Records describing patients with psychiatric or substance use comorbidity are identified as records the models wrongly excluded, and Multimedia Appendix 2 confirms several such exclusions were judged unjustified. The paper frames this as error analysis and states no equity goal."
+  },
+  "E08a": {
+   "status": "partial",
+   "location": "Results, Comparison of GPT-3.5, GPT-4, and Human Evaluators",
+   "quote": "The sensitivity and specificity of human evaluators and GPT-3.5 and GPT-4 for each segment are shown in Table 4",
+   "note": "The evaluation is structured to report performance separately for each of the two reviews and for each screening segment, which acts as a topic and record-block breakdown, but no check by study type, population, language, setting or record source was planned."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Results on Takeshima et al Paper; Table 4",
+   "quote": "In the first study, the sensitivities/specificities of the GPT-3.5 and GPT-4 were 0.900/0.709 and 0.806/0.996, respectively",
+   "note": "Performance is reported disaggregated by review, which differ in clinical question and size, and Table 4 further disaggregates by screening segment for both models and all four human evaluators."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for language, non-English, translation, country, region and setting breakdowns of performance. The only record-quality subgroup mentioned is 355 records in the Maruki list whose text was corrupted into irrelevant Chinese characters, reported narratively as all handled correctly, with no per-language or per-region metrics."
+  },
+  "E09": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "For systematic reviews, maintaining high sensitivity for studies eligible for full-text assessment, ideally at 100% [ 10 ], is crucial if they are to be fully supplanted by an automated process",
+   "note": "The target is an ideal of 100% sensitivity and it is attributed to a norm, reference 10, the Cochrane Handbook chapter on searching for and selecting studies."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for survey, interview, questionnaire, usability, acceptability, satisfaction, perceived workload and elicited reviewer opinion. The four human evaluators contributed screening decisions from the original reviews only, and no perspectives were collected."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Abstract, Results; and Discussion, Principal Findings",
+   "quote": "Further investigation indicated that the cases incorrectly excluded by GPT-3.5 were due to a lack of domain knowledge, while the cases incorrectly excluded by GPT-4 were due to misinterpretations of the inclusion criteria",
+   "note": "Named failure modes include wrongly excluding eligible records, lack of domain knowledge, misinterpretation of criteria, opaque decision processes, the grounding problem and factual error."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion, Principal Findings",
+   "quote": "A potential future risk is that the normalization of AI-based judgments could result in the oversight of human expert verification, potentially diminishing the quality of systematic reviews",
+   "note": "Over-reliance on automated judgement is raised explicitly as a risk, but no mitigation is proposed, no check is built into the design, and automation bias and alert fatigue are not named or measured."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Abstract, Conclusions; and Limitations",
+   "quote": "Future research should aim to generalize this approach and explore its effectiveness in diverse settings, both medical and nonmedical, to fully establish its use and operational feasibility",
+   "note": "Intended use is title and abstract screening for systematic reviews; scope is limited to psychiatric clinical reviews, and the paper states that use and operational feasibility beyond that are not yet established."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Methods, Calling the GPT-3.5 and GPT-4 API",
+   "quote": "The Apps Script used in this study is shown in Multimedia Appendix 1",
+   "note": "Multimedia Appendix 1 fetched at https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11364944/supplementaryFiles as jmir_v26i1e52758_app1.docx and contains the complete Google Apps Script including model constants, temperature and max_tokens. The prompts themselves are reproduced in Textboxes 1 and 2 of the article. No code repository or commit is given."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "GPT-3.5 has shown exceptional performance in the medical domain, achieving remarkable results on medical licensing examinations across different regions [ 4 ]. Furthermore, GPT-4, the successor to GPT-3.5, has exhibited superior performance",
+   "note": "Prior evidence for both evaluated models is cited, and the introduction additionally reviews four earlier LLM screening studies with their sensitivities as the rationale for building on GPT-3.5 and GPT-4."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Introduction; and Methods, Process of Screening and Prompt Engineering",
+   "quote": "In this study, we regarded the results of human screening as the gold standard and calculated the sensitivity and specificity of the GPT-3.5 and GPT-4 screening results in comparison with them",
+   "note": "Provenance is stated in the Methods: both source reviews screened titles and abstracts in duplicate with two pairs of independent evaluators, and the pre-consensus decisions of each evaluator were used."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Methods, Calling the GPT-3.5 and GPT-4 API",
+   "quote": "In light of these observations, and primarily to ensure reproducibility, this study fixed the temperature at 0 for all screenings",
+   "note": "Multimedia Appendix 1 additionally shows max_tokens set to 2000 and a single user role message. Output was constrained by instruction rather than by a structured output schema, with the prompt rule that only E or I may be returned."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Textbox 2, structure of the prompts used for each of the 3 layers",
+   "quote": "You are a researcher rigorously screening titles and abstracts of scientific papers for inclusion or exclusion in a review paper. Does the paper with the above title and abstract meet the specified research design? If yes, highly suspected, or difficult to determine, answer 'I'. If not, answer 'E'.",
+   "note": "Textbox 1 gives the verbatim information extraction prompt and the criteria GPT-4 produced for both reviews; Textbox 2 gives all three verbatim layer prompts. Both textboxes are reproduced in the local full text."
+  },
+  "E19": {
+   "status": "present",
+   "location": "Methods, Process of Screening and Prompt Engineering",
+   "quote": "Within these prompts, we specified that if a decision cannot be made, records should be considered potentially eligible for full-text assessment and not excluded",
+   "note": "Each layer prompt carries the clause 'If yes, highly suspected, or difficult to determine, answer I', which routes undecidable records to human full-text assessment. There is no instruction to defer to a named human reviewer or to abstain."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, Process of Screening and Prompt Engineering",
+   "quote": "In this study, we extracted information by inserting the text from the “inclusion criteria” paragraph of the Methods section of each paper into the specified location in the prompt",
+   "note": "The criteria supplied to the models are each review's own published inclusion criteria, condensed by GPT-4 into research design, target population, intervention and control, and the resulting text for both reviews is reproduced verbatim in Textbox 1."
+  },
+  "E21": {
+   "status": "present",
+   "location": "Abstract, Objective",
+   "quote": "Our goal is to develop a screening method that maximizes sensitivity for identifying relevant records",
+   "note": "The prompt rule that undecidable records are included, and the 3-layer design itself, implement this priority; the paper accepts GPT-3.5 specificity of 0.116 as the cost."
+  },
+  "E22": {
+   "status": "present",
+   "location": "Limitations",
+   "quote": "gpt-3.5-turbo-0125’s training data include information up to September 2021, whereas gpt-4-0125-preview’s training data extend to December 2023 [ 35 ]. Consequently, the systematic review paper by Takeshima et al [ 38 ] might have been incorporated into GPT-3.5’s training data set",
+   "note": "Training cutoffs are compared against the publication dates of both source reviews and possible contamination is recorded as an explicit limitation. The stated mitigation is weak: the authors argue impact is minimal because the prompts did not name the reviews, and they ran no leakage test."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Discussion, Principal Findings",
+   "quote": "One primary concern is their susceptibility to misinformation and quality issues inherent in their training data",
+   "note": "Known LLM failure modes are documented, namely misinformation susceptibility, opaque decision making, the grounding problem, factual error and accuracy decay with long prompts, but none is tested. The Limitations section states outright that the study was not designed to explore the risks of using LLMs for screening."
+  },
+  "E24": {
+   "status": "partial",
+   "location": "Limitations",
+   "quote": "However, our observations indicate no variation in results across multiple tests with the same model in this study",
+   "note": "Repeat-run consistency is claimed from informal observation with no counts, no repeat schedule and no agreement statistic. Prompt variants and wording sensitivity were explicitly not examined, which the Limitations section states as the fourth limitation."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Process of Screening and Prompt Engineering, Table 1",
+   "quote": "Databases Ovid MEDLINE, Cochrane Central Register of Controlled Trials, Embase, PsycINFO, and ClinicalTrials.gov PubMed, Cochrane Central Register of Controlled Trials, and Embase Number of records screened 1381 3146",
+   "note": "Table 1 documents clinical question, databases searched, records screened, records taken to full text and records in quantitative synthesis for both reviews. Data limitations are documented in the Limitations section and in the note on 355 records with corrupted text. The record lists themselves are not published."
+  },
+  "E26": {
+   "status": "partial",
+   "location": "Discussion, Principal Findings; and References 35 and 36",
+   "quote": "Furthermore, the decision-making processes of LLMs lack transparency, making them difficult to interpret",
+   "note": "Model transparency is discussed as a drawback of LLM screening and OpenAI model and pricing documentation is cited for version, cutoff and cost, but no model card or system card is cited for either evaluated model and transparency was not a criterion in choosing them."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, Language Model Details",
+   "quote": "For gpt-3.5-turbo, we used the most current model available, gpt-3.5-turbo-0125",
+   "note": "Exact dated snapshots are pinned for both models, gpt-3.5-turbo-0125 and gpt-4-0125-preview, and are repeated in Multimedia Appendix 1, but no access or run date is reported for the screening runs; the only timing detail is that the work was spread over 3 days."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Abstract, Methods; and Methods, Process of Screening and Prompt Engineering",
+   "quote": "We conducted screenings on 2 of our previous systematic reviews related to the treatment of bipolar disorder, with 1381 records from the first review and 3146 from the second",
+   "note": "The complete record sets of both real reviews were screened with no balancing or sampling, through the production OpenAI API called from Google Sheets, which is the route the authors propose for practice."
+  },
+  "E29": {
+   "status": "present",
+   "location": "Methods, Data Analysis; Results; Multimedia Appendix 2",
+   "quote": "Furthermore, for records that were incorrectly excluded by GPT-3.5 or GPT-4, we conducted a narrative verification of the erroneous judgments by asking each LLM to explain the reasons behind their decisions",
+   "note": "Every eligible record excluded by either model was reviewed, classified as justified or not, counted by layer in Tables 2 and 3, and listed with title, abstract, layer and adjudication note in Multimedia Appendix 2, fetched as jmir_v26i1e52758_app2.xlsx from https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11364944/supplementaryFiles ."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, Calling the GPT-3.5 and GPT-4 API",
+   "quote": "In this study, we used Google Spreadsheet and Google Apps Script to interface with the GPT-3.5 and GPT-4 APIs for batch processing",
+   "note": "The environment is described down to the spreadsheet functions GPT35 and GPT4, the batch invocation pattern, daily API call limits and API errors that lengthened the run. No integration with dedicated screening software is claimed."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Limitations",
+   "quote": "This study has some limitations. First, the 2 systematic reviews used in this investigation [ 38 , 39 ] were confined to clinical studies within psychiatry, limiting the generalizability of our findings",
+   "note": "Five numbered limitations cover generalisability, small exploratory sample without statistical substantiation, model obsolescence, temperature 0 not guaranteeing identical output, absent prompt variation analysis, absent risk analysis and possible training contamination."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Results, Results on Takeshima et al Paper and Results of the Paper by Maruki et al",
+   "quote": "For the one record that GPT-3.5 determined to be excluded at the target population layer, it was suggested that GPT-3.5 concluded that the record “included both bipolar disorder and unipolar mood disorder, which did not match the selection criteria",
+   "note": "Every unjustified exclusion is characterised individually with the model's own stated reason, and the worst case is bounded explicitly: none of the 6 and 9 records that entered the meta-analyses was excluded by either model."
+  },
+  "E33": {
+   "status": "partial",
+   "location": "Discussion, Principal Findings",
+   "quote": "Although achieving 100% sensitivity remained unattainable, a 3-layer screening method with GPT-4 may potentially be practical for use in the systematic review process and can reduce human labor",
+   "note": "A metric to decision link is stated, 100% sensitivity being the condition for full replacement of human screening, and it is applied to a practical use judgement, but it is not presented as a pre-specified protocol rule and no go, no-go or limited deployment thresholds were registered in advance."
+  },
+  "E34": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the text and all four tables for confidence intervals, 95%, standard deviation, standard error, credible interval, kappa or any other uncertainty measure around the headline sensitivities and specificities; only point estimates to three decimal places are reported, and the Limitations section concedes the results lack statistical substantiation."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Results, Time and Cost Required for Screenings",
+   "quote": "The screening for these 2 studies incurred a total cost of US $59, with US $4 for calls to GPT-3.5 and US $55 for calls to GPT-4",
+   "note": "Monetary compute cost is measured and disclosed, and token pricing and throughput of about 110 records per minute are given, but no energy, carbon or environmental figure is reported anywhere in the paper or its appendices."
+  }
+ }
+}

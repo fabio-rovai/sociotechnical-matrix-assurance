@@ -1,0 +1,248 @@
+{
+ "study": {
+  "pmid": "40119675",
+  "pmc": "PMC12012331",
+  "doi": "10.1093/jamia/ocaf050",
+  "title": "High-performance automated abstract screening with large language model ensembles",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": [
+   "GPT-3.5 Turbo (gpt-3.5-turbo-0125)",
+   "GPT-4 Turbo (gpt-4-0125-preview)",
+   "GPT-4o (gpt-4o-2024-05-13)",
+   "Llama 3 70B (meta-llama-3-70b)",
+   "Gemini 1.5 Pro (gemini-1.5-pro-001)",
+   "Claude Sonnet 3.5 (claude-3-5-sonnet@20240620)"
+  ],
+  "task_note": "Six LLMs were run as zero-shot binary abstract screeners with six prompts of increasing inclusion bias across the 23 Cochrane reviews of 2023 Issue 8, first on a balanced 800 record development set against three human screeners and then on 119 695 records from replicated searches, with LLM-LLM and LLM-human ensembles evaluated for sensitivity, precision and workload reduction."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-opus-5-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/40119675_PMC12012331.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12012331/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12012331/supplementaryFiles",
+  "https://github.com/RohanSanghera/GEN-SYS",
+  "https://raw.githubusercontent.com/RohanSanghera/GEN-SYS/main/api-code.ipynb",
+  "https://raw.githubusercontent.com/RohanSanghera/GEN-SYS/main/Analysis.R",
+  "https://api.github.com/repos/RohanSanghera/GEN-SYS/git/trees/main?recursive=1"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Materials and methods, Performance metrics",
+   "quote": "Sensitivity, specificity, and accuracy calculations were subsequently performed to provide interpretable measures of abstract screening performance",
+   "note": "Precision and recall are named as the primary outcome measures in the next sentence, and balanced accuracy, F1, NPV, Kappa and workload reduction are reported throughout the results."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Materials and methods, Data selection and preparation",
+   "quote": "The initial corpus comprised 128 299 articles from replicated and de-duplicated searches across all 23 systematic reviews. During data cleaning, 8604 articles (6.71%) with missing abstracts were excluded from further analysis, resulting in a final dataset of 119 695 articles",
+   "note": "All 23 reviews are the complete 2023 Issue 8 of the Cochrane Database of Systematic Reviews, each cited individually as references 17 to 39 and listed in Table 1 with search result counts and included record counts."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Table 1",
+   "quote": "Lead author Title n (search results) n (included records) Bellon Perioperative glycaemic control for people with diabetes undergoing surgery 3693 23",
+   "note": "Table 1 gives search results and included records for each of the 23 reviews, so prevalence is directly derivable per review and overall. The class imbalance is also stated qualitatively as the reason precision collapsed on the comprehensive dataset."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Materials and methods, Implementation simulation",
+   "quote": "Workload reduction was calculated as the number of correctly excluded articles per 100 screened records; this corresponds to the proportion of articles that human reviewers would not need to appraise subsequently",
+   "note": "Workload reduction is reported for every ensemble in Table 4, ranging from 37.55% to 99.13%, with 41.81% the maximum among ensembles that kept perfect sensitivity."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "Automated systems may instead be used in place of a second reviewer in parallel with human researchers",
+   "note": "Two roles are distinguished: autonomous pre-screening in series, which the paper warns can lose eligible studies irrecoverably, and second reviewer in parallel, where the abstract states that human oversight over all records is maintained and all included abstracts are reappraised by humans at full text."
+  },
+  "E06": {
+   "status": "present",
+   "location": "Materials and methods, Implementation simulation",
+   "quote": "For in parallel ensembles, a single “include” decision from either component was sufficient for article inclusion, whereas for in series ensembles both components had to reach an “include” decision for the article to be included",
+   "note": "This is an explicit disagreement resolution rule for model and human decisions, applied to LLM-human as well as LLM-LLM pairs, and its consequences for sensitivity and precision are quantified for all 6 configurations."
+  },
+  "E07": {
+   "status": "partial",
+   "location": "Discussion, limitations",
+   "quote": "Inter-review variation shows that automated screening may be better suited to some subjects than others, and applications should be specifically validated within a subject or topic if used",
+   "note": "Medical subject areas are named as a source of differential screening performance and a reason for domain-specific validation, but no population, language or setting at risk of differential exclusion is identified and no equity goal is stated."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Materials and methods, Performance metrics",
+   "quote": "Correlation analysis between human and LLM performance was undertaken to explore whether specific reviews were consistently more challenging across both human and LLM screeners",
+   "note": "A per-review breakdown is designed into the evaluation, with per-review confusion matrix statistics computed by the published code, coefficients of determination across reviews, and per-review panels in Figure 1."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, LLM can match or exceed human screening performance on a balanced dataset",
+   "quote": "Similar comparative performance was observed when results were stratified by review ( Supplementary Material S2 )",
+   "note": "Per-review results are reported in the small panels of Figure 1, in the Kappa ranges per review in Table S1, and in Supplementary Material S2, fetched at https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12012331/supplementaryFiles as Balanced Accuracy Results.xlsx plus per-run result files."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for language, non-English, translation, country, region and setting breakdowns of screening performance. Multilingual capability is mentioned once as a general LLM property, and one review concerns second language learners, but no performance figure is reported by language, region or setting."
+  },
+  "E09": {
+   "status": "partial",
+   "location": "Results, Ensemble configurations exhibit useful abstract screening performance",
+   "quote": "Four parallel ensembles exhibited 100% sensitivity, a prerequisite for autonomous deployment",
+   "note": "A threshold is stated, 100% sensitivity for autonomous deployment, and it drives the GPT-3.5 prompt exception in the methods, but it is asserted by the authors without attribution to a standard, a guideline or a named decision maker, and no acceptable miss rate is set for supervised use."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for survey, interview, questionnaire, usability, acceptability, satisfaction and perceived workload. Three human researchers screened the development set as a performance comparator only; their experience of the task was not elicited, and no systematic reviewer or end user was consulted."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Materials and methods, LLM pipelines and prompt development",
+   "quote": "false negatives (exclusion of eligible records) are a more damaging error than false positives (including ineligible records for full text screening); because eligible records that are excluded will not be used in subsequent evidence synthesis",
+   "note": "Missed eligible studies are named as the critical failure mode and the discussion adds that in series deployment risks erroneously excluding eligible studies that cannot be salvaged. API errors, content violations and uninterpretable outputs are also named and handled by defaulting to include. Inconsistency across runs is quantified by Kappa."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Abstract, Discussion",
+   "quote": "LLM-human ensembles can achieve similar benefits while maintaining human oversight over all records",
+   "note": "The parallel ensemble design is a structural mitigation that keeps a human decision on every record, and domain-specific validation before unsupervised deployment is recommended, but over-reliance, automation bias and alert fatigue are never named, and no interaction effect on the human screeners was measured."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Conclusion",
+   "quote": "LLM performance is subject-specific but can be optimized through prompt engineering, and researchers are advised to conduct domain-specific validation before unsupervised deployment",
+   "note": "Intended use is abstract screening in evidence synthesis, best in parallel with human researchers; the scope limit is that unsupervised deployment is not sanctioned without subject-specific validation, and the authors recommend that PRISMA capture the use of automated screening."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Materials and methods, Technical details",
+   "quote": "All code required to replicate experiments and analysis is hosted on GitHub ( https://github.com/RohanSanghera/GEN-SYS",
+   "note": "Repository fetched and resolves. It holds api-code.ipynb, which contains the verbatim prompt builder, the review titles, the inclusion and exclusion criteria for all 23 reviews and the API call loop, and Analysis.R. Only a bare URL is given, with no commit, tag or archive DOI; the single commit at extraction was 2bada18c7066cf02324c1680220b9c0084c9613e dated 2025-03-24. Prompts are also in Supplementary Material S1."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Results, Prompt design determines LLM screening behavior",
+   "quote": "GPT-4 was excluded from full dataset evaluation as its successor, GPT-4o, demonstrated superior performance, efficiency, and cost",
+   "note": "Model choice for the comprehensive evaluation is justified by measured development set performance, and the background cites prior evidence that LLMs attain clinician comparable results on examinations and reasoning tasks. No rationale is given for which six models were trialled in the first place."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Materials and methods, Data selection and preparation",
+   "quote": "The inclusion lists of each review were used as the ground truth: gold standard examples of articles which should have been included on the basis of the reviews’ protocols",
+   "note": "Provenance is Cochrane review author inclusion decisions. The paper is explicit that this reference standard is both comparator and ground truth, and lists that circularity as its third limitation."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Materials and methods, Prompt development",
+   "quote": "model parameters were adjusted to produce deterministic, concise outputs suitable for abstract screening: “temperature” and “max_tokens” parameters were specified as 0.2 and 5, respectively",
+   "note": "Frequency and presence penalties were explored on Llama 3 and left at defaults, with the exploratory runs published in Supplementary Material S2. The repository notebook confirms temperature 0.2 and max_tokens 5, plus retry with exponential backoff and Vertex AI safety settings at BLOCK_ONLY_HIGH. Output is constrained by instruction and by the 5 token cap, not by a structured output schema."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Materials and methods, Prompt development",
+   "quote": "The final wording of each prompt is provided in Supplementary Material S1",
+   "note": "Supplement fetched at https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12012331/supplementaryFiles ; the file Supplementary Material 1.rtf reproduces all six prompts verbatim under the headings None, Mild, Moderate, Heavy, Extreme and Title. The same prompts appear as message arrays in the get_messages function of api-code.ipynb in the repository."
+  },
+  "E19": {
+   "status": "partial",
+   "location": "Supplement: Supplementary Material 1.rtf, Bias Level: Heavy, fetched from https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12012331/supplementaryFiles",
+   "quote": "If there is any uncertainty if an article fulfils the inclusion criteria, but the abstract appears relevant to the title of the systematic review, lean towards including the article, as long as no exclusion criteria are met.",
+   "note": "The Heavy and Title prompts both contain an explicit uncertainty clause that routes doubtful records to inclusion and therefore to human full text screening, and the Extreme prompt instructs maximum sensitivity. No prompt offers an unsure output option or instructs deference to a human reviewer; every prompt forces a binary Include or Exclude. The identical text is in the repository at https://raw.githubusercontent.com/RohanSanghera/GEN-SYS/main/api-code.ipynb . | Adjudicated to partial on 11 Sep 2026 for cross-record consistency; see data/adjudications.json."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Materials and methods, Prompt development",
+   "quote": "For each systematic review, prompts were constructed using the task description described above, review’s title, and inclusion criteria",
+   "note": "Each review's own criteria were used. The repository notebook reproduces incl_criteria_dict and excl_criteria_dict with PICOS population, intervention, control and study design text for all 23 reviews, so the criteria supplied to the models are fully recoverable."
+  },
+  "E21": {
+   "status": "present",
+   "location": "Materials and methods, Prompt development",
+   "quote": "Where models repeatedly returned an error message, content violation note, or no interpretable output, a label of “include” was assigned to avoid excluding potentially eligible records before full text screening",
+   "note": "The paper states this schema aimed to maximise sensitivity even at the expense of overall accuracy, the prompt ladder deliberately biases towards inclusion, and the GPT-3.5 prompt selection was overridden in favour of perfect sensitivity rather than optimal balanced accuracy."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for training data, knowledge cutoff, contamination, leakage and memorisation. The only temporal control is at record level, excluding records published after the reviews' search dates for temporal consistency, which does not address the fact that the 2023 Cochrane reviews and their inclusion lists predate the training cutoffs of GPT-4o, Gemini 1.5 Pro and Claude Sonnet 3.5. The three stated limitations do not mention leakage."
+  },
+  "E23": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for hallucination, confabulation, fabricated or specious reasoning, prompt injection, jailbreak, adversarial input and misuse. None is documented and none is tested. The only output pathology handled is API errors, content violation notes and uninterpretable output, which are treated operationally by retrying and then defaulting to include."
+  },
+  "E24": {
+   "status": "present",
+   "location": "Materials and methods, Evaluation methodology",
+   "quote": "In these trials, each LLM-prompt combination was applied 3 times over the development dataset to establish consistency",
+   "note": "Both halves of the definition are met: six prompt variants of graded inclusion bias were compared systematically, with a Kruskal-Wallis test on recall across prompts, and repeat-run consistency was quantified by Kappa per model and per review in Table S1."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Materials and methods, Data selection and preparation",
+   "quote": "For each of 23 reviews in Issue 8 (2023), the original search strategy was replicated using identical keyword combinations on the databases specified in the reviews’ appendices",
+   "note": "Source, selection rationale, replication method, de-duplication, the temporal consistency rule, the 6.71% of records dropped for missing abstracts and the discrepancy between replicated and originally reported record counts are all documented, and the data availability statement says all study data are in the supplement."
+  },
+  "E26": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the text and all 51 references for a model card, system card or technical report for GPT-3.5 Turbo, GPT-4 Turbo, GPT-4o, Llama 3 70B, Gemini 1.5 Pro or Claude Sonnet 3.5, and for any statement that model documentation or transparency influenced model selection. The paper pins model versions and access routes and urges transparent reporting of model and prompt details, citing reference 50, but cites no vendor documentation for any evaluated model and never makes transparency a selection criterion."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Materials and methods, LLM pipelines for automated abstract screening",
+   "quote": "GPT-3.5 Turbo (gpt-3.5-turbo-0125), GPT-4 Turbo (gpt-4-0125-preview), and GPT-4o (gpt-4o-2024-05-13) models were accessed through the Azure OpenAI Service, using the OpenAI (1.23.2) Python package",
+   "note": "All six models are pinned to exact dated identifiers, including claude-3-5-sonnet@20240620, gemini-1.5-pro-001 and meta-llama-3-70b, and the client library version is given, but no access or run date for the experiments is reported anywhere; the only date anchor is that the protocol was developed when 2023 Issue 8 was the latest Cochrane issue."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Materials and methods, Data selection and preparation",
+   "quote": "A comprehensive dataset of all 119 695 articles, which was used for final evaluation of optimal LLM-prompt combinations, as a faithful reflection of the real-world task of abstract screening",
+   "note": "The headline validation uses the full replicated search output of 23 real reviews at natural prevalence, through production APIs on Azure OpenAI, Vertex AI and Replicate. A balanced 800 record development subset was used first for prompt selection, and LLM-human ensembles could only be evaluated on that subset."
+  },
+  "E29": {
+   "status": "partial",
+   "location": "Results, LLM can match or exceed human screening performance on a balanced dataset",
+   "quote": "These results indicated that review-centric factors—such as clarity and comprehensiveness of reporting—may affect abstract screening performance in addition to LLM and human factors such as intrinsic aptitude, expertise, and prompt engineering",
+   "note": "Errors are analysed quantitatively at review level through per-review performance, correlation between human and LLM performance and coefficients of determination, but no misclassified record is inspected, categorised or explained, and no false negative is identified individually."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Materials and methods, LLM pipelines for automated abstract screening",
+   "quote": "LLM screening was undertaken using pipelines implementing application programming interface (APIs) for open- and closed-source LLMs",
+   "note": "Access routes are named per model, Azure OpenAI Service, Google Cloud Vertex AI and Replicate.com, with Python 3.11.5 and R 4.2.1 for analysis, retry with exponential backoff for rate limiting, and the discussion states that the approach requires calling an API with a spreadsheet of every record from the search stage rather than integrating with screening software."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion, limitations",
+   "quote": "Three limitations may have affected the study’s results and conclusions. First, representativeness was limited although a full issue of the Cochrane Database of Systematic Reviews was used to test across a broad range of medical topics",
+   "note": "The three limitations are limited representativeness with inter-review variation, optimisation bias towards GPT-3.5 because prompt engineering was done on it, and an inflated Cochrane comparator arising from using review author decisions as both ground truth and benchmark. The failure mode of unsalvageable erroneous exclusion in series deployment is documented in the adjacent discussion rather than inside the limitations passage."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Abstract, Results; and Results, LLMs maintain high sensitivity when extended to a real-world dataset",
+   "quote": "When evaluated on the comprehensive dataset, the best performing LLM-prompt combinations exhibited consistent sensitivity (range 0.756-1.000) but diminished precision (range 0.004-0.096) due to class imbalance",
+   "note": "Worst-case performance is reported rather than averages alone, as ranges across models and reviews, per-review panels in Figure 1, and an explicit worst case for the highest workload reduction ensemble whose sensitivity falls to 69%. Individual missed eligible records are not identified or characterised."
+  },
+  "E33": {
+   "status": "partial",
+   "location": "Materials and methods, Evaluation methodology",
+   "quote": "Prompt selection for full dataset evaluation was based on balanced accuracy—the arithmetic mean of sensitivity and specificity. An exception was made for GPT-3.5, where the “heavy” bias prompt was selected despite not exhibiting optimal balanced accuracy",
+   "note": "A stated selection rule links a metric to which configurations proceed, and 100% sensitivity is named as a prerequisite for autonomous deployment, but the rule was varied for GPT-3.5 after seeing the results and neither rule is presented as a pre-registered go, no-go or limited deployment criterion; no protocol document or registration is cited."
+  },
+  "E34": {
+   "status": "partial",
+   "location": "Results, Prompt design determines LLM screening behavior",
+   "quote": "as recall increased, precision tended to decrease (Pearson’s correlation coefficient, R = −0.47, 95% confidence interval −0.53 to −0.42, P < .001",
+   "note": "A 95% confidence interval is reported for the precision recall correlation and Kappa ranges with medians quantify decision consistency, but every headline sensitivity, precision, balanced accuracy and workload reduction figure in Tables 2, 3 and 4 is a bare point estimate with no interval or standard error."
+  },
+  "E35": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for energy, carbon, emissions, environmental, compute, GPU hours, token counts and monetary API spend in the paper, the supplement and the repository. Cost and efficiency are invoked only qualitatively as a reason for preferring GPT-4o to GPT-4, and for preferring GPT-3.5 for early prompt engineering, with no measured figure."
+  }
+ }
+}

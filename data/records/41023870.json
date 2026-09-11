@@ -1,0 +1,243 @@
+{
+ "study": {
+  "pmid": "41023870",
+  "pmc": "PMC12481989",
+  "doi": "10.1186/s12874-025-02674-3",
+  "title": "A human-LLM collaborative annotation approach for screening articles on precision oncology randomized controlled trials",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": [
+   "gpt-3.5-turbo",
+   "BioBERT"
+  ],
+  "task_note": "A prompt tuned gpt-3.5-turbo screened PubMed titles and abstracts for precision oncology randomized controlled trials against four criteria, with humans re-checking only the articles the model flagged positive; the prompt was tuned on 100 and validated on 100 manually annotated articles, the workflow was applied to 1,800 records drawn from a 23,521 record PubMed retrieval, and accuracy was scored against a 300 article manually reviewed gold standard."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/41023870_PMC12481989.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12481989/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12481989/supplementaryFiles",
+  "https://github.com/Hui-zju/porct_as",
+  "https://api.github.com/repos/Hui-zju/porct_as/git/trees/main?recursive=1",
+  "https://raw.githubusercontent.com/Hui-zju/porct_as/main/README.md",
+  "https://raw.githubusercontent.com/Hui-zju/porct_as/main/prompt_optimization/norms.py",
+  "https://raw.githubusercontent.com/Hui-zju/porct_as/main/prompt_optimization/screening.py",
+  "https://raw.githubusercontent.com/Hui-zju/porct_as/main/prompt_optimization/gen_response.py"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Abstract, Results",
+   "quote": "The results showed that the collaborative annotation achieved an F1 score of 0.9583, reducing the annotation workload by approximately 80% compared to manual annotation alone.",
+   "note": "Precision, recall and F1 are tabulated for the tuning set, the validation set, LLM only annotation and human-LLM annotation in Tables 2 and 3, and Krippendorff's Alpha is reported for inter-annotator agreement."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Methods, Data source and screening criteria",
+   "quote": "we retrieved articles from PubMed [ 17 ] using the search query: “randomized controlled trial”[pt] AND “cancer”[MeSH Major Topic] AND “humans”[mh]. This search yielded 23,521 articles published between January 1, 2012, and December 31, 2023.",
+   "note": "This is not a named systematic review but a screening task for precision oncology RCTs. Record counts are given at every stage: 23,521 retrieved, 200 manually annotated as the standard set split 100 tuning and 100 validation, 1,800 collaboratively annotated, 300 sampled for the gold standard and 200 held out as a supervised test set. Human positives are 13 of 200 and 25 of 300."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Result of prompt optimization",
+   "quote": "As shown in Fig. 3 , we ultimately identified 13 precision oncology clinical trial articles.",
+   "note": "Prevalence is derivable. The same subsection states that 200 articles were manually annotated, so 13 of 200 is 6.5 percent. Table 4 gives human positives of 23 plus 2 equals 25 of 300 in the gold standard sample, 8.3 percent, and the LLM flagged 274 of 1,800."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Performance of human-LLM collaborative annotation",
+   "quote": "there are only 274 positive labels by the LLM for 1800 articles, which suggests that the pre-annotation of the LLM significantly reduces the number of articles that need to be manually annotated, decreasing the need for manual annotation by about 80% (1-274/1800)",
+   "note": "Workload reduction is the headline end to end metric. Recall after the human step is also reported in Table 3 as 0.9200 for human-LLM annotation with precision 1.0000 and F1 0.9583."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Discussion, Selection of article screening methods",
+   "quote": "Specifically, the LLM can perform the initial screening, with human correction to enhance both efficiency and accuracy.",
+   "note": "The Abstract and Fig. 1 workflow state the same division: the LLM annotates all articles and humans verify every LLM-identified positive sample, which is where the final decision rests. LLM negatives are explicitly not reviewed."
+  },
+  "E06": {
+   "status": "present",
+   "location": "Methods, Collaborative annotation",
+   "quote": "Although errors may occur among the LLM-annotated positive samples, they are relatively rare. By selectively verifying these positive samples manually, we can effectively correct any misclassifications.",
+   "note": "Human override of the model is the core mechanism and its effect is quantified in Table 4, where 28 LLM false positives are corrected to negative and false positives fall from 28 to 0. Human to human discrepancies are separately resolved by a third annotator."
+  },
+  "E07": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched the full text and the repository for equity, disparity, language, region, setting and population at risk of differential exclusion. The screening target is cancer patients and biomarker studies, and the risk of omission is discussed only in general terms as compromising the comprehensiveness of retrieved evidence, without naming any group, language or study type that would be disproportionately missed."
+  },
+  "E08a": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched Methods and Fig. 1 for any planned analysis by subgroup, cancer type, study design, publication year, journal or source. The design compares annotation strategies, LLM only versus human-LLM versus manual, on the same pooled record set, with no stratified analysis planned."
+  },
+  "E08b": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched Tables 2, 3 and 4 and Fig. 4 for error rates broken down by record subgroup. Results are reported by annotation strategy and by dataset split, tuning versus validation, but never by topic, cancer type, study type, population or source."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched Methods, Results and Limitations for performance by language or region. The PubMed query does not restrict language and no language or region breakdown is reported anywhere."
+  },
+  "E09": {
+   "status": "partial",
+   "location": "Results, Supervised model performance across different annotation strategies",
+   "quote": "To prioritize higher recall, we selected models for testing that achieved a recall above 0.8 while maximizing the F1 score on the validation set.",
+   "note": "Partial: an explicit numeric threshold, recall above 0.8, is stated with the authors as the party applying it, and near-perfect recall is the stated target of prompt optimisation. But the 0.8 rule governs supervised model selection, not the screening workflow, no acceptable miss rate is set for the collaborative annotation itself, and no external norm or standard is cited."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched the full text and the repository for survey, interview, questionnaire, usability, user study, annotator feedback and perceived workload. Annotators appear only as producers of labels; their experience of the tool is never elicited or reported."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Discussion, Limitations and future work",
+   "quote": "Without these characteristics, the collaborative annotation method may result in a low recall rate, potentially omitting relevant literature.",
+   "note": "Missed eligible studies are named as the critical failure mode, together with prompt overfitting to the tuning set, biased labels from biased training data, contextual misunderstanding and model drift across ChatGPT versions."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion, Limitations and future work",
+   "quote": "We do not manually verify the negative annotations made by the LLM, and therefore cannot correct for false-positive samples. Therefore, the LLM must demonstrate high recall and strong generalization capabilities.",
+   "note": "Over-reliance on the model is designed around rather than assumed away: the workflow specifies exactly which model outputs a human must check, the paper states the consequence of not checking the negatives, and it proposes verifying negative samples when the low prevalence assumption fails. Note that the published sentence says false-positive samples where the logic of the method requires false-negative samples; the quote preserves the published wording. | Adjudicated to partial on 11 Sep 2026 for cross-record consistency; see data/adjudications.json."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Methods, Collaborative annotation",
+   "quote": "It is important to emphasize that our collaborative annotation approach is specifically designed for tasks involving article screening with a low prevalence of positive samples, where articles meeting specific criteria comprise only a small fraction of the retrieved set.",
+   "note": "The non intended case is stated in the limitations: if relevant articles are not a small proportion, the method may be compromised and negatives would also need manual verification. Generalisability beyond precision oncology is flagged as untested."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Data availability",
+   "quote": "Our dataset is available on GitHub, via https://github.com/Hui-zju/porct_as/tree/main/data .",
+   "note": "Verified: the repository resolves and contains the prompt definitions in prompt_optimization/norms.py, the API calling code in prompt_optimization/screening.py, the BioBERT fine tuning code, the annotated datasets and the raw gpt-3.5-turbo responses. Last push 16 August 2024. No commit, tag or DOI is pinned in the paper."
+  },
+  "E15": {
+   "status": "partial",
+   "location": "Methods, Fine-tuning of the supervised model",
+   "quote": "We selected the BioBERT [ 19 ] model, known for its excellent performance in previous studies [ 6 , 20 ], for fine-tuning to perform the classification task.",
+   "note": "Partial: prior evidence is cited for the supervised classifier, BioBERT, but no rationale or prior evidence is given for choosing gpt-3.5-turbo as the annotating LLM. The paper only states that it was selected as the base model, and later recommends open source models instead for reproducibility."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Data source and screening criteria",
+   "quote": "To ensure accuracy and reliability, two experts conducted the initial annotations independently. Any discrepancies were reviewed by an additional annotator who made the final decision. We used the Medtator [ 18 ] annotation tool for this process.",
+   "note": "Dual independent expert annotation with third annotator adjudication, quantified by Krippendorff's Alpha of 0.65 and 96.50 percent agreement. The 300 article gold standard used for evaluation was produced by manual article by article review of the collaboratively annotated set."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Methods, Design of ChatGPT prompt",
+   "quote": "we configured the top-p parameter to its default value of 1, while setting the temperature to 0. This configuration minimizes the variability of the returned responses.",
+   "note": "Structured output is also constrained: the prompt fixes a JSON response schema with yes or no options. No seed and no max token setting are reported. The repository confirms temperature 0, and the result filenames encode gpt-3.5-turbo_0_single1."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Repository: https://github.com/Hui-zju/porct_as/blob/main/prompt_optimization/norms.py",
+   "quote": "system_task = \"As an expert annotator with a focus on scientific article content analysis, your role involves ascertaining whether the article meets the criteria.\"",
+   "note": "The repository file norms.py holds the system message, the user task string, the four criterion descriptions and the JSON response format builder, and screening.py shows how they are assembled into the final message. Figure 2 of the paper also reproduces the whole prompt as an image, with wording that differs slightly from the repository, for example biomarker rather than characteristic."
+  },
+  "E19": {
+   "status": "absent",
+   "location": "Repository: https://github.com/Hui-zju/porct_as/blob/main/prompt_optimization/norms.py",
+   "searched": "Read the full assembled prompt in the repository files norms.py and screening.py and in Figure 2 of the paper. The response schema permits only the values Yes and No under an Options block listing Yes and No, with no unsure, uncertain or abstain value and no instruction to defer or escalate to a human reviewer. A confidence field exists only as commented out code."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, Data source and screening criteria",
+   "quote": "we established four criteria as shown in Table 1 : (1) the article must be a randomized controlled trial, (2) the study population must be cancer patients, (3) the study purpose must be cancer treatment evaluation, and (4)the study must involve biomarkers related to genetic and molecular",
+   "note": "These are the study's own screening criteria and the same four are the criteria dictionary supplied to the model in the repository file norms.py under the keys format, population, purpose and characteristic, so what the model received is reproduced rather than merely described."
+  },
+  "E21": {
+   "status": "present",
+   "location": "Abstract, Methods",
+   "quote": "Initially, we optimized the prompt using a manually annotated standard dataset, refining it iteratively to achieve near-perfect recall for the LLM.",
+   "note": "The recall first design is explicit and repeated: the Limitations state that the design choice ensures that relevant instances are not missed, with human validation used to manage precision in subsequent stages, and the supervised model was selected under a recall above 0.8 constraint."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched the full text and the repository for contamination, leakage, memorisation, knowledge cutoff and training cutoff. The screened articles were published 2012 to 2023 and gpt-3.5-turbo could plausibly have memorised many of them, but this is never raised. The only related discussion is model drift, that ChatGPT back-end changes can yield different results for the same prompt, which is a reproducibility argument rather than a contamination one."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Background",
+   "quote": "The potential for biased labels due to biased training data [ 12 ], as well as the difficulty in understanding the nuances of natural language in different contexts [ 13 ], leads to considerable variation in performance across different tasks, datasets, and labels.",
+   "note": "Partial: known LLM weaknesses are documented, including biased labels, contextual misunderstanding, unreliable self-reported confidence and version drift, and misclassifications were analysed and used to drive prompt revision. No failure mode is tested with a dedicated experiment, and hallucination, prompt injection and misuse are never named."
+  },
+  "E24": {
+   "status": "present",
+   "location": "Results, Result of prompt optimization",
+   "quote": "The optimization of LLM prompts is an iterative process, and the model’s performance does not always improve with each modification. It varies with different combinations of prompt optimization methods, making it challenging to present the iterative optimization process intuitively.",
+   "note": "Prompt variants were compared at three levels, prompt framework structure, criterion by criterion versus simultaneous evaluation, and conceptual wording of each criterion, and were scored on a held-out validation set. The repository implements the variants as dialogue modes single1, single2, gradual and continuous. Repeat-run consistency was not tested and temperature was 0."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Data source and screening criteria",
+   "quote": "During the manual annotation process, experts assessed whether each article met these criteria based on the title and abstract. To ensure accuracy and reliability, two experts conducted the initial annotations independently.",
+   "note": "Source, query, date window, retrieved count, annotation procedure and tool are all documented, and the limitations name the small gold standard dataset and the class imbalance. The annotated corpus itself is published in the repository under data and dataset."
+  },
+  "E26": {
+   "status": "partial",
+   "location": "Discussion, Limitations and future work",
+   "quote": "Therefore, to ensure reproducibility of the study, the recommended best practice is to employ an open source LLM based on publicly available training data.",
+   "note": "Partial: model transparency and training data openness are explicitly reasoned about as criteria for choosing a model, but only retrospectively as advice for future work. No model card, system card or equivalent documentation for gpt-3.5-turbo is cited, and transparency did not inform the choice actually made."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, Design of ChatGPT prompt",
+   "quote": "Using the OpenAI API ( https://platform.openai.com/docs/api-reference ), we selected “gpt-3.5-turbo” as our base model.",
+   "note": "Partial: gpt-3.5-turbo is a rolling alias rather than a pinned snapshot such as gpt-3.5-turbo-0613, and no API access or run date is reported. The paper itself flags this, noting that ChatGPT models evolve and can give different results for the same prompt. The repository confirms the same alias and the last push date is 16 August 2024, the closest available anchor."
+  },
+  "E28": {
+   "status": "partial",
+   "location": "Results, Performance of human-LLM collaborative annotation",
+   "quote": "To assess the accuracy of Human-LLM collaborative annotation,we randomly selected 300 articles from the collaboratively annotated dataset for manual review on an article-by-article basis to produce gold standard labels.",
+   "note": "Partial: the records are real, unbalanced and low prevalence, drawn from a genuine 23,521 record PubMed retrieval and processed through the OpenAI API route intended for practice. But the evaluation covers 1,800 of the 23,521 records and is scored on a 300 article sample, so it is not the complete record set of a real review."
+  },
+  "E29": {
+   "status": "present",
+   "location": "Results, Performance of human-LLM collaborative annotation",
+   "quote": "Compared to LLM-only annotation, human-LLM annotation improves annotation performance primarily by reducing the number of false positives through manual review (28 vs 0).",
+   "note": "Table 4 gives full confusion matrices for both strategies on the 300 article gold standard, so false positives and false negatives are quantified. Prompt optimisation was itself driven by an analysis of misclassifications in the tuning set. The analysis is quantitative; the two residual false negatives are not described individually."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, Design of ChatGPT prompt",
+   "quote": "We utilized the role attribute in the message objects to define the prompts for “system” and “user” roles. The “system” role was employed to set the context and guidelines, providing ChatGPT’s virtual character and relevant background information.",
+   "note": "The environment is the OpenAI chat completions API called per article from Python, with JSON responses post processed into labels, plus the Medtator tool for human annotation and PyTorch Lightning for BioBERT fine tuning. Batching is per article rather than per batch of records, and there is no integration with screening software."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion, Limitations and future work",
+   "quote": "The proposed human-LLM collaborative annotation method relies on the assumption that relevant articles constitute a small proportion of the search results. If this assumption is not met, the effectiveness of the method may be compromised.",
+   "note": "The section runs through prompt overfitting between tuning and validation sets, the inability to recover articles the LLM wrongly rejects, the labour cost of manual prompt optimisation, model deprecation and drift, class imbalance, the small gold standard and untested generalisability."
+  },
+  "E32": {
+   "status": "partial",
+   "location": "Discussion, Limitations and future work",
+   "quote": "The difference in recall between the tuning set (100%) and the validation set (86%) during prompt optimization indicates potential overfitting.",
+   "note": "Partial: the worse of the two recall figures is reported rather than only the favourable one, and the consequence of omissions for clinical decision making is discussed. But the missed eligible articles are never identified or characterised, and no tail or worst case metric is computed for the collaborative annotation itself."
+  },
+  "E33": {
+   "status": "partial",
+   "location": "Background",
+   "quote": "we hypothesize that if we could develop a model with near-perfect recall and high precision, then the negative samples annotated by the LLM would mostly be correct.",
+   "note": "Partial: a rule stated in advance links a metric, near-perfect recall, to the limited deployment decision of accepting the LLM's negative labels without human review, and Methods add that prompt refinement stops when recall and precision are satisfactory. Neither is quantified as a go or no-go threshold, and the only numeric rule, recall above 0.8, governs supervised model selection."
+  },
+  "E34": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched Tables 2, 3 and 4, Figs. 3 and 4 and the text for confidence interval, CI, standard error, standard deviation, bootstrap and significance test attached to the precision, recall or F1 values. All are reported as bare point estimates to four decimal places. Krippendorff's Alpha of 0.65 describes inter-annotator agreement, not the uncertainty of any performance metric."
+  },
+  "E35": {
+   "status": "absent",
+   "location": "not found in full text or the linked repository",
+   "searched": "Searched the full text and the repository for energy, carbon, GPU hours, compute time, token counts, runtime and API cost. Cost appears only as a qualitative claim that LLM screening is cost-effective and that supervised models are more cost-effective in the long run. No compute, energy or monetary figure is measured, despite a documented GPU fine tuning run."
+  }
+ }
+}

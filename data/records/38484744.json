@@ -1,0 +1,246 @@
+{
+ "study": {
+  "pmid": "38484744",
+  "pmc": null,
+  "doi": "10.1002/jrsm.1715",
+  "title": "Can large language models replace humans in the systematic review process? Evaluating GPT-4's efficacy in screening and extracting data from peer-reviewed and grey literature in multiple languages",
+  "year": "2024",
+  "selection_route": "report_referenced",
+  "model_names": [
+   "GPT-4"
+  ],
+  "task_note": "The study evaluates GPT-4 on three tasks (title and abstract screening, full-text screening and data extraction) for an ongoing systematic review on parenting in protracted refugee situations; this record is extracted only against the title and abstract screening task, which covered 300 double-reviewed records split across English peer-reviewed, English grey and non-English literature, and full-text and extraction results are used only where they are inseparable from the reported screening evidence."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "evidence-extractor-agent",
+ "sources_consulted": [
+  "data/pmc_fulltext/38484744_arXiv2310.17526.txt",
+  "https://arxiv.org/abs/2310.17526",
+  "https://api.osf.io/v2/users/?filter[full_name]=Khraisha",
+  "https://api.osf.io/v2/users/yjhm3/nodes/",
+  "https://api.osf.io/v2/users/yjhm3/registrations/",
+  "https://api.osf.io/v2/nodes/bc3gj/",
+  "https://api.osf.io/v2/nodes/bc3gj/files/osfstorage/",
+  "https://osf.io/bc3gj/",
+  "https://osf.io/download/znhda/",
+  "https://chatgpt.com/share/dc94cb4e-82ce-4ea5-aa36-3d3e4011e1e5"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, Analysis metrics",
+   "quote": "For GPT-4 performance, we calculated sensitivity, specificity and accuracy, which are commonly used metrics",
+   "note": "Named metrics for title and abstract screening are sensitivity (recall), specificity, accuracy, an imbalance ratio, Cohen's kappa, prevalence-adjusted bias-adjusted kappa and weighted kappa, each defined with its formula."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Repository: registered protocol description at https://osf.io/bc3gj/ (registration https://osf.io/9e6ym )",
+   "quote": "We will then assess 300 titles and abstracts that are double-reviewed. Of these, we will review 100 titles and abstracts in English language black literature and another 100 titles and abstracts in English language grey literature.",
+   "note": "The review is identified as an ongoing systematic review on parenting in protracted refugee situations, registered on OSF and PROSPERO (the PROSPERO identifier is anonymised in the preprint). The paper gives 300 records screened at title and abstract; the OSF protocol adds the stratum sizes (100 English peer-reviewed, 100 English grey, 100 non-English split 25 each across Arabic, French, Italian and Urdu) and fixes the human-reference inclusion share at 50 percent for each English stratum. The OSF workbook Raw data title abstract.xlsx carries the per-record human decisions, 100 rows per stratum."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results",
+   "quote": "Peer-reviewed studies in English were fully balanced, as intended by our design, except in the extraction stage (.03; that is, 1 included for every 30 excluded).",
+   "note": "Prevalence at title and abstract is reported per stratum as a relevant to irrelevant ratio in the Balance column of Table 1 and in the text: 1 for English peer-reviewed, 1 for English grey and 0.05 for other languages. The English figures are engineered by the pre-registered 50 to 50 sampling rather than the review's natural prevalence, which the paper says is typically around 3 percent, and raw inclusion counts are not printed in the article."
+  },
+  "E04": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the whole preprint for time saved, hours, workload, throughput, cost, efficiency and recall after a human step. The design is explicitly human-out-of-the-loop, so no combined workflow exists to measure, and the single mention of efficiency is procedural: multiple abstracts were batched into one query to increase efficiency in screening. No time, cost or workload figure is reported for any stage."
+  },
+  "E05": {
+   "status": "partial",
+   "location": "Abstract",
+   "quote": "This pre-registered study evaluates GPT-4’s capability in title/abstract screening, full-text review, and data extraction across various literature types and languages using a ‘human-out-of-the-loop’ approach.",
+   "note": "The role is stated without ambiguity: GPT-4 is tested as an autonomous screener, deliberately with no human in the loop, against the question of whether it can replace human reviewers. Because the design removes the human, the paper never states what would remain a human decision in a deployed workflow; the conclusion only counsels substantial caution."
+  },
+  "E06": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the Methods screening procedure, the Discussion and the Conclusion for any rule covering what happens when GPT-4 and the human reviewers disagree at title and abstract. None is given. The cascade rule at title and abstract is internal to the model (a yes or maybe on one criterion moves the record to the next criterion, a no excludes it). A human-anchored procedure does appear, but only for full-text screening, where GPT-4 was started on the human's exclusion reason and testing stopped once it agreed; that is an evaluation shortcut for a different task, not a disagreement workflow."
+  },
+  "E07": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "No study, for instance, has tested grey literature and non-English literature, which can constitute a large proportion of the evidence base for some topics (Lawrence et al., 2014).",
+   "note": "Grey literature and non-English literature are named as parts of the evidence base at risk of being missed by automated screening, and testing them is the study's stated novelty. The languages are Arabic, French, Italian and Urdu per the OSF protocol."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "It is also the first to test an LLM model in reviewing grey literature and literature in other languages.",
+   "note": "The pre-registered design fixes three literature strata (English peer-reviewed, English grey, non-English) with equal sample sizes, and the OSF protocol also pre-specifies looking at specificity by exclusion reason. A fourth stratum, the high-reliability prompt group, was added post hoc after the reliability results came in, which the protocol records as an addition."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results",
+   "quote": "The balanced dataset of English peer-reviewed literature had lower accuracy (title/abstract: .67, full-text: .69) than the more unbalanced non-English literature dataset (title/abstract: .88, full-text: .96).",
+   "note": "Table 1 reports balance, sensitivity, specificity, accuracy, Cohen's kappa, weighted kappa and adjusted kappa separately for English peer-reviewed, English grey, other languages and the high-reliability prompt group at the title and abstract stage."
+  },
+  "E08c": {
+   "status": "present",
+   "location": "Results",
+   "quote": "This was especially true in literature containing non-English studies (>.90).",
+   "note": "Performance is measured and reported across languages: specificity above 0.90 for non-English records against above 0.80 overall, and title and abstract accuracy of 0.88 for non-English against 0.67 for English peer-reviewed. The paper argues the gap may be an artefact of the deliberate balancing of the English strata rather than genuine multilingual strength, and separately suggests GPT-4's training data may lean toward grey and non-English sources."
+  },
+  "E09": {
+   "status": "present",
+   "location": "Methods, Analysis metrics",
+   "quote": "Previous studies have reported that human error rates in systematic review screening range from 5% to 20%, implying that a score of 100% is ‘superior’ to humans, while an accuracy score of 80% to 95% for GPT-4 could be regarded as ‘on par’ (Wang et al., 2020).",
+   "note": "The acceptable-error bands are anchored to a cited norm, published human screening error rates from Wang et al. 2020, and are set out in full before the results: 80 to 95 percent accuracy is on par, 60 to 80 percent near-par and below 60 percent subpar. Kappa is interpreted against McHugh's stricter bands rather than Cohen's."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for survey, interview, questionnaire, usability, acceptability, workload assessment and any reviewer-reported outcome. Human reviewers produced the reference decisions and their interrater reliability is reported (Cohen's kappa 0.77 on the full-text sample), but no reviewer or prospective user was asked for a judgement about the tool, and no usability or burden measure was collected."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Methods, Prompt engineering approach",
+   "quote": "This approach seemed to reduce hallucinations, a frequently observed phenomenon where an LLM confidently produces an inaccurate output (Beutel et al., 2023), but reduced consistency upon retesting.",
+   "note": "Named failure modes are hallucination (defined in the text), run-to-run inconsistency under an identical prompt, degradation with larger input volumes, and false rejections, which the paper calls the most serious error GPT-4 can make. The Clever Hans framing in the Conclusion adds plausible-sounding output as a failure mode in itself."
+  },
+  "E12": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "Such a limitation will not be easily detected by anecdotal tests (Mahuli et al., 2023; Qureshi et al., 2023) and may mislead general users who may assume that GPT is performing well when it is not.",
+   "note": "Over-reliance is addressed head on: the paper argues that raw accuracy on an imbalanced dataset flatters the model, that users are misled because GPT-4's output reads like competent human writing, and it closes with the Clever Hans analogy. The mitigation offered is methodological, namely reporting chance-corrected and prevalence-adjusted kappa alongside accuracy so the illusion is visible. It is an evaluation-level mitigation rather than a workflow control, and alert fatigue is not discussed."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Abstract and Conclusion",
+   "quote": "Our findings indicate that, currently, substantial caution should be used if LLMs are being used to conduct systematic reviews, but suggest that, for certain systematic review tasks delivered under reliable prompts, LLMs can rival human performance.",
+   "note": "Use is scoped to tasks running under prompts that pass a test-retest reliability check, and the paper is explicit that this does not extend to tasks with low-reliability prompts, where performance fell to none or minimal agreement. Further scope limits are the small sample, the single review topic and the deliberate balancing."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Methods",
+   "quote": "Links to our GPT-4 prompts and outputs, as well as the R code used for analysis, are on the Open Science Foundation (OSF) page (link).",
+   "note": "The OSF project resolves at https://osf.io/bc3gj/ and holds Code for GPT paper.R plus three raw-data workbooks (title and abstract, full text, extraction), and the registration is at https://osf.io/9e6ym . The weakness is the reference itself: this preprint prints the placeholder (link) instead of the address, and PROSPERO is printed as (Anonymised), so a reader of this version cannot reach the materials without searching for them, as I had to."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "This model has been reported to significantly surpass all other LLMs, including previous versions of GPT, in various natural language processing tasks across both English and other languages (OpenAI, 2023).",
+   "note": "The rationale for choosing GPT-4 is prior reported performance across languages, cited to the GPT-4 technical report, together with the observation that no study had yet tested GPT-4 on systematic review tasks."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods",
+   "quote": "Sample size was largely based on studies reviewed by at least two humans for screening, which was the case for English language documents at all stages and those written in other languages in the title/abstract stage.",
+   "note": "At title and abstract every record in all three strata carried at least two independent human decisions, and the OSF protocol confirms the 300 records were selected because they were double-reviewed. Provenance is an ongoing review registered on OSF and PROSPERO, and interrater reliability among the humans is reported as Cohen's kappa 0.77 with an adjusted kappa of 0.89. The paper flags that the review was not finished, so the reference labels could still shift."
+  },
+  "E17": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for temperature, top_p, max tokens, seed, structured output, JSON, API parameters and sampling settings; there are zero occurrences of any of them. The access route explains it: screening ran through the ChatGPT consumer interface, which exposes no decoding controls. What is reported instead are prompt-level constraints (a five-message limit for titles and abstracts, three for full texts, and batches of three to five abstracts per message), which are not decoding or constraint parameters in the sense required."
+  },
+  "E18": {
+   "status": "partial",
+   "location": "Repository: https://osf.io/bc3gj/ , Data and code, Raw data title abstract.xlsx",
+   "quote": "https://chat.openai.com/share/dc94cb4e-82ce-4ea5-aa36-3d3e4011e1e5",
+   "note": "The prompts are not reproduced as text anywhere: not in the preprint, which has no supplement, and not as a file on OSF. What exists is one shared ChatGPT conversation link per record per criterion inside the raw-data workbooks, of which the quoted cell is an example; these render only through a JavaScript client, and I could not retrieve the conversation content programmatically to confirm the wording (the share URL returns HTTP 200 and redirects to chatgpt.com, but the page body carries no text and the backend endpoint returns 403). The paper characterises the four prompts only by length: two under 300 words, one about 400 and one about 1600."
+  },
+  "E19": {
+   "status": "partial",
+   "location": "Methods, Screening and extraction",
+   "quote": "We proceeded to the next criterion in another chat if GPT-4 responded ‘yes/maybe’. A ‘no’ meant exclusion from further review.",
+   "note": "The accepted response set at title and abstract was yes or maybe against no, so a maybe is an explicit uncertainty option and it resolves toward keeping the record in the cascade. Two things stop this being full evidence: the prompt text itself could not be read, so how uncertainty was framed to the model cannot be checked, and nothing in the described instruction defers to or escalates to a human, since the design is human-out-of-the-loop by construction."
+  },
+  "E20": {
+   "status": "partial",
+   "location": "Methods",
+   "quote": "We tested documents that were reviewed using four inclusion/exclusion criteria: containing empirical data, parenting behaviour, refugee status, and protracted refugee situation.",
+   "note": "The criteria supplied to the model are the review's own, and the OSF protocol confirms the model was given the PROSPERO registration formulations specifically so that it would apply the review's definitions rather than its own. They are stated only as four concept labels: the operational wording is not reproduced, and the paper reveals indirectly that it mattered, noting that three prompts contained exact definitions while the parenting behaviour prompt was deliberately open."
+  },
+  "E21": {
+   "status": "partial",
+   "location": "Methods, Analysis metrics",
+   "quote": "We also used weighted kappa to better capture the severity of false rejections by GPT-4, which are the most serious errors it can make, because this would exclude a study which meets the inclusion criteria.",
+   "note": "The evaluation is asymmetric in favour of sensitivity: false rejections carry a weight of 30 against false acceptances, justified by a median search precision of about 3 percent, and the yes or maybe cascade keeps doubtful records alive. What is missing is prioritisation in the configuration, threshold or decision rule: no minimum sensitivity is set, the headline accuracy bands are symmetric, and the weighting is applied after the fact to score the model rather than to steer it."
+  },
+  "E22": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "A few may have included contaminated data, such as Guo et al., (2023) and Syriani et al., (2023), who used datasets for systematic reviews that published their results before or in 2021, when GPT was trained, which may bias the results in favour of GPT.",
+   "note": "Contamination is argued explicitly against the training cutoff, and the study's own design answers it: the evaluation uses an ongoing, unpublished review whose labels cannot have been memorised. The OSF protocol adds a second mitigation, supplying the PROSPERO formulations so the model applies the review's construct definitions rather than any it was pre-trained on. The Discussion also reasons about training-data composition, suggesting the corpus may lean toward grey and non-English sources."
+  },
+  "E23": {
+   "status": "present",
+   "location": "Methods, Prompt engineering approach",
+   "quote": "Presenting criteria and text within the same message and lowering the number of studies based on the criterion’s complexity improved consistency without increasing hallucinations.",
+   "note": "Hallucination and run-to-run inconsistency are both documented and both empirically tested. Prompt formats were varied and compared on hallucination and consistency, and test-retest reliability was quantified over five repetitions per criterion. Prompt injection and misuse are not considered."
+  },
+  "E24": {
+   "status": "present",
+   "location": "Methods, Prompt engineering approach",
+   "quote": "We assessed test-retest reliability using 10 studies on each of our four criteria. Each criterion corresponds to a prompt. We tested the four prompts five times and generated five decisions per criterion per study.",
+   "note": "This is the most thorough prompt-robustness work of the four studies. Repeat-run consistency is measured (100 percent for empirical data and refugee status, 70 percent for protracted refugee situation, 50 percent for parenting behaviour), prompt format variants were compared during development, and the reliability scores are then carried into the analysis as a stratifying variable through the high-reliability prompt group."
+  },
+  "E25": {
+   "status": "partial",
+   "location": "Methods",
+   "quote": "We registered this study protocol on the OSF, while the details of the review can be found on both OSF (link) and PROSPERO (Anonymised).",
+   "note": "Provenance is partly documented: the source review is named and registered, the three literature strata are described, the deliberate balancing and its risk of bias are stated, and the sample-size rationale is given. The OSF protocol adds the stratum sizes and the four non-English languages. Still missing are the databases searched, the search strategy, the date range, record counts per stratum in the article itself, and a licence on the OSF project, and this version prints neither the OSF address nor the PROSPERO identifier."
+  },
+  "E26": {
+   "status": "present",
+   "location": "References, and Introduction",
+   "quote": "OpenAI (2023). Gpt-4 technical report. arXiv:2303.08774.",
+   "note": "The GPT-4 technical report, the vendor's own system-card-equivalent documentation for the model under test, is cited and used to justify the model choice. The Introduction also weighs transparency directly, criticising prior work for opaque training data and arguing that the model's training corpus composition shapes the results."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods",
+   "quote": "We used the ChatGPT interface to access the GPT-4 model between May and September 2023.",
+   "note": "An access window is reported, May to September 2023, which is more than most studies give. The version identifier is not: the model is named only GPT-4, with no snapshot such as a dated build, and access was through the ChatGPT consumer interface, which was silently updated during that five-month window, so the model behind the interface may well have changed mid-study. Nothing in the paper or the OSF materials pins it."
+  },
+  "E28": {
+   "status": "partial",
+   "location": "Methods",
+   "quote": "While we ensured a mix of decisions in terms of a random selection of relevant and irrelevant studies written in English to gain deeper insight into inclusion performance, this was generally not possible for non-English studies due to the large number of excluded studies.",
+   "note": "The access route is realistic, the ChatGPT interface a practitioner would actually use, and the non-English stratum kept its natural imbalance of about 1 in 20. The record set is not: 300 records were sampled from a larger corpus, and the two English strata were deliberately balanced to 50 percent relevant by the pre-registered design. The authors are candid that this is why their accuracy came out lower than comparable studies, and note that their most imbalanced strata were the ones most like a real review."
+  },
+  "E29": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "We also observe that the ‘parenting behaviour’ prompt might have been most challenging for GPT-4 because the prompt was more open than specific (to capture non-traditional ways of parenting), unlike all other ones, which contained exact definitions.",
+   "note": "Error is analysed at the level of drivers rather than records: prompt length and openness, prompt reliability, likely training-data composition, and the separation of true skill from chance agreement through PABAK and weighted kappa. The OSF protocol pre-specified a descriptive assessment of discrepancies between GPT-4 and the human reviewers, but no such record-level analysis is reported; no individual misclassified record is examined and no confusion counts are printed in the article, only derived rates."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, Screening and extraction",
+   "quote": "Each abstract batch (a maximum of three abstracts for the protracted concept – given that it contained a longer prompt – and five abstracts for other concepts) underwent four chat tests based on inclusion/exclusion criteria.",
+   "note": "The environment is described in operational detail: the ChatGPT interface rather than the API, one chat per criterion, batch sizes of three to five abstracts, a five-message limit for titles and abstracts, splitting of long grey-literature abstracts, and wording changes for website and report sources. There is no integration with screening software."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "There are three main strengths and weaknesses to this study. First, despite our comprehensive approach covering various literature types and our efforts to achieve balance, the challenges in balancing non-English texts and our very attempts at balancing could have both introduced biases.",
+   "note": "The limitations paragraph covers balancing-induced bias, a small sample limiting generalisability, and the absence of a pre-registered prompt-engineering plan. Failure modes are documented alongside: hallucination, test-retest instability, degradation with input volume, and false rejections as the most costly error."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Results",
+   "quote": "Supporting this notion, the associated adjusted kappa scores were low, ranging from ‘none’ to ‘moderate’ as categorised by McHugh (2012).",
+   "note": "Tail performance is reported rather than an average. The range across strata is given, the weakest stratum is identified as the balanced English peer-reviewed set, the worst prompt reliability is named (50 percent for parenting behaviour), and the weighted kappa is constructed specifically to surface false rejections, with the high-reliability group reaching 0.97 once they are penalised. The individual missed records are not identified or described."
+  },
+  "E33": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "Third, we registered and documented our research protocol and analysis plan to ensure its validity and replicability but might have benefited from also creating a detailed plan for prompt engineering in advance.",
+   "note": "The study is genuinely pre-registered, and its analysis plan (fetched from OSF) pre-specifies the metrics, the strata and the interpretation bands that map accuracy onto superior, on par, near-par and subpar against human error rates. That is a pre-specified rule for reading the metrics, but not a decision rule: no threshold is bound to a go, no-go or limited-deployment action, the expected outcomes are phrased as insights rather than decisions, and the authors concede the prompt-engineering half was not pre-specified at all."
+  },
+  "E34": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for confidence interval, CI, standard error, credible interval and bootstrap; there are zero occurrences of any of them in the preprint. Every value in Table 1, including sensitivity, specificity, accuracy and all three kappa variants, is a bare point estimate, several of them computed on strata of about 100 records and one, the high-reliability prompt group, on 23 records, where the sampling uncertainty would be wide. PABAK adjusts kappa for prevalence and bias but is a correction, not an interval."
+  },
+  "E35": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for energy, carbon, emissions, compute, GPU, tokens, price and cost. The word cost appears once, in a cited reference about the cost of systematic reviews, not about running the model. No API or subscription cost, no token count, no run time and no energy or environmental figure is reported for any stage, which is a notable omission given that the whole exercise ran through a paid consumer interface over five months."
+  }
+ }
+}

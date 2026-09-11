@@ -1,0 +1,246 @@
+{
+ "study": {
+  "pmid": "40921065",
+  "pmc": "PMC12455167",
+  "doi": "10.2196/76252",
+  "title": "Automated Literature Screening for Hepatocellular Carcinoma Treatment Through Integration of 3 Large Language Models: Methodological Study",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": [
+   "Doubao-1.5-pro-32k",
+   "DeepSeek-V3",
+   "DeepSeek-R1-Distill-Qwen-7B"
+  ],
+  "task_note": "A three model pipeline, an initial reviewer, a critic and an arbitrator, made PICOS based include or exclude decisions on titles and abstracts across 9 datasets totalling 27,982 records that were rebuilt by replaying the search strategies of 9 published hepatocellular carcinoma treatment meta-analyses, with the published inclusion decisions of those meta-analyses as the reference standard."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/40921065_PMC12455167.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12455167/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455167/supplementaryFiles",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12455167/bin/medinform_v13i1e76252_app1.docx",
+  "https://github.com/chitsanfei/review-screening-analyzer",
+  "https://raw.githubusercontent.com/chitsanfei/review-screening-analyzer/master/README.md",
+  "https://raw.githubusercontent.com/chitsanfei/review-screening-analyzer/master/prompt_manager.py",
+  "https://raw.githubusercontent.com/chitsanfei/review-screening-analyzer/master/model_manager.py",
+  "https://osf.io/preprints/osf/srgpx_v1",
+  "https://api.osf.io/v2/preprints/srgpx/"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Abstract, Methods",
+   "quote": "The system was evaluated across 9 reconstructed datasets derived from published HCC meta-analyses, with performance assessed using accuracy, agreement metrics (κ and prevalence-adjusted bias-adjusted κ), recall, precision, F 1 -scores, and computational efficiency parameters",
+   "note": "Balanced accuracy, F-beta and the Matthews correlation coefficient are added in the Statistical Analysis section for the imbalanced setting."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Results, Overview of Datasets; Table 2",
+   "quote": "LORC-CH b Laparoscopic versus open resection of hepatocellular carcinoma in patients with cirrhosis: meta-analysis [ 21 ] 11/770 (1.4%) British Journal of Surgery",
+   "note": "Table 2 names all 9 source meta-analyses with citations and gives included records over total for each, for example 11 of 770. Totals are 129 included of 27,982 records, confirmed in Table S1 of Multimedia Appendix 1."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Overview of Datasets; Table 2",
+   "quote": "In each of the meta-analyses included, 9 datasets were created to represent the initial records identified during their search process, as shown in Table 2 . The number of initially identified records in these simulated datasets ranged from 309 to 8733.",
+   "note": "Prevalence is reported explicitly in the Table 2 column Included records (n/N, %), ranging from 0.17 percent to 3.9 percent per dataset, and is 129 of 27,982, about 0.46 percent, overall."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Performance",
+   "quote": "Regarding time costs, 19,674.2 seconds (approximately 5 h and 28 min) were spent analyzing the 9 datasets, with an average of 2186.0 seconds (approximately 36 min; SD 2052.4 seconds) per dataset.",
+   "note": "Economic cost is also reported end to end, US $11.59 across all datasets and about US $0.41 per 1000 entries. No human time saved and no recall after a human step are reported, since there is no human step."
+  },
+  "E05": {
+   "status": "partial",
+   "location": "Discussion, Principal Findings",
+   "quote": "Nevertheless, it is important to note that hallucinations in LLMs are difficult to avoid, and appropriate human intervention remains crucial [ 47 ].",
+   "note": "Partial: the workflow is presented as automated screening that replaces or pre-screens for human reviewers and human intervention is said to remain crucial, but the paper never states which decision stays with a human. Multimedia Appendix 1 section A4 says the models can replace human effort or at a minimum conduct preliminary screening."
+  },
+  "E06": {
+   "status": "partial",
+   "location": "Methods, Application Design",
+   "quote": "Finally, model C was assigned the role of arbitrator, reanalyzing those entries for which models A and B had provided conflicting decisions and making the final determination along with the supporting reasoning.",
+   "note": "Partial: an explicit conflict resolution step exists, but it resolves disagreement between two models, not between the model and a human. No human override, escalation or adjudication path is defined anywhere in the workflow."
+  },
+  "E07": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched the full text and Multimedia Appendix 1 for equity, disparity, underrepresented populations, language and setting effects on exclusion. Non English studies were excluded when selecting the source meta-analyses, and no population, language, setting or study type is named as being at risk of differential exclusion by the system."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Methods, Statistical Analysis",
+   "quote": "The accuracy, precision, recall, F 1 -score, κ, and prevalence-adjusted bias-adjusted κ (PABAK) of the analysis results for all datasets were calculated, where precision and recall were calculated separately based on exclusion and inclusion as the final goal.",
+   "note": "Metrics were planned per dataset, and the 9 datasets differ by topic, source journal, meta-analysis type and the candidate study designs they contain, so the planned breakdown is by review dataset rather than by a record level attribute such as language or population."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Performance; Figure 2",
+   "quote": "Comparative performance of 3 large language model–based analytic systems across 9 benchmark datasets. The metrics include accuracy, precision, recall, F1-score, κ, and prevalence-adjusted bias-adjusted kappa (PABAK).",
+   "note": "Per dataset accuracy, precision, recall, F1, kappa and PABAK are tabulated in Table S2 of Multimedia Appendix 1, for example LORC-CH accuracy 0.9597 with inclusion precision 0.2619 and inclusion recall 1.0000. Per dataset time and cost appear in Table S5."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched Results, Figure 2 and Tables S1 to S5 of Multimedia Appendix 1 for any breakdown by language or region. The source meta-analyses are described as conducted across the United States, Europe and Asia, but no performance figure is disaggregated by region or language, and non English studies were excluded at source selection."
+  },
+  "E09": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched Methods, Statistical Analysis and Discussion for a target or acceptable error threshold such as a minimum recall, and for who set it or which norm it follows. Performance is reported and judged qualitatively as good or modest, with no pre-specified threshold and no cited screening standard."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched the full text and Multimedia Appendix 1 for survey, interview, questionnaire, usability, user study, reviewer feedback and workload assessment. No reviewer or user was consulted; the evaluation is entirely retrospective against published meta-analyses."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "Crucially, it should not be ignored that our overall precision and F 1 -scores are relatively low, as shown in Figure 2 . We conducted an in-depth analysis of the cases where misidentification occurred.",
+   "note": "Named failure modes include misclassification of cost-effectiveness analyses as RCTs, attention dilution under long prompts, model collapse from distillation, error propagation between models, and unavoidable hallucination."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "the Sankey diagram, as shown in Table S6 and Figure S1 in Multimedia Appendix 1 , revealed that data flow across datasets exhibits remarkable consistency, indicating limited divergent perspectives generated by the secondary model",
+   "note": "Partial: over-reliance is identified and measured, but inside the model chain, where the critic model B rarely diverges from model A, with temperature and prompt engineering proposed as mitigations. Automation bias or alert fatigue in a human reviewer is never examined; the only human statement is that human intervention remains crucial."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "Moreover, our dataset is currently focused on HCC treatment. Although we selected HCC treatment as a complex test case to rigorously evaluate our system, and the workflow is theoretically generalizable, its performance on broader oncology topics or other disease domains remains to be validated.",
+   "note": "Intended use is stated as accelerating evidence synthesis and guideline updating for HCC treatment. The scope limit is the restriction to HCC treatment and the need for validation elsewhere."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Data Availability",
+   "quote": "The source code is openly available on GitHub [ 49 ].",
+   "note": "Verified: https://github.com/chitsanfei/review-screening-analyzer resolves and contains app.py, analyzer.py, model_manager.py and prompt_manager.py, and the README cites this paper. No commit, tag or version is pinned in the paper, and the repository has been updated since publication, most recently 25 July 2026. The full prompts and hyperparameters are also in Multimedia Appendix 1. A Hugging Face demo is cited as reference 48."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Methods, Validation; Table 1",
+   "quote": "After constructing all the datasets, 3 major language models were selected based on considerations of research cost and model performance. These models were Doubao-1.5-pro-32k from ByteDance (model A), DeepSeek-v3 (model B), and DeepSeek-R1-Distill-Qwen-7B (model C)",
+   "note": "Table 1 gives the strengths and limitations behind each choice, and the Discussion adds that these models offer performance comparable to GPT-4o at reduced cost."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Statistical Analysis",
+   "quote": "The result tables from each validation set analyzed by the system were compared with the actual final results (excluding entries with missing or empty abstracts from the simulated search) included in their corresponding papers.",
+   "note": "The reference standard is the final inclusion decision of 9 published meta-analyses, selected for being PRISMA compliant and in the top 5 percent of Science Citation Index Expanded journals, with PICOS extracted manually and checked by a second author."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Supplement: Multimedia Appendix 1 (medinform_v13i1e76252_app1.docx), fetched via https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455167/supplementaryFiles",
+   "quote": "The common configurations were as follows: (1) temperature of 0.3; (2) batch size of 10; (3) maximum tokens of 4096; (4) threads of 8, and (5) timeout of 180 s. The remaining hyperparameters were kept to the platform's default values.",
+   "note": "Section A3 of Multimedia Appendix 1. Structured output is constrained by the prompts, which mandate a fixed JSON schema. No top_p and no seed are reported, and remaining values are left at platform defaults. The repository file model_manager.py carries the same defaults, temperature 0.3 and max_tokens 4096."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Supplement: Multimedia Appendix 1 (medinform_v13i1e76252_app1.docx), fetched via https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455167/supplementaryFiles",
+   "quote": "You are a medical research expert analyzing clinical trial abstracts.\nYour task is to analyze each article and determine if it matches the PICOS criteria.",
+   "note": "Section A2 of Multimedia Appendix 1 reproduces the full verbatim prompts for all three models, model A the initial reviewer, model B the critic and model C the arbitrator. The repository file prompt_manager.py contains near identical templates at https://github.com/chitsanfei/review-screening-analyzer/blob/master/prompt_manager.py"
+  },
+  "E19": {
+   "status": "absent",
+   "location": "Supplement: Multimedia Appendix 1 (medinform_v13i1e76252_app1.docx), fetched via https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455167/supplementaryFiles",
+   "searched": "Read all three prompts in section A2 of Multimedia Appendix 1 and in the repository file prompt_manager.py. There is no unsure, uncertain, unclear or escalate option and no instruction to defer to a human. The prompts do the opposite, requiring a forced binary choice: NEVER leave any field empty or use null values, and For decisions, always provide either true or false."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, Application Design",
+   "quote": "the program preset roles and inserted the population, intervention, comparison, outcome, and study design (PICOS) guidelines for 3 different large models and embedded the literature entries that needed to be analyzed into prompts in batches.",
+   "note": "Section A7 of Multimedia Appendix 1 reproduces the full PICOS string supplied to the models for each of the 9 datasets. These were extracted by hand from each source meta-analysis, so they restate rather than copy the reviews' own criteria."
+  },
+  "E21": {
+   "status": "partial",
+   "location": "Results, Performance",
+   "quote": "When β was set to 2, the weighted average of F-β was 0.45 (range 0.09-0.68). The weighted average of balanced accuracy was 0.93 (range 0.81-0.99).",
+   "note": "Partial: choosing F-beta with beta of 2 weights recall above precision, and the paper accepts weighted precision of 0.15 while presenting recall of 0.90 as the headline. But no configuration, threshold or decision rule is set to favour recall; the prompts instruct the models to be strict."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched the full text and Multimedia Appendix 1 for contamination, leakage, memorisation, knowledge cutoff and training cutoff. Training data is discussed only as a cause of misclassification and model collapse. The source meta-analyses were published 2020 to 2025 and are highly cited, so their included studies could plausibly sit in the training corpora of Doubao and DeepSeek, and this risk is never raised."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "For example, we found that cost-effectiveness analyses derived from RCTs published by other researchers were incorrectly identified as RCTs themselves.",
+   "note": "Partial: failure modes are documented, including specious plausibility of this kind, unavoidable hallucination, attention dilution under long prompts and model collapse, and the misclassifications were analysed post hoc. None was tested with a dedicated experiment, and prompt injection and misuse are not considered."
+  },
+  "E24": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched Methods, Results and Discussion for prompt variants, ablations, wording sensitivity, repeat runs, reruns and seed variation. Only one prompt set was run once per dataset. Prompt engineering and temperature refinement are named only as future work to fix the low divergence of the critic model."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Validation",
+   "quote": "The following inclusion criteria were used: (1) studies published within the past 5 years, (2) meta-analyses of treatment strategies for PLC, (3) studies that reported the search platforms used and described the basic search strategy in the text, and (4) studies published in the top 5% of journals",
+   "note": "Collection method is documented end to end: eligibility for source meta-analyses, manual PICOS extraction, replication of each search strategy with the full search strings in section A8, deduplication in section A1, and removal of blank abstract entries. Limitations of the datasets are discussed."
+  },
+  "E26": {
+   "status": "present",
+   "location": "Methods, Validation; Table 1",
+   "quote": "Model A Doubao-1.5-pro-32k Closed; general purpose; MoE a High performance and multimodal capability Closed source model with low transparency",
+   "note": "Table 1 records openness and transparency for each model as an explicit criterion of choice, including the note that DeepSeek-V3 shows signs of distillation that may cause identity inconsistency or output bias. No model card or system card is cited by reference."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, Validation; Table 1",
+   "quote": "These models were Doubao-1.5-pro-32k from ByteDance (model A), DeepSeek-v3 (model B), and DeepSeek-R1-Distill-Qwen-7B (model C), with model C distinguished as a reasoning-optimized LLM.",
+   "note": "Partial: three exact model identifiers including the Doubao 1.5 pro 32k point release are given, but no API access date or run date is reported. The paper was submitted 19 April 2025 and the Hugging Face and GitHub references are dated 29 May 2025, which is the closest available anchor."
+  },
+  "E28": {
+   "status": "partial",
+   "location": "Methods, Validation",
+   "quote": "To ensure minimal human intervention in the simulation, any studies that were ultimately included in the original meta-analyses but were missing from the search results were not added back to the datasets.",
+   "note": "Partial: the record sets are complete, unbalanced and very low prevalence, and were processed through the cloud API route intended for practice. But they are reconstructions of each review's search rather than the reviews' actual retrieved sets, aligned only as closely as possible to the PRISMA counts, and entries with empty abstracts were dropped."
+  },
+  "E29": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "We conducted an in-depth analysis of the cases where misidentification occurred. First, nonspecialized models and potentially insufficient training corpora may be responsible for the initial misclassification of literature entries",
+   "note": "The analysis is qualitative and cause oriented, supported by the Sankey reversion data in Table S6 of Multimedia Appendix 1. Misclassification counts per dataset are derivable from Table S1 and Table S2."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Discussion, Principal Findings",
+   "quote": "Furthermore, our system leverages a program that sends local requests to the LLM’s cloud computing service, resulting in minimal requirements for user-side devices. It does not necessitate high-performance GPUs, and only terminal devices capable of multithreading are required",
+   "note": "Section A4 of Multimedia Appendix 1 adds that the authors implemented their own HTTP POST calls rather than the OpenAI package, in Python 3.12.3 under Conda, with asynchronous multithreading and batches of 10 entries, against the Volcano Engine platform. No integration with screening software is described."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "Our system has certain limitations. Although our datasets encompass multiple topics with substantial numbers of records initially identified, the Sankey diagram, as shown in Table S6 and Figure S1 in Multimedia Appendix 1 , revealed that data flow across datasets exhibits remarkable consistency",
+   "note": "The limitations paragraph covers low divergence of the critic model, low precision and F1, misclassification causes, attention dilution, model collapse from distillation and restriction to HCC. There is no separately headed limitations section."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Results, Performance",
+   "quote": "In contrast, when targeting inclusion, the weighted average precision was 0.15 (SD 0.13; range 0.05-0.47), while the weighted recall was 0.90 (SD 0.16; range 0.62-1.00).",
+   "note": "Worst case performance is reported rather than averages alone: the lowest inclusion recall across datasets is 0.62 and per dataset values are in Table S2 of Multimedia Appendix 1. The individual missed eligible studies are not identified and no reason is given for any specific miss."
+  },
+  "E33": {
+   "status": "absent",
+   "location": "not found in full text, Multimedia Appendix 1 or the linked repository",
+   "searched": "Searched Methods, Statistical Analysis and Conclusions for a pre-specified rule linking a metric to a go, no-go or limited deployment decision. Results are interpreted after the fact as showing promise and feasibility, with no threshold and no stated criterion for adoption or rejection."
+  },
+  "E34": {
+   "status": "partial",
+   "location": "Results, Performance",
+   "quote": "Overall, the system correctly classified 26,735 (95.54%) of 27,982 records across the 9 datasets. When targeting exclusion, the weighted average precision and recall reached approximately 1.00 (SD < 0.01; range 0.99-1.00) and 0.96 (SD 0.04; range 0.90-1.00), respectively.",
+   "note": "Partial: standard deviations and ranges across the 9 datasets accompany every headline metric, and a paired t test with P less than .001 is reported for the kappa versus PABAK comparison. No confidence interval is given for any performance metric, and the dispersion measures describe between dataset variation rather than sampling uncertainty."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Results, Performance",
+   "quote": "Furthermore, the economic costs were modest, with the analysis of all datasets totaling US $11.59, an average of US $1.29 (SD US $1.25) per dataset, and approximately US $0.41 per 1000 entries.",
+   "note": "Partial: compute is disclosed as processing time, per model token counts in Table S4 and Table S5 of Multimedia Appendix 1, and monetary cost, and the paper notes that no high performance GPU is needed. No energy use and no carbon or environmental estimate is given."
+  }
+ }
+}

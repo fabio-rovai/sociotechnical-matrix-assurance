@@ -1,0 +1,237 @@
+{
+ "study": {
+  "pmid": "41626916",
+  "pmc": "PMC12623132",
+  "doi": "10.1017/rsm.2025.15",
+  "title": "Validation of large language models (Llama 3 and ChatGPT-4o mini) for title and abstract screening in biomedical systematic reviews",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": ["Llama 3 70B", "ChatGPT-4o mini"],
+  "task_note": "Llama 3 70B through the Groq API and ChatGPT-4o mini through the OpenAI API, each in three temperature configurations, screened the titles and abstracts of a completed PROSPERO-registered systematic review on female-specific cardiovascular risk factors in postmenopausal women (1,081 deduplicated records, 984 with abstracts available to the models, 84 human inclusions), with dual independent human screening in Rayyan as the reference standard."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-code-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/41626916_PMC12623132.txt",
+  "data/pmc_fulltext/41626916_PMC12623132.xml",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12623132/",
+  "https://doi.org/10.1017/rsm.2025.15",
+  "https://www.cambridge.org/core/product/identifier/S1759287925000158/type/journal_article",
+  "https://static.cambridge.org/content/id/urn%3Acambridge.org%3Aid%3Aarticle%3AS1759287925000158/resource/name/S1759287925000158sup001.zip",
+  "https://docs.google.com/spreadsheets/d/1-4GIh1XytLks2ZMZ8kZM7MHIVPQ9qOj3/edit?usp=sharing&ouid=107391628292051032027&rtpof=true&sd=true",
+  "https://docs.google.com/spreadsheets/d/1-4GIh1XytLks2ZMZ8kZM7MHIVPQ9qOj3/export?format=xlsx"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, 2.3 Statistical analysis; Tables 2 and 3",
+   "quote": "Sensitivity, specificity, positive predictive value (PPV), negative predictive value, and likelihood ratios were calculated for each AI tool compared with the human gold standard.",
+   "note": "Total accuracy is additionally reported for every configuration in Table 2. No workload saved or time metric is among the named metrics."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Methods, 2 Methods; Results, 3",
+   "quote": "The articles included in this study were those identified in a prior systematic review investigating the risk factors specific to postmenopausal women associated with the incidence of cardiovascular morbidity and mortality (PROSPERO reference: CRD42022323101).",
+   "note": "The review is identified by PROSPERO registration and topic; 1,397 records were retrieved, 1,081 remained after deduplication, 84 were classified as included by the human reviewers, and the models could assess only the 984 records whose abstracts were present in the export (80 of which were human inclusions)."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Discussion, 4",
+   "quote": "However, the PPV is moderate, ranging from 42.6% to 44.3%, due to the low prevalence of relevant articles (8.1%).",
+   "note": "Prevalence is stated explicitly as 8.1% and is also directly derivable from the reported counts (80 human inclusions among the 984 records screened by the models, and 84 among the 1,081 deduplicated records)."
+  },
+  "E04": {
+   "status": "partial",
+   "location": "Discussion, 4",
+   "quote": "In this study, Llama 3 (LLA_2) identified 140 articles for full review compared with 84 manually selected, with 62 overlaps.",
+   "note": "The downstream burden of the proposed workflow is quantified: the best Llama configuration sends 140 of 984 records to full-text review against 84 selected manually. The missing components are that no time saved, no monetary or compute cost, no workload-saved proportion and no recall after the human verification step is measured; reductions in time and effort are asserted in the Highlights and Discussion without any figure, and the limitations concede that human validation could limit time savings in practice."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Discussion, 4; Conclusion, 5",
+   "quote": "Although AI has shown efficacy, human intervention remains necessary to validate and verify exclusion and inclusion decisions, potentially limiting time savings in practical settings.",
+   "note": "The intended role is a complementary pre-screen that excludes irrelevant articles, explicitly not a replacement for manual review, and the human decision that remains is validation and verification of the inclusion and exclusion decisions before full-text review."
+  },
+  "E06": {
+   "status": "partial",
+   "location": "Discussion, 4",
+   "quote": "It is recommended to use AI to exclude irrelevant articles, with additional human review of AI-included articles to ensure a more accurate full-text evaluation.",
+   "note": "One side of the disagreement is handled: every record the model includes is reviewed by a human, so model false positives are caught downstream. The missing component is the other side: nothing in the proposed workflow recovers a record the model excludes and a human would have included. The authors instead say a second phase of the study would be needed to assess the false negatives, and that determining whether the 22 AI-excluded articles should have been retained is still open."
+  },
+  "E07": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and the three supplementary files for any named population, language, region, setting or study type at risk of differential exclusion, and for any equity goal for screening. Terms checked: bias, equity, language, English, region, country, setting, underrepresented, minority, differential. The Introduction names the potential for bias in AI algorithms stemming from training data as a general concern and the limitations raise training representativeness, but neither is tied to any named group. The one concrete differential coverage gap, that 97 of the 1,081 records had no abstract in the export and so could not be assessed by the models at all, is reported as a factual limitation of the data and is never framed as a risk of differential exclusion."
+  },
+  "E08a": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the Methods and statistical analysis section for any planned stratification or subgroup analysis of performance by topic, study design, population, language, region, setting or source database. Terms checked: subgroup, stratified, by study design, by database, by language, heterogeneity. The only planned variation is across two models and three temperature settings, and the pre-planned sensitivity analysis varies AI configurations rather than record subgroups. Records came from Medline, Embase and Scopus but no per-database analysis is designed."
+  },
+  "E08b": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the Results, Tables 2 and 3, Figure 1 and the published dataset for performance or error rates broken down by any characteristic of the records: topic, study design, population, exposure, language or source database. Tables 2 and 3 disaggregate only by AI tool and temperature configuration, which is a property of the index test rather than a subgroup of records. The published dataset contains per-record decisions but the paper reports no disaggregated result computed from them."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text, Supplementary Material 1 (search strategies) and Supplementary Material 2 (study selection criteria) for any language restriction, any record of the language of the screened abstracts, or any breakdown of performance by language, country, region or setting. Terms checked: language, English, Spanish, translated, region, country, setting, multilingual. Language is never recorded as a variable and no language, region or setting comparison is reported, although the search covered three international databases."
+  },
+  "E09": {
+   "status": "partial",
+   "location": "Discussion, 4",
+   "quote": "Probability coefficients according to Evidence-Based Medicine 24 are used in decision-making and indicate that changes from pre-test to post-test probability can be very important, important, moderate, small, or of no clinical significance.",
+   "note": "An external norm is invoked and attributed, the likelihood ratio interpretation bands from evidence-based medicine citing Fletcher's Clinical Epidemiology, and the results are graded against it: the change is judged moderate to high when an article is included and moderate when it is excluded. The missing component is an acceptable error or target threshold for screening itself. No minimum sensitivity or maximum proportion missed is stated, sensitivity is only called acceptable after the fact, and nobody is named as setting a screening threshold."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and supplementary files for a survey, interview, focus group, questionnaire, usability assessment, workload perception measure or any collected reviewer or user feedback. Terms checked: survey, interview, questionnaire, usability, perception, acceptability, satisfaction, user. The human reviewers contribute only screening decisions to build the reference standard; no perspectives are collected, and usability is discussed only as a future development (integration into Covidence or Rayyan, or user-friendly interfaces)."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Discussion, 4",
+   "quote": "In the context of this study, the false negative rate (complement of sensitivity) indicates the articles that the AI might miss, potentially leading to the loss of important studies.",
+   "note": "Missed eligible studies are named as the critical failure mode, with the mirror failure (unnecessary full-text analysis of false positives) named in the same paragraph, and the limitations repeat that the AI might miss relevant articles or include studies not manually selected. Hallucinated eligibility reasoning cannot arise here because the prompts forbid any output beyond one word, and inconsistency across runs is not named."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion, 4",
+   "quote": "These limitations highlight the importance of using AI as a complementary tool rather than a complete replacement for manual review in systematic reviews.",
+   "note": "The risk of relying on the model is mitigated in the proposed design: human validation of inclusion and exclusion decisions is retained, AI is explicitly positioned as complementary rather than a replacement, and the Introduction flags that the black box nature of these algorithms makes their decisions hard to understand and trust. The missing component is that over-reliance, automation bias and alert fatigue are never named as such and no check for them is built into the evaluation."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Discussion, 4; Conclusion, 5",
+   "quote": "These results emphasize the need for continued research and adaptation of these tools, adjusting selection criteria to address the particularities of other disciplines, and validating their performance before widespread adoption.",
+   "note": "Intended use is title and abstract screening in biomedical systematic reviews, through an API, as a filter for irrelevant articles with human review of everything the model includes. Scope limits are stated: one biomedical review, models must be revalidated and their criteria adapted before use in other disciplines, adoption should not be widespread before that validation, and the approach presently requires programming knowledge."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Discussion, 4; Supplementary Material 3; Data availability statement",
+   "quote": "Our study expands upon this prior work by explicitly reporting the optimized prompts and configurations used, allowing researchers with programming knowledge to easily replicate and adapt these methods.",
+   "note": "The verbatim system and user prompts and the six configurations are published in Supplementary Material 3 inside the supplementary zip, which is reachable through the article DOI http://doi.org/10.1017/rsm.2025.15 and at the stable Cambridge URL https://static.cambridge.org/content/id/urn%3Acambridge.org%3Aid%3Aarticle%3AS1759287925000158/resource/name/S1759287925000158sup001.zip. The record-level dataset is published at the Google Sheets link in the Data availability statement (I downloaded it: 984 data rows with the human decision, the per-record query text and the per-configuration model decisions) and the article carries an Open Data badge. The Python code that made the API calls is not deposited."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Methods, 2.1 Llama 3; Methods, 2.2 ChatGPT-4o mini",
+   "quote": "Llama 3 was selected due to its completely free access through Groq, making it a viable alternative for researchers with limited budgets who require an advanced LLM without financial constraints.",
+   "note": "Both choices are justified. Llama 3 is chosen for zero cost and for being a non-OpenAI architecture; ChatGPT-4o mini is chosen as an affordable variant of GPT-4 and because ChatGPT-based models are described as emerging as the gold standard in systematic review screening, which is supported by prior evidence cited in the Introduction and Discussion."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, 2 Methods",
+   "quote": "The reference standard was the manual review: two human reviewers independently assessed titles and abstracts using Rayyan between November 22, 2022, and January 23, 2023, and a third reviewer resolved discrepancies.",
+   "note": "Provenance is fully stated: dual independent screening in Rayyan with third-reviewer adjudication, dated, from a PROSPERO-registered review, collected retrospectively after the manual screening was complete, with the models blinded to it. The inclusion rule is also stated, records with insufficient information in the title and abstract were classified as included so that they progress to full text."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Methods, 2.2 ChatGPT-4o mini and following; Table 1",
+   "quote": "The key variation between the configurations was the temperature setting, which was adjusted to 0, 0.5, and 1.",
+   "note": "Temperature is reported for all six runs and tabulated in Table 1 with an explanation of what each value does. The prompts additionally impose a hard output constraint of exactly one lowercase word without punctuation. No top_p, max tokens or seed is reported."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Supplement: Supplementary Material 3, System prompt and user prompt, in https://static.cambridge.org/content/id/urn%3Acambridge.org%3Aid%3Aarticle%3AS1759287925000158/resource/name/S1759287925000158sup001.zip",
+   "quote": "Respond with exactly one word: 'true' if the statement is accurate, or 'false' if it is inaccurate or lacks sufficient evidence.",
+   "note": "I downloaded and read the supplementary zip. Supplementary_Material_3.docx reproduces both prompts verbatim as assignable Python strings, the system_prompt with its five numbered instructions, worked examples and guidelines, and the user_prompt with the templated {title} and {abstract} slots and the full lettered inclusion criteria. The article text points to it at Methods and the same prompts appear per record in the published dataset."
+  },
+  "E19": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Read both verbatim prompts in Supplementary Material 3 looking for an unsure, uncertain or borderline option, a confidence output, or any instruction to defer, flag or escalate to a human reviewer. Terms checked: unsure, uncertain, unclear, maybe, borderline, flag, escalate, human, reviewer, confidence, review. Neither prompt allows anything but one word. Uncertainty is handled without any human: the system prompt says that in cases of uncertainty due to limited evidence the model should err on the side of caution and respond false, and the user prompt says that if any information is unclear or not explicitly stated the model should assume the criterion is met. These two instructions point in opposite directions and neither defers to human review, and the model is told it will be penalized for using more than one word."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, 2 Methods and configuration section; Supplementary Material 2 and 3",
+   "quote": "The system and user prompts are detailed in Supplementary Material 3 and were based on the eligibility criteria of the systematic review.",
+   "note": "Supplementary Material 2 states the review's own study selection criteria (study designs, effect measures, postmenopausal women aged 30 to 70, the female-specific exposures, and the cardiovascular outcomes) and the user prompt in Supplementary Material 3 reproduces the same criteria as the lettered list a to e that the model is asked to apply, so the criteria supplied to the model are verifiably the review criteria."
+  },
+  "E21": {
+   "status": "partial",
+   "location": "Supplement: Supplementary Material 3, user prompt, in https://static.cambridge.org/content/id/urn%3Acambridge.org%3Aid%3Aarticle%3AS1759287925000158/resource/name/S1759287925000158sup001.zip",
+   "quote": "If any information is unclear or not explicitly stated, assume the criterion is met.",
+   "note": "A decision rule favouring inclusion under uncertainty is written into the user prompt, and the human reference standard applies the same rule, since records with insufficient information in the title and abstract were classified as included. The missing components are consistency and analysis: the system prompt in the same file gives the opposite instruction, to err on the side of caution and respond false in cases of uncertainty; the word sensitivity or recall is never said to be prioritised over precision; and the best configurations are identified on overall accuracy, with the reported sensitivities of 77.5% and 56.2% accepted without any recall-favouring threshold."
+  },
+  "E22": {
+   "status": "partial",
+   "location": "Methods, 2 Methods",
+   "quote": "The AI models did not have access to the results of the manual screening.",
+   "note": "One form of leakage is explicitly excluded: the index test was blinded to the reference standard and the data were collected retrospectively after manual screening was complete. Training contamination is not addressed at all. The searches ran in 2022 and the models were queried in July 2024, so the screened articles predate the runs, but the paper never compares a knowledge cutoff with the review dates, never considers that the included studies could be memorised from training data, and the nearest statement is a limitation about whether the training corpus was representative of biomedical articles."
+  },
+  "E23": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and the three supplementary files for documentation and testing of LLM failure modes: hallucination, fabrication, prompt injection, jailbreak, specious or plausible but wrong reasoning, and misuse. Terms checked: hallucinat, fabricat, injection, jailbreak, adversarial, misuse, plausible, confabulat. The Introduction names algorithmic bias from training data and the black box opacity of AI algorithms as general concerns, but no LLM failure mode is tested, and the prompts forbid any output beyond a single word so no reasoning is produced that could be audited for plausibility or fabrication."
+  },
+  "E24": {
+   "status": "partial",
+   "location": "Methods, 2.3 Statistical analysis; Table 1; Results, 3",
+   "quote": "A sensitivity analysis was performed by adjusting different prompt configurations and parameters of the AI tools to assess potential variability in diagnostic accuracy.",
+   "note": "A pre-planned robustness check is run and fully reported: six configurations, two models crossed with temperature 0, 0.5 and 1, each with complete validity indicators and confidence intervals in Tables 2 and 3. The missing component is the prompt itself. The Methods state that the configurations maintained the same system prompt and user prompt across all tests, so no prompt variant or wording sensitivity is tested, and no repeat run at a fixed configuration is reported, leaving run-to-run consistency at a given temperature unmeasured. The published dataset carries extra columns whose names suggest earlier unreported model and prompt variants, but no results for them appear in the paper."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, 2 Methods; Supplementary Material 1; Results, 3",
+   "quote": "Potentially eligible articles ( n = 1,397) were identified through searches conducted in the Medline, Embase, and Scopus databases in October 2022.",
+   "note": "Source, collection and limitations are documented: three named databases with dates, the full search strings and filters in Supplementary Material 1 (which I read and which records a PubMed search dated 30 June 2022 with study type, human, female and adult filters), deduplication in Rayyan down to 1,081 records, the eligibility criteria in Supplementary Material 2, and the explicit limitation that 97 records had no abstract in the export so the models could assess only 984."
+  },
+  "E26": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text, reference list and supplementary files for a model card, system card, technical report or vendor documentation for Llama 3 70B or ChatGPT-4o mini, and for any statement that model transparency, openness or documentation informed the choice of model. Terms checked: model card, system card, technical report, documentation, transparency, open weights, open source. No such document is cited. The stated selection criteria are cost, accessibility, architectural diversity and alignment with the state of the art, and the black box transparency problem is raised only as a general concern about AI tools in the Introduction, not as a factor in choosing either model; the paper instead notes that OpenAI regularly updates its models."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, 2 Methods; Methods, 2.1 Llama 3; Methods, 2.2 ChatGPT-4o mini",
+   "quote": "The AI tools were employed in July 2024.",
+   "note": "The run date is reported, which is the part most papers omit, and the models are named with their size and access route (Llama 3 70B via Groq, ChatGPT-4o mini via the OpenAI API). The missing component is an exact version identifier: no API model string or dated snapshot is given for either reported model, and the paper states that OpenAI regularly updates its models, which concedes the version was not pinned. The published dataset contains columns named for exact endpoints such as llama3-70b-8192 and gpt-3.5-turbo-0125, but the columns holding the six reported configurations are named ia0 to ia2 and ia0_chatgpt to ia2_chatgpt and carry no version string."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Methods, 2 Methods; Results, 3",
+   "quote": "After duplicate removal using the Rayyan platform, a total of 1,081 articles remained.",
+   "note": "The evaluation uses the entire deduplicated output of a real PROSPERO-registered systematic review search, with its natural prevalence of 8.1%, with no curation, balancing or enrichment, and runs through the production Groq and OpenAI APIs, including their free-tier rate limits, which is the access route the authors recommend for practice. The one qualification, reported by the authors, is that 97 of the 1,081 records had no abstract in the export, so the models were applied to the 984 records that a real export would actually have given them."
+  },
+  "E29": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the Results, Discussion and supplementary files for any systematic analysis of the misclassified records: categorisation of error types, inspection of which articles were wrongly included or excluded, or reasons for the errors. Terms checked: error analysis, misclassif, reasons for, categories of error, examined the false. Only the confusion matrix counts and rates are reported (for example LLA_2 with 78 false positives and 18 false negatives). The paper explicitly defers the analysis, stating that a second phase of the study would assess the suitability of the articles selected by AI and those excluded by AI but included manually, and that it is crucial to determine whether the 22 articles excluded by the AI should have been retained. The published dataset would permit such an analysis but none is reported."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, 2.1 Llama 3; Methods, 2.2 ChatGPT-4o mini; Methods, process description",
+   "quote": "API Integration: We interfaced with the Llama 3 70B model through Groq’s RESTful API, which allowed for seamless integration into our existing research pipeline, and similarly, ChatGPT-4o mini was integrated using OpenAI’s API in our setup.",
+   "note": "The environment is described in four labelled stages (API integration, data processing, model invocation, response handling), with Python as the client, the authentication route, the free-tier constraints (rate limiting, computational resources, model availability and queuing), an academic setting with standard resources and cloud services, and Rayyan as the separate human screening platform. Integration into screening software is named only as future work."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion, 4, study limitations",
+   "quote": "Regarding study limitations, reliance on AI algorithms is notable, as the effectiveness of these tools heavily depends on the quality of the algorithm and training data.",
+   "note": "The limitations paragraph documents dependence on algorithm and training data quality, uncertain generalisation to other datasets, the risk that the AI misses relevant articles or adds irrelevant ones and thereby increases full-text workload, limits in human reviewer training, and the point that necessary human validation may erode the time savings. The 97 records without abstracts are reported in the Results as a further constraint."
+  },
+  "E32": {
+   "status": "partial",
+   "location": "Discussion, 4; Tables 2 and 3",
+   "quote": "It is crucial to determine if those 22 articles excluded by the AI should have been retained and whether the AI correctly identified relevant articles overlooked in the manual review.",
+   "note": "The tail is quantified rather than averaged away: missed eligible studies are counted for every configuration (18 to 20 for Llama, 35 for every ChatGPT configuration), the worst model is reported alongside the best (ChatGPT-4o mini sensitivity 56.2%, a 43.7% false negative rate), and lower confidence bounds are given (LLA_2 sensitivity 0.775, 95% CI 0.683 to 0.867). The missing component is characterisation: which studies were missed and why is not established, and the authors say determining it requires a second phase that was not carried out."
+  },
+  "E33": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and supplementary files for a rule fixed in advance that links a metric to a go, no-go or limited-deployment decision, and for a registered protocol for this validation study. Terms checked: prespecified, pre-specified, a priori, protocol, registered, threshold for adoption, decision rule, deployment. The PROSPERO registration covers the underlying systematic review, not this AI evaluation. The likelihood ratio interpretation bands are applied after the results are known, and the recommendation to use AI to exclude irrelevant articles with human review of AI inclusions is drawn from the findings rather than set beforehand."
+  },
+  "E34": {
+   "status": "present",
+   "location": "Methods, 2.3 Statistical analysis; Tables 2 and 3",
+   "quote": "These metrics were derived from 2 × 2 tables, with 95% confidence intervals calculated for each measure.",
+   "note": "Confidence intervals are attached to the headline metrics themselves, not only to a secondary statistic: Table 2 gives 95% CIs for sensitivity and specificity and Table 3 gives them for positive and negative predictive value and for both likelihood ratios, for all six configurations. For example LLA_2 sensitivity 0.775 (0.683 to 0.867) and specificity 0.914 (0.896 to 0.932)."
+  },
+  "E35": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text, the three supplementary files and the published dataset for any measured energy, carbon, environmental, compute or monetary cost of the runs. Terms checked: energy, carbon, emission, environmental, GPU, compute, token, cost, price, runtime, time to complete. Cost appears only as unmeasured price-tier statements, that Llama 3 is completely free through Groq and that ChatGPT-4o mini is offered at a reduced rate, plus a remark that no extensive local computational resources were needed. No runtime is reported. The published dataset does carry input and output token count columns, but only for an earlier gpt-3.5-turbo run that the paper does not report, and none for the six configurations that are reported."
+  }
+ }
+}

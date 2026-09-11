@@ -1,0 +1,159 @@
+{
+ "statuses": [
+  "present",
+  "partial",
+  "absent",
+  "not_applicable"
+ ],
+ "rule": "present only when the evidence is in the publication, its supplement or a linked repository and a location is recorded; partial when a component is missing; not_applicable only where the definition says so",
+ "fields": {
+  "E01": {
+   "name": "metrics_named",
+   "definition": "Screening performance metrics are named (sensitivity or recall, specificity, precision, accuracy, F1, workload saved)."
+  },
+  "E02": {
+   "name": "benchmark_dataset_identified",
+   "definition": "The evaluation dataset is identified: which review(s), how many records, how many included by the human reference."
+  },
+  "E03": {
+   "name": "prevalence_reported",
+   "definition": "Inclusion prevalence (included records over total) is reported or directly derivable from reported counts."
+  },
+  "E04": {
+   "name": "workflow_level_metric",
+   "definition": "At least one end-to-end workflow metric is reported: time saved, workload reduction, cost, or recall after the human step, not only per-record model metrics."
+  },
+  "E05": {
+   "name": "role_statement",
+   "definition": "The intended role of the model is stated (sole screener, second reviewer, triage or pre-screen) together with what remains a human decision."
+  },
+  "E06": {
+   "name": "disagreement_handling",
+   "definition": "How model versus human disagreements, overrides or escalations are handled in the proposed workflow is stated."
+  },
+  "E07": {
+   "name": "affected_groups_or_equity",
+   "definition": "The study names populations, languages, settings or study types at risk of differential exclusion, or states an equity goal for screening."
+  },
+  "E08a": {
+   "name": "subgroup_check_designed",
+   "definition": "The evaluation design includes a planned check of performance by subgroup, language, setting or study type."
+  },
+  "E08b": {
+   "name": "subgroup_results_reported",
+   "definition": "Performance or error rates are reported disaggregated by at least one subgroup (topic, study type, population, language, source)."
+  },
+  "E08c": {
+   "name": "language_region_results",
+   "definition": "Performance is measured across records in different languages or from different regions or settings."
+  },
+  "E09": {
+   "name": "acceptable_error_defined",
+   "definition": "An acceptable error or target threshold (for example minimum sensitivity) is stated together with who set it or the norm it follows."
+  },
+  "E10": {
+   "name": "user_perspective_evidence",
+   "definition": "Reviewer, user or professional perspectives are collected as evidence (survey, interview, usability or workload assessment)."
+  },
+  "E11": {
+   "name": "failure_modes_identified",
+   "definition": "Critical failure modes are named (missed eligible studies, hallucinated eligibility reasoning, over-confident exclusion, inconsistency across runs)."
+  },
+  "E12": {
+   "name": "interaction_failure_checks",
+   "definition": "Over-reliance, automation bias or alert fatigue in the human and model workflow is addressed in the design or discussed with a mitigation."
+  },
+  "E13": {
+   "name": "intended_use_scope",
+   "definition": "Intended use and non-intended use or scope limits of the screening approach are stated."
+  },
+  "E14": {
+   "name": "code_or_workflow_published",
+   "definition": "Code, prompts or the workflow are published in a repository or supplement with a stable reference (URL, DOI, commit or version)."
+  },
+  "E15": {
+   "name": "model_prior_evidence",
+   "definition": "A rationale or prior evidence for the choice of model is given."
+  },
+  "E16": {
+   "name": "ground_truth_provenance",
+   "definition": "The reference standard is defined (for example dual independent human screening or final review inclusion) and its provenance stated."
+  },
+  "E17": {
+   "name": "config_reported",
+   "definition": "Decoding or constraint parameters are reported (temperature, top_p, max tokens, seed, structured output)."
+  },
+  "E18": {
+   "name": "prompt_text_published",
+   "definition": "The verbatim prompt or prompts are available in the paper, supplement or repository."
+  },
+  "E19": {
+   "name": "prompt_reinforces_human_authority",
+   "definition": "The prompt includes an uncertainty, unsure or escalation option, or instructs deference to human review. Not applicable when E18 is absent."
+  },
+  "E20": {
+   "name": "eligibility_criteria_stated",
+   "definition": "The eligibility criteria supplied to the model are the review's own criteria and are stated or reproduced."
+  },
+  "E21": {
+   "name": "recall_prioritised",
+   "definition": "The configuration, threshold or decision rule explicitly prioritises sensitivity or recall over precision."
+  },
+  "E22": {
+   "name": "leakage_contamination_addressed",
+   "definition": "Data leakage or training contamination is discussed (model knowledge cutoff versus review date, memorisation of included studies) with a mitigation or an explicit limitation."
+  },
+  "E23": {
+   "name": "known_failure_modes_tested",
+   "definition": "Known LLM failure modes (hallucination, prompt injection, specious plausibility, misuse) are documented and at least one is tested."
+  },
+  "E24": {
+   "name": "prompt_robustness_tested",
+   "definition": "Prompt robustness is tested: prompt variants, wording sensitivity, or repeat-run consistency."
+  },
+  "E25": {
+   "name": "data_provenance_documented",
+   "definition": "Dataset source, collection method and limitations are documented (a data card equivalent)."
+  },
+  "E26": {
+   "name": "model_card_referenced",
+   "definition": "A model card, system card or equivalent documentation for the chosen model is cited, or model transparency is explicitly considered in model choice."
+  },
+  "E27": {
+   "name": "model_version_pinned",
+   "definition": "An exact model version identifier and the access or run date are reported."
+  },
+  "E28": {
+   "name": "realistic_conditions",
+   "definition": "The evaluation uses the complete record set of a real review (not a curated or balanced subset) under the access route intended for practice."
+  },
+  "E29": {
+   "name": "error_analysis",
+   "definition": "A systematic error analysis of misclassifications is reported (quantitative or qualitative)."
+  },
+  "E30": {
+   "name": "test_environment_described",
+   "definition": "The test environment is described (API or user interface, batching, integration with screening software)."
+  },
+  "E31": {
+   "name": "limitations_and_failure_modes_documented",
+   "definition": "A limitations section documents failure modes and uncertainties."
+  },
+  "E32": {
+   "name": "worst_case_analysis",
+   "definition": "Missed eligible studies are characterised (which studies, why) or tail and worst-case performance is reported, not only averages."
+  },
+  "E33": {
+   "name": "decision_rule_prespecified",
+   "definition": "A pre-specified decision rule links metrics to a go, no-go or limited-deployment decision."
+  },
+  "E34": {
+   "name": "confidence_intervals",
+   "definition": "Confidence intervals or another uncertainty measure are reported for headline metrics."
+  },
+  "E35": {
+   "name": "energy_cost_reported",
+   "definition": "Energy, compute or environmental cost is measured and disclosed."
+  }
+ }
+}

@@ -1,0 +1,241 @@
+{
+ "study": {
+  "pmid": "41422008",
+  "pmc": "PMC12831233",
+  "doi": "10.1186/s12913-025-13901-4",
+  "title": "Harnessing ChatGPT for abstract screening in health-related scoping reviews: the role of structured eligibility criteria",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": ["ChatGPT 4.0"],
+  "task_note": "ChatGPT 4.0 was called through an Excel macro API connector to include or exclude abstracts from a completed scoping review on digital tools for interprofessional interaction in healthcare (15,306 unique records, 188 human inclusions), first with the review's original criteria and then with three sets of criteria refined by thematic analysis of the model's own explanations, evaluated on a 25% stratified subsample of 3,827 abstracts."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-code-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/41422008_PMC12831233.txt",
+  "data/pmc_fulltext/41422008_PMC12831233.xml",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12831233/",
+  "https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-025-13901-4",
+  "https://static-content.springer.com/esm/art%3A10.1186%2Fs12913-025-13901-4/MediaObjects/12913_2025_13901_MOESM1_ESM.xlsx",
+  "https://static-content.springer.com/esm/art%3A10.1186%2Fs12913-025-13901-4/MediaObjects/12913_2025_13901_MOESM2_ESM.pdf",
+  "https://static-content.springer.com/esm/art%3A10.1186%2Fs12913-025-13901-4/MediaObjects/12913_2025_13901_MOESM3_ESM.pdf",
+  "https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12913-025-13901-4/MediaObjects/12913_2025_13901_Fig2_HTML.png"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, Derivation of the new prompts and their performance analysis; Table 1",
+   "quote": "The metrics included: (1) sensitivity, (2) specificity, (3) accuracy, (4) balanced accuracy, (5) positive predictive value, (6) negative predictive value, (7) F1 score, (8) false negative rate, (9) proportion missed, (10) false positive rate, 11) Matthews correlation coefficient",
+   "note": "Workload savings is the twelfth metric in the same list, and Table 1 gives the formula and a plain-language explanation for every metric."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Methods, Underlying material: description of the scoping review",
+   "quote": "The database search yielded 15 306 unique results, the abstracts of which were screened by two blinded researchers, with a third reviewer resolving any conflicts, ultimately resulting in 188 inclusions.",
+   "note": "The review is identified by topic and by its published protocol (reference 31). The evaluation subset for the refined prompts is separately identified as 3,827 abstracts comprising 25% of each outcome category (2,465 TN, 149 TP, 20 FN, 1,193 FP)."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Part 2: Performance of the rephrased inclusion and exclusion criteria",
+   "quote": "Given the highly imbalanced nature of the dataset (imbalance ratio, i.e. number of excluded abstracts divided by the number of included abstracts, at 21.709), the accuracy of the prompts differed",
+   "note": "Prevalence is stated as an imbalance ratio for the evaluation subset and is also directly derivable for the full review from 188 inclusions out of 15,306 unique records, and for the subset from the reported cell counts in appendix 2."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Part 2: Performance of the rephrased inclusion and exclusion criteria; Table 1",
+   "quote": "Under the hypothesis that all abstracts evaluated as positive require human review, the narrow prompt provided the highest workload savings (0.825).",
+   "note": "Workload savings is defined and reported for every individual and combined prompt in appendix 2 and appendix 3, and the number of undecided abstracts requiring manual review is reported for each combination, which is an explicit end-to-end workload figure rather than a per-record model metric."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "A possible screening mode might be to proceed with solo-screening on those abstracts that were included when combining the decisions, e.g., of the narrow and wide prompt and apply the gold-standard screening of two reviewers on those abstracts that resulted in differing decisions",
+   "note": "The role is a screening aid alongside one human screener, with two human reviewers retained for the cases the model combination leaves undecided. The Discussion also states that human oversight is still paramount, so what remains a human decision is explicit."
+  },
+  "E06": {
+   "status": "present",
+   "location": "Methods, Derivation of the new prompts and their performance analysis; Discussion",
+   "quote": "We combined ChatGPT’s decisions from each prompt using two approaches: (1) conflicts between the prompts were left undecided to be potentially resolved by a human researcher, or (2) conflicts were resolved through majority voting.",
+   "note": "Two explicit escalation rules are defined and their cost is quantified: the undecided route sends 422 to 1,031 abstracts (11% to 27%) to human resolution, and the majority-vote route resolves conflicts without a human. What happens when the single human screener and the model disagree in the proposed solo-screening mode is not separately specified."
+  },
+  "E07": {
+   "status": "present",
+   "location": "Results, Part 1: Population; Results, Part 1: Context",
+   "quote": "In contrast, some abstracts were falsely excluded because they referenced broad categories of healthcare providers, such as “medical doctors” and “palliative care providers”.",
+   "note": "The study names specific provider populations that the model systematically excludes (palliative care providers, broadly named provider groups), specific settings it fails to recognise as healthcare contexts, and publication types it misclassifies. This is a methodological account of differential exclusion rather than a social equity goal, which is never stated."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Methods, In-depth analysis of ChatGPT’s responses and the gold standard error rate",
+   "quote": "The categories were devised a priori from the scoping review’s exclusion criteria and included: no digital tool, no interaction between healthcare professionals, interaction between healthcare professionals with the same background and/or same organization",
+   "note": "The coding categories were fixed in advance and include publication types (conference abstract, editorial, book or chapter) and content categories, and per-category correctness is then reported. The planned stratification is by exclusion reason and publication type, not by language, region or patient population."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Part 1: Exclusion criteria",
+   "quote": "ChatGPT correctly detected the presence or absence of the exclusion criteria “students/education” in over 98% of abstracts.",
+   "note": "Correctness is reported separately for each exclusion criterion category: over 99% for conference abstract, editorial and book, over 98% for students and education, 91.4% for patient and healthcare provider interaction, and 100% for references without abstracts. Appendix 3 additionally disaggregates false exclusions by whether the study survived full-text screening."
+  },
+  "E08c": {
+   "status": "partial",
+   "location": "Methods, Underlying material: description of the scoping review",
+   "quote": "To capture all available scientific literature on this topic, all types of primary research approach and study design, including meta-analysis from any healthcare setting and geographic location, published in English, French, German, Portuguese, or Spanish were included in the study.",
+   "note": "Performance is measured over a record set that is explicitly multilingual (five languages) and unrestricted by geography and healthcare setting, so the evaluation spans languages and regions. The missing component is any breakdown or comparison: no result is reported by language, by country or by setting, and language is never recorded as a variable."
+  },
+  "E09": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text, the three appendices and the Discussion for a stated acceptable error rate, minimum sensitivity, maximum proportion missed or any target threshold, and for who set it or which norm it follows. Terms checked: threshold, acceptable, target, minimum, benchmark, standard, on a par, criterion. The Discussion states the opposite, that given the degree of human error it is important to establish the performance metrics at which AI tools can be considered on a par with human researchers, which concedes that no such threshold exists. Human error rates (3.56% false inclusion, 0.36% omission) are reported as context but never converted into a target."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and appendices for a survey, interview, focus group, questionnaire, usability test, workload perception measure or any collected reviewer or user feedback. Terms checked: survey, interview, questionnaire, usability, perception, acceptability, user, trust measurement. Trust and transparency are discussed only from the cited literature; no perspectives were collected from the reviewers or any other users in this study."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Methods, In-depth analysis of ChatGPT’s responses and the gold standard error rate",
+   "quote": "ChatGPT 4.0 screened the abstracts twice, producing slightly different results across the two rounds (interrater-reliability (Cohen’s kappa): 0.76, standard error: 0.01, 95% confidence interval: 0.75–0.78).",
+   "note": "Inconsistency across runs is named and quantified (1,648 discrepant abstracts). Missed eligible studies are named and counted as false negatives, over-inclusion is named, and wrongly inferred context (the model asserting healthcare providers that the abstract never names) is named as a distinct failure pattern."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "Regardless of the promising results in this study, it needs to be emphasized that human oversight is – at the current point in time – still paramount.",
+   "note": "The risk of relying on the model is addressed with two mitigations: human oversight is asserted as still paramount, and eliciting explanations for every decision is offered as a way to open the black box and support calibrated trust. The missing component is that over-reliance, automation bias and alert fatigue are never named as such, and no check for them is built into the design; reviewer fatigue is mentioned only as something the model reduces."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Limitations; Discussion; Conclusion",
+   "quote": "First, our results are based on a single scoping review, thus additional research is required to explore the applicability of the results to other topics and disciplines.",
+   "note": "Intended use is AI-assisted abstract screening for scoping reviews alongside human screening, with the proposed solo-screening plus two-reviewer escalation mode in the Discussion. Scope limits are stated explicitly: one scoping review, one chatbot, one eligibility-criteria framework, findings tied to the model version at the time of the study, and human oversight still required."
+  },
+  "E14": {
+   "status": "partial",
+   "location": "Fig. 2; Table 2; Supplementary Information statement; Data availability",
+   "quote": "Supplementary Information The online version contains supplementary material available at 10.1186/s12913-025-13901-4.",
+   "note": "The verbatim prompt is published as Fig. 2 and the three refined criteria sets are published verbatim in Table 2, both inside the article, and three supplementary appendices carry the article DOI. The missing component is the location required by the definition: no code, prompt or workflow file is deposited in a repository or supplement, the appendices contain qualitative coding and metric tables only, there is no GitHub, OSF, Zenodo or Dryad link anywhere, and the Data availability statement offers the datasets only from the corresponding author on reasonable request. The only versioned artefact is the third-party Excel macro, cited as version 6.9."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Methods, Underlying material: description of the scoping review",
+   "quote": "ChatGPT was chosen due to its widespread use in various domains and strong performance across tasks [ 8 , 32 , 33 ].",
+   "note": "Three references are cited to support the choice, and the Background additionally cites pilot evidence for large language models in systematic review screening and an earlier trial of ChatGPT in a healthcare scoping review by the same group."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Underlying material: description of the scoping review",
+   "quote": "These screening results are defined as the gold standard and “correct” decisions for comparing the performance of humans versus AI (Fig. 1 ).",
+   "note": "The reference standard is dual independent blinded human screening with third-reviewer conflict resolution from a completed, protocol-published scoping review. The study also audits the reference standard itself, finding 24 wrongly included and 4 wrongly excluded abstracts, a 3.56% false inclusion rate and a 0.36% omission rate."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Methods, Derivation of the new prompts and their performance analysis",
+   "quote": "We did not enforce a word limit and set the temperature – a parameter that controls the randomness of the response – to 0.7.",
+   "note": "Temperature is reported with an explicit justification, the absence of a length limit is reported, and the call configuration is stated to elicit responses without recalling prior conversations, which fixes the context between records. No top_p, seed or structured output schema is reported."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Fig. 2, Prompt used to elicit ChatGPT’s decisions and reasoning; Table 2, Refined criteria based on the in-depth analysis",
+   "quote": "A specific digital tool designed for interaction (i.e., communication, cooperation, coordination, and collaboration) among the target population is explicitly mentioned in the abstract .",
+   "note": "Fig. 2 reproduces the original prompt verbatim as a screenshot with its three labelled parts (instruction, context, abstract), and Table 2 reproduces the full text of the narrow, balanced and wide criteria that replace the context block in the three refined prompts. The quote is the narrow concept criterion from Table 2. The Fig. 2 instruction reads: I want you to write Include if the abstract fulfils both conditions of the inclusion criteria AND NONE of the exclusion criteria. A partial inclusion is an exclusion! Provide an explanation for your decision."
+  },
+  "E19": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Read the verbatim prompt in Fig. 2 (fetched at https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12913-025-13901-4/MediaObjects/12913_2025_13901_Fig2_HTML.png) and all three refined criteria sets in Table 2, looking for an unsure, uncertain, unclear or borderline option, a confidence or relevance rating, or any instruction to defer or flag to a human reviewer. Terms checked: unsure, uncertain, unclear, maybe, borderline, flag, escalate, human, reviewer, confidence. The prompt forces a binary Include decision, states that a partial inclusion is an exclusion, and asks only for an explanation. The undecided category in this study is produced afterwards by comparing two prompts, not by anything in the prompt itself, and the Discussion raises a relevance rating scale only as an alternative the authors did not use."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, Underlying material: description of the scoping review; Table 2",
+   "quote": "We included a manuscript if it featured a digital tool facilitating interaction between a minimum of two healthcare workers (1) from different professional backgrounds, or (2) with the same background but working in different organizations.",
+   "note": "The criteria supplied to the model are the review's own criteria, given in Methods, reproduced in the prompt in Fig. 2, and then systematically reformulated into narrow, balanced and wide versions in Table 2 with the changed text marked in bold."
+  },
+  "E21": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and appendices for an explicit statement that sensitivity or recall is prioritised over precision, for a recall target, or for a decision rule, threshold or configuration that favours inclusion. Terms checked: prioritise, prioritize, favour recall, high recall, sensitivity threshold, err on the side, conservative, over-inclusive by design. The study reports the sensitivity and specificity trade-off across the narrow, balanced and wide prompts neutrally, selects and discusses combinations on balanced accuracy, Matthews correlation coefficient and workload savings, and recommends the narrow and wide combination partly because it lowers workload. Temperature 0.7 is justified by the breadth of scoping review questions, not by recall."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text, limitations and appendices for data leakage, training contamination, memorisation of the review's included studies, knowledge cutoff, or any comparison of the model training date against the 2022/2023 review and its publication window. Terms checked: contamination, leakage, memoris, memoriz, cutoff, cut-off, training date, prior exposure, seen during training. The nearest statement is that ChatGPT is not open source so its training and model data remain undisclosed, which concerns transparency and model bias rather than leakage, and no contamination risk or mitigation is raised anywhere."
+  },
+  "E23": {
+   "status": "present",
+   "location": "Methods, In-depth analysis of ChatGPT’s responses and the gold standard error rate; Results, Part 1",
+   "quote": "We randomly sampled 10% of all correctly classified (included and excluded) abstracts and qualitatively evaluated the correctness of the explanations.",
+   "note": "Plausible but unfounded model reasoning is both documented and tested. The reasoning behind correct decisions was audited on a 10% random sample (n = 60 true positives, n = 986 true negatives) by two independent coders, all 80 false negatives and 113 false positives were coded inductively to saturation, and the resulting patterns include the model inferring healthcare providers or digital tools that the abstract never states and one case where it mistook general practitioners for the patient. Run-to-run inconsistency was also tested by screening twice. Prompt injection and misuse are not addressed."
+  },
+  "E24": {
+   "status": "present",
+   "location": "Methods, Derivation of the new prompts and their performance analysis; Results, Part 2",
+   "quote": "Based on the thematic analysis above, we reformulated the original inclusion and exclusion criteria in three refined prompts, using the “Population-Concept-Context” (PCC) scheme suggested by the Joanna Briggs Institute (Table 1 ) [ 30 ].",
+   "note": "This is the core design of the study. Four prompt versions (original, narrow, balanced, wide) are run on the same records and compared on twelve metrics, five combinations are evaluated, and repeat-run consistency is measured separately by screening the whole set twice (Cohen's kappa 0.76). The limitations note that only one criteria framework was tested."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Underlying material: description of the scoping review; Methods, Derivation of the new prompts",
+   "quote": "The protocol detailing the methodology is published elsewhere [ 31 ].",
+   "note": "Source, collection and limitations are all documented: the topic and objectives of the underlying scoping review, its eligibility languages and settings, a published protocol, the 15,306 unique database results, how the 25% subset was drawn (random number assigned in Excel within each category, sorted ascending, first 25% taken), and the limitation that everything rests on this single review."
+  },
+  "E26": {
+   "status": "partial",
+   "location": "Limitations",
+   "quote": "Additionally, since ChatGPT is not open source, its training and model data, including model biases, remain undisclosed [ 24 , 42 ].",
+   "note": "Model transparency is explicitly considered, and in the same paragraph as the choice to use a single chatbot; the Discussion also treats the black box nature of these tools as a barrier to uptake and offers explanation elicitation as a partial remedy. The missing components are that no model card, system card or vendor documentation is cited, and transparency is raised retrospectively as a limitation rather than as a criterion that shaped the choice, which was made on widespread use and strong performance."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, Underlying material: description of the scoping review; Methods, Derivation of the new prompts",
+   "quote": "In order to do so, we retrospectively trained ChatGPT 4.0 in a follow-up study on a subset of 100 abstracts of this scoping review [ 17 ].",
+   "note": "The model is named as ChatGPT 4.0 throughout, which is a product version rather than an exact model identifier: no API snapshot string is given, and the version actually served through the Excel macro is not stated. No access or run date is reported either; the only dates are the 2022/2023 scoping review and the 31 January 2025 submission. The limitations acknowledge that the findings reflect performance at the time of the study."
+  },
+  "E28": {
+   "status": "partial",
+   "location": "Methods, Derivation of the new prompts and their performance analysis",
+   "quote": "In order to evaluate the performance of these refined prompts, we constructed a subset of abstracts comprising 25% of each category – 2465 for TN, 149 for TP, 20 for FN, 1193 for FP – and obtained ChatGPT 4.0’s decisions.",
+   "note": "The realistic components are met: the records come from a real completed scoping review, the earlier original-prompt run covered the entire set of 15,306 abstracts, the sampling is proportional within each outcome category so the class imbalance is preserved rather than balanced, and the access route (API calls from Excel) is one a review team could use. The missing component is that the headline evaluation of the refined prompts runs on a 3,827 record subsample rather than the complete record set."
+  },
+  "E29": {
+   "status": "present",
+   "location": "Methods, In-depth analysis of ChatGPT’s responses and the gold standard error rate; Results, Part 1; Supplementary appendix 1",
+   "quote": "We inductively analysed 113 false positives (2% of FP) and all 80 false negatives (100% of FN), identifying common error patterns and the underlying assumptions that led to misclassification.",
+   "note": "The error analysis is both quantitative and qualitative, coded by two researchers with joint calibration on the first 30 cases and analysed to saturation, organised into themes and subthemes by PCC category, and extended to 51 records that flipped between the two runs. Supplementary appendix 1 (fetched as MOESM1 xlsx) records each error pattern with the identifiers of the individual abstracts concerned."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, Derivation of the new prompts and their performance analysis",
+   "quote": "The responses were gathered via an application programming interface in Excel (Microsoft Corporation), using version 6.9 of an Excel macro (ListenData, 2023) and the ‘AIAssistant’ function, which elicited responses from ChatGPT without recalling prior conversations.",
+   "note": "The access route, the tool and its version, the absence of conversational carry-over between records, and the analysis environment (Stata version 16) are all stated. No integration with dedicated screening software is described for the model, though Covidence-style dual screening is what produced the reference standard."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Limitations",
+   "quote": "As large language models – such as the one underlying ChatGPT – continue to evolve, our findings reflect ChatGPT’s performance at the time of the study and may not generalize to future iterations.",
+   "note": "The Limitations section documents dependence on a single scoping review, use of a single chatbot, undisclosed training data and model biases, version drift over time, and testing of only one eligibility-criteria framework. Failure modes themselves are documented at length in Results Part 1 and appendix 1 rather than in this section."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Results, Part 2; Results, Part 1: Population and Concept; Supplementary appendix 1",
+   "quote": "When considering only the articles included after the full text screening, the number of false exclusions ranged from three (NW, NB, NBW) to twelve (N).",
+   "note": "Missed eligible studies are characterised in three ways: counted for every prompt configuration (11 for wide up to 52 for narrow), re-counted against the studies that survived full-text screening, which is the consequential tail, and explained qualitatively, since all 80 false negatives from the original run were coded and their causes named (broad provider terms, implicit tool references, short abstracts of 58 and 77 words against a 295 word average, and misreading the abstract's focus)."
+  },
+  "E33": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and appendices for a pre-specified rule linking any metric to a go, no-go or limited-deployment decision, for a registered protocol of this evaluation, or for a stated adoption criterion. Terms checked: prespecified, pre-specified, a priori threshold, decision rule, adoption, deployment, recommend if, go, no-go. The evaluation protocol for the underlying scoping review is published, but no decision rule for this AI evaluation is set in advance, and the Discussion explicitly frames the establishment of such performance levels as future work."
+  },
+  "E34": {
+   "status": "partial",
+   "location": "Methods, In-depth analysis of ChatGPT’s responses and the gold standard error rate; Supplementary appendix 2 and appendix 3",
+   "quote": "(interrater-reliability (Cohen’s kappa): 0.76, standard error: 0.01, 95% confidence interval: 0.75–0.78)",
+   "note": "An uncertainty measure is reported, with both a standard error and a 95% confidence interval, but only for the run-to-run agreement of the model with itself. The headline screening metrics carry none: appendix 2 and appendix 3, which I fetched and read, give sensitivity, specificity, predictive values, F1, accuracy, balanced accuracy, error rates, Matthews correlation coefficient and workload savings for all nine configurations as bare point estimates with no interval, and Fig. 3 and Fig. 4 plot the same point estimates."
+  },
+  "E35": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full text and all three appendices for energy use, carbon or environmental cost, compute resources, token counts, API spend, runtime or any efficiency measure expressed in resources rather than screening workload. Terms checked: energy, carbon, emission, environmental, GPU, compute, token, cost, price, runtime, time to complete. The word cost appears once, in the phrase at the cost of missing 52 studies. Efficiency is quantified only as workload savings, that is the proportion of abstracts a human need not read."
+  }
+ }
+}

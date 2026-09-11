@@ -1,0 +1,252 @@
+{
+ "study": {
+  "pmid": "41626985",
+  "pmc": "PMC12657656",
+  "doi": "10.1017/rsm.2025.10014",
+  "title": "Optimal large language models to screen citations for systematic reviews",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": [
+   "GPT-4o",
+   "Gemini 1.5 Pro",
+   "Claude 3.5 Sonnet",
+   "Llama 3.3 70B"
+  ],
+  "task_note": "Title and abstract screening of the complete citation sets retrieved for five clinical questions of the Japanese Clinical Practice Guidelines for the Management of Sepsis and Septic Shock 2024, with four LLMs judged against the guideline team's conventional two-reviewer screening."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "evidence-extractor-agent",
+ "sources_consulted": [
+  "data/pmc_fulltext/41626985_PMC12657656.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12657656/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12657656/supplementaryFiles",
+  "https://github.com/seveneleven711thanks39/llm-assisted_citation_screening",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/README.md",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/screening_text_generator.py",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/gpt_integration.py",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/claude_integration.py",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/gemini_integration.py",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/llama_integration.py",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/run_example.py",
+  "https://raw.githubusercontent.com/seveneleven711thanks39/llm-assisted_citation_screening/main/data_loader.py",
+  "https://www.medrxiv.org/content/10.1101/2024.06.26.24309513v1"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, Performance measures",
+   "quote": "Accuracy metrics: sensitivity and specificity were calculated based on the number of references identified as “relevant” by each LLM and the number of references identified as “irrelevant” by each LLM.",
+   "note": "Processing time, cost and a consistency rate are also named in the same subsection."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Results, Conventional citation screening",
+   "quote": "The manual citation screening process, based on titles and abstracts, selected 112 of 5,634 publications (2.0%) on CQ1, 17 of 3,418 (0.5%) on CQ2, 14 of 1,038 (1.3%) on CQ3, 70 of 4,326 (1.6%) on CQ4, and 39 of 2,253 (1.7%) on CQ5.",
+   "note": "The five clinical questions are the reviews; Table 1 gives their PICO. Record counts and human-reference inclusion counts are given per clinical question."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Conventional citation screening",
+   "quote": "Subsequent full-text screening selected a total of 41 publications for qualitative analysis: 8 from CQ1 (0.14%), 4 from CQ2 (0.12%), 4 from CQ3 (0.39%), 17 from CQ4 (0.39%), and 8 from CQ5 (0.36%)",
+   "note": "Prevalence is printed as a percentage at both the title and abstract stage (0.5 to 2.0 percent) and the full-text stage (0.12 to 0.39 percent)."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Comparison of overall citation screening time, cost for 100 studies, and consistency across the LLMs",
+   "quote": "The overall citation screening times for 100 studies (at the 95% CI) using GPT-4o, Gemini 1.5 Pro, Claude 3.5 Sonnet, and Llama 3.3 70B were 0.93 [0.92–0.98] min, 1.53 [1.49–1.74] min, 3.25 [3.10–3.79] min, and 1.20 [1.12–1.24] min, respectively",
+   "note": "Screening time and API cost per 100 records are both measured end to end; the discussion also cites a prior study reporting workload reduction above 90 percent."
+  },
+  "E05": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "While LLM-assisted citation screening can serve as a de facto second reviewer preceding full-text screening, different performance scores highlight the necessity for systematic reviewers to consider their specific needs regarding accuracy versus workload reduction",
+   "note": "The role is stated (de facto second reviewer placed before full-text screening) but the paper never states which decision remains with the human, beyond implying that false positives cost additional review effort."
+  },
+  "E06": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched Methods, Results and Discussion for adjudication, override, escalation or arbitration of LLM versus human decisions. The only disagreement rule given is human to human inside the reference standard (third neutral reviewer), and the post hoc ensemble rule resolves model to model disagreement by counting any include as an include. No model versus human disagreement procedure is proposed."
+  },
+  "E07": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the whole text for equity, disparity, differential exclusion, and for named populations, languages, regions, settings or study types said to be at risk of being missed. The search was limited to Japanese and English records and the limitations name only sepsis as a domain constraint on generalisability, which is not a statement about differential exclusion of any group."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Methods, Statistical analysis",
+   "quote": "We used meta-analysis methods to calculate the integrated sensitivity and specificity across different CQs separately in the primary and secondary analyses",
+   "note": "The design pre-specifies per clinical question (topic) estimates plus a heterogeneity inspection across clinical questions."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Figure 2 caption, and Supplement eTables 4 and 5",
+   "quote": "The individual sensitivity and specificity for each clinical question (CQ) and the integrated sensitivity values across CQs 1–5 were compared among GPT-4o, Gemini 1.5 Pro, Claude 3.5 Sonnet, and Llama 3.3 70B using confidence intervals.",
+   "note": "Supplement eTables 2 to 5 give TP, FP, TN, FN and sensitivity and specificity per clinical question, per model and per repeat round."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched Methods, Results, figures and the supplementary eTables for performance stratified by record language, country, region or setting. Records in Japanese and English were both searched via Ichushi-Web and PubMed or CENTRAL, but no result is reported by language or by source database."
+  },
+  "E09": {
+   "status": "present",
+   "location": "Background",
+   "quote": "As sufficient sensitivity has been defined as achieving a recall rate of at least 95%, such accuracy with minimal risk of missing relevant studies would be needed in this area.",
+   "note": "The threshold is at least 95 percent recall and is attributed to the cited screening automation literature (references 5, 6 and 16) rather than set by the authors."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for survey, interview, questionnaire, usability, acceptability, satisfaction and self-reported workload. Reviewer characteristics (age, sex, profession, qualifications, experience, prior systematic reviews) were collected and tabulated in eTable 1, but no reviewer or user perspective on the LLM workflow was elicited."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "As some relevant studies may be missed by GPT-4o, reviewers should select appropriate LLMs based on their particular priorities, balancing the need to identify potentially relevant studies with the benefit of reducing the workload for human reviewers.",
+   "note": "Named failure modes are missed eligible studies (false negatives), excess false positives that create review effort, and run to run inconsistency, which is quantified as a consistency rate."
+  },
+  "E12": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched for over-reliance, overreliance, automation bias, complacency, alert fatigue, deskilling and trust calibration. The paper discusses reviewer workload and the burden of checking false positives but never treats the human and model interaction as a failure surface and proposes no mitigation."
+  },
+  "E13": {
+   "status": "partial",
+   "location": "Discussion, Limitations",
+   "quote": "First, we only used data from the J-SSCG 2024, which focuses on sepsis. This may have limited the generalizability of our findings to other fields.",
+   "note": "Intended use is stated in the Discussion as a de facto second reviewer before full-text screening, and the evidence is scoped to one sepsis guideline, but no non-intended use or out-of-scope condition for the screening approach itself is stated."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Methods, Study design and settings",
+   "quote": "The source code for this study is publicly available in the GitHub repository",
+   "note": "The repository resolves at https://github.com/seveneleven711thanks39/llm-assisted_citation_screening and holds the loader, the prompt generator and one integration script per model. No commit hash or release tag is cited, and the data files are password protected with the passcode oami2025."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Background",
+   "quote": "Recent LLMs such as GPT, Gemini, Claude, and Llama have shown promising potential for understanding and generating natural language-based responses, which may streamline the citation screening process.",
+   "note": "The rationale is that the four models are the currently popular ones with cited prior evidence, and the authors' own earlier GPT-4 Turbo study motivated testing newer models."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Conventional citation screening",
+   "quote": "The screening process involved two independent reviewers who individually assessed the titles and abstracts of each study. Disagreements were resolved through discussion or, when necessary, by consulting a third neutral reviewer.",
+   "note": "Provenance is the J-SSCG 2024 systematic review team; the primary reference standard is the final full-text inclusion list and the secondary reference standard is the title and abstract inclusion list."
+  },
+  "E17": {
+   "status": "partial",
+   "location": "Repository: https://github.com/seveneleven711thanks39/llm-assisted_citation_screening/blob/main/llama_integration.py",
+   "quote": "max_new_tokens=1024,\n                temperature=0.7",
+   "note": "The article reports no decoding parameters at all. The repository code reports max_tokens 4096 for Claude and max_new_tokens 1024 with temperature 0.7 for the Llama call, and safety settings for Gemini, but no temperature, top_p or seed for GPT-4o or Gemini, and no structured output constraint. Coverage is therefore incomplete and the reported temperature of 0.7 is inconsistent with the paper's claim of high run to run reproducibility."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Methods, LLMs",
+   "quote": "You are conducting a systematic review and meta-analysis, focusing on a specific area of medical research. Your task is to evaluate research studies and determine whether they should be included in your review.",
+   "note": "The full command prompt for CQ1 is reproduced in the article body, and the repository file screening_text_generator.py holds a runnable version of the same prompt for CQ2."
+  },
+  "E19": {
+   "status": "partial",
+   "location": "Repository: https://github.com/seveneleven711thanks39/llm-assisted_citation_screening/blob/main/screening_text_generator.py",
+   "quote": "When judging each domain, if there is uncertainty in the decision due to a lack of adequate information, please answer with include in order to minimize the possibility of falsely excluding potentially relevant literature.",
+   "note": "The repository prompt contains an explicit uncertainty rule that routes doubtful records to include, which sends them onward to human full-text review. It stops short of the definition because the output stays a forced binary include or exclude with no unsure label and no instruction to defer to a human, and the prompt reproduced in the article body omits this uncertainty sentence entirely."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, LLMs, and Table 1",
+   "quote": "For each query, we strictly adhered to the same phrases outlined in the framework of the CQs formulated by the J-SSCG 2024 members for conventional citation screening",
+   "note": "Table 1 reproduces the population, intervention, comparison and study design for all five clinical questions, and the prompt in the body reproduces the CQ1 criteria verbatim."
+  },
+  "E21": {
+   "status": "present",
+   "location": "Methods, Statistical analysis",
+   "quote": "To maximize sensitivity, we aggregated the individual decisions of each LLM and counted the number of publications identified as “relevant” by any of them.",
+   "note": "The ensemble decision rule is an explicit any-include union chosen to maximise sensitivity, and the repository prompt likewise instructs the model to include when uncertain to avoid false exclusion."
+  },
+  "E22": {
+   "status": "present",
+   "location": "Discussion, Limitations",
+   "quote": "Fifth, the potential risk of cross-contamination between LLMs and the training data used by model developers remains a concern, particularly regarding the J-SSCG 2024 dataset.",
+   "note": "Declared as an explicit limitation with no mitigation beyond a call for continuous monitoring. The Japanese guideline was published in December 2024 and the English version in March 2025, after most of the screening runs, which the paper does not use as an argument."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Methods, LLMs",
+   "quote": "The screening process was repeated in triplicate to ensure reproducibility. In the replicate process, the exact same prompt, same data, and same conditions were used each time.",
+   "note": "Run to run inconsistency is the only known failure mode that is documented and tested, and it is quantified as a consistency rate of 95.9 to 98.9 percent. Hallucination, prompt injection, specious plausibility and misuse are neither documented nor tested, and the models were asked for a bare include or exclude token with no rationale that could be audited."
+  },
+  "E24": {
+   "status": "present",
+   "location": "Results, Comparison of overall citation screening time, cost for 100 studies, and consistency across the LLMs",
+   "quote": "The consistency for LLM-assisted citation screening (at the 95% CI) using GPT-4o, Gemini 1.5 Pro, Claude 3.5 Sonnet, and Llama 3.3 70B were 98.9% [95.9–99.2], 97.8% [96.6–98.7], 95.9% [95.6–96.6], and 98.0% [97.0–98.5], respectively",
+   "note": "Repeat-run consistency across three identical rounds is the tested component. Prompt variants and wording sensitivity were not tested, and the limitations concede that the prompt was tuned on GPT-4 Turbo and may not suit the other models."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Clinical questions in the J-SSCG",
+   "quote": "Extensive literature searches were conducted across several databases, including CENTRAL, PubMed, and Ichushi-Web.",
+   "note": "Source databases, the PICO-driven search strategy, the restriction to Japanese and English, EndNote deduplication, the transfer to Rayyan, the provenance of the data from the J-SSCG 2024 taskforce, and the limitation that all data come from one sepsis guideline are all documented."
+  },
+  "E26": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "In contrast, closed-source commercial models present notable challenges, including limited transparency about their training data and the potential for perverse incentives that could result in misleading claims about their capabilities.",
+   "note": "Model transparency is explicitly weighed in model choice and is used to argue for the open-source Llama option. No actual model card or system card is cited."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, LLMs",
+   "quote": "The LLM-assisted citation screening with GPT-4o, Gemini 1.5 Pro, and Claude 3.5 Sonnet was conducted between June 26 and July 18, 2024, while the screening with Llama 3.3 70B was performed between January 24 and 26, 2025.",
+   "note": "Run dates are reported for all four models and release dates are given, but the article gives only family names. Exact dated identifiers appear only in the repository, and only for two models (gpt-4o-2024-05-13 and claude-3-5-sonnet-20240620); the repository's Gemini script pins gemini-1.5-flash-8b and the Llama script pins meta-llama/Meta-Llama-3-70B-Instruct, neither of which is the Gemini 1.5 Pro or Llama 3.3 70B named in the article."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Methods, LLMs",
+   "quote": "After importing the dataset from the citation management tool following the conventional method, we connected it to the application programming interface (API) of each LLM using Pandas version 1.0.5 in Python version 3.9.0.",
+   "note": "Every retrieved record of five real guideline reviews was screened (5,634, 3,418, 1,038, 4,326 and 2,253 records) with no balancing or subsetting, through the production API. The Discussion concedes that many practitioners would instead use a graphical interface, which was not tested."
+  },
+  "E29": {
+   "status": "partial",
+   "location": "Results, Accuracy of the LLM-assisted citation screening for literature review, and Supplement eTables 2 and 3",
+   "quote": "The number of true-positive, true-negative, false-positive, and false-negative results are listed in Figures 2 and 3",
+   "note": "Misclassifications are counted per model, per clinical question and per repeat round, but no analysis of the content or causes of the errors is offered: the missed records are never described and no reason for any individual false negative is given."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, LLMs",
+   "quote": "We performed the citation screening using a 14-inch MacBook Pro (2021) equipped with the Apple M1 Max chip and 32 GB of RAM.",
+   "note": "The environment is described as API access from Python 3.9.0 with Pandas 1.0.5 on named hardware, with EndNote and Rayyan handling the surrounding reference management, and with the character interface versus graphical interface distinction discussed."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion, Limitations",
+   "quote": "Second, our metrics for assessing accuracy relied on conventional screening methods, which can vary between reviewers. Noisy labels due to variable input from human raters can influence the performance of machine-aided labeling tests.",
+   "note": "Five numbered limitations cover single-domain data, noisy human reference labels, prompt transferability, model drift over time, and training data contamination."
+  },
+  "E32": {
+   "status": "present",
+   "location": "Results, Accuracy of the LLM-assisted citation screening for literature review, and Supplement eTable 5",
+   "quote": "GPT-4o and Llama 3.3 70B exhibited marked variability in sensitivity and consistent specificity, whereas Gemini 1.5 Pro and Claude 3.5 Sonnet demonstrated consistent sensitivity but notable variability in specificity.",
+   "note": "Tail performance is reported rather than averages alone: supplement eTable 5 shows the worst cells, for example GPT-4o at 0.46 sensitivity on CQ1 and Llama 3.3 70B at 0.59 on CQ1 in the secondary analysis. The missed records themselves are still not identified or characterised."
+  },
+  "E33": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the protocol statement, Methods, Statistical analysis, Results and Conclusions for a pre-specified go, no-go or limited-deployment rule tied to a metric. The at least 95 percent recall norm is quoted in the Background but is never bound to a decision, and the Conclusions call sensitivity of 0.94 satisfactory, which is below that very threshold. The supplementary appendix lists protocol deviations but no decision rule."
+  },
+  "E34": {
+   "status": "present",
+   "location": "Methods, Statistical analysis",
+   "quote": "we counted the citations they correctly identified as “relevant” and calculated the sensitivity and specificity for each with a 95% confidence interval (CI)",
+   "note": "Clopper-Pearson 95 percent intervals are reported for sensitivity, specificity, time, cost and consistency."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Results, Comparison of overall citation screening time, cost for 100 studies, and consistency across the LLMs",
+   "quote": "Additionally, the overall citation screening costs for 100 studies using GPT-4o, Gemini 1.5 Pro, Claude 3.5 Sonnet, and Llama 3.3 70B (at the 95% CI) were $0.40 [0.37–0.46], $0.28 [0.27–0.38], $0.39 [0.35–0.42], and $0 [0–0], respectively",
+   "note": "Monetary API cost and wall-clock processing time are measured and disclosed, which covers the compute-cost side. No energy use, no carbon estimate and no token or FLOP accounting is reported, and the local Llama runs are recorded as costing zero dollars with no energy figure attached."
+  }
+ }
+}

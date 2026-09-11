@@ -1,0 +1,201 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix stm: <https://gov.tesseract.academy/def/sociotechnical-matrix#> .
+@prefix stmd: <https://gov.tesseract.academy/id/sociotechnical-matrix/> .
+@prefix stms: <https://gov.tesseract.academy/def/sociotechnical-matrix/shapes#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+stms:Cell-DEP-B10 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-B10" ; stm:forCell stmd:cell-DEP-B10 ;
+  sh:sparql [ sh:message "Cell DEP-B10 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E21> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-B11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-B11" ; stm:forCell stmd:cell-DEP-B11 ;
+  sh:sparql [ sh:message "Cell DEP-B11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E32> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-B12 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-B12" ; stm:forCell stmd:cell-DEP-B12 ;
+  sh:sparql [ sh:message "Cell DEP-B12 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E33> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-B13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-B13" ; stm:forCell stmd:cell-DEP-B13 ;
+  sh:sparql [ sh:message "Cell DEP-B13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E34> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-B6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-B6" ; stm:forCell stmd:cell-DEP-B6 ;
+  sh:sparql [ sh:message "Cell DEP-B6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E01> AS ?field) } UNION { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E28> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-B9 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-B9" ; stm:forCell stmd:cell-DEP-B9 ;
+  sh:sparql [ sh:message "Cell DEP-B9 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E08b> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-C6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-C6" ; stm:forCell stmd:cell-DEP-C6 ;
+  sh:sparql [ sh:message "Cell DEP-C6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E29> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-C9 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-C9" ; stm:forCell stmd:cell-DEP-C9 ;
+  sh:sparql [ sh:message "Cell DEP-C9 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E08b> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-D6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-D6" ; stm:forCell stmd:cell-DEP-D6 ;
+  sh:sparql [ sh:message "Cell DEP-D6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E30> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-E13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-E13" ; stm:forCell stmd:cell-DEP-E13 ;
+  sh:sparql [ sh:message "Cell DEP-E13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E35> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-F11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-F11" ; stm:forCell stmd:cell-DEP-F11 ;
+  sh:sparql [ sh:message "Cell DEP-F11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E31> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEP-F6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEP-F6" ; stm:forCell stmd:cell-DEP-F6 ;
+  sh:sparql [ sh:message "Cell DEP-F6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E31> AS ?field) } UNION { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E27> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-B10 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-B10" ; stm:forCell stmd:cell-DES-B10 ;
+  sh:sparql [ sh:message "Cell DES-B10 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E09> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-B11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-B11" ; stm:forCell stmd:cell-DES-B11 ;
+  sh:sparql [ sh:message "Cell DES-B11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E11> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-B13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-B13" ; stm:forCell stmd:cell-DES-B13 ;
+  sh:sparql [ sh:message "Cell DES-B13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E13> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-B6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-B6" ; stm:forCell stmd:cell-DES-B6 ;
+  sh:sparql [ sh:message "Cell DES-B6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E01> AS ?field) } UNION { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E02> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-B7 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-B7" ; stm:forCell stmd:cell-DES-B7 ;
+  sh:sparql [ sh:message "Cell DES-B7 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E05> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-B9 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-B9" ; stm:forCell stmd:cell-DES-B9 ;
+  sh:sparql [ sh:message "Cell DES-B9 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E07> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-C11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-C11" ; stm:forCell stmd:cell-DES-C11 ;
+  sh:sparql [ sh:message "Cell DES-C11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E12> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-C13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-C13" ; stm:forCell stmd:cell-DES-C13 ;
+  sh:sparql [ sh:message "Cell DES-C13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E14> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-C6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-C6" ; stm:forCell stmd:cell-DES-C6 ;
+  sh:sparql [ sh:message "Cell DES-C6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E04> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-C7 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-C7" ; stm:forCell stmd:cell-DES-C7 ;
+  sh:sparql [ sh:message "Cell DES-C7 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E06> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-C9 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-C9" ; stm:forCell stmd:cell-DES-C9 ;
+  sh:sparql [ sh:message "Cell DES-C9 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E08a> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DES-E10 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DES-E10" ; stm:forCell stmd:cell-DES-E10 ;
+  sh:sparql [ sh:message "Cell DES-E10 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E10> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-B10 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-B10" ; stm:forCell stmd:cell-DEV-B10 ;
+  sh:sparql [ sh:message "Cell DEV-B10 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E20> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-B11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-B11" ; stm:forCell stmd:cell-DEV-B11 ;
+  sh:sparql [ sh:message "Cell DEV-B11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E22> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-B13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-B13" ; stm:forCell stmd:cell-DEV-B13 ;
+  sh:sparql [ sh:message "Cell DEV-B13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E25> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-B6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-B6" ; stm:forCell stmd:cell-DEV-B6 ;
+  sh:sparql [ sh:message "Cell DEV-B6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E02> AS ?field) } UNION { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E03> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-B9 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-B9" ; stm:forCell stmd:cell-DEV-B9 ;
+  sh:sparql [ sh:message "Cell DEV-B9 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E08b> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-C10 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-C10" ; stm:forCell stmd:cell-DEV-C10 ;
+  sh:sparql [ sh:message "Cell DEV-C10 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E21> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-C11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-C11" ; stm:forCell stmd:cell-DEV-C11 ;
+  sh:sparql [ sh:message "Cell DEV-C11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E23> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-C13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-C13" ; stm:forCell stmd:cell-DEV-C13 ;
+  sh:sparql [ sh:message "Cell DEV-C13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E26> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-C6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-C6" ; stm:forCell stmd:cell-DEV-C6 ;
+  sh:sparql [ sh:message "Cell DEV-C6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E15> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-C7 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-C7" ; stm:forCell stmd:cell-DEV-C7 ;
+  sh:sparql [ sh:message "Cell DEV-C7 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E17> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-C9 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-C9" ; stm:forCell stmd:cell-DEV-C9 ;
+  sh:sparql [ sh:message "Cell DEV-C9 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E08c> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-D11 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-D11" ; stm:forCell stmd:cell-DEV-D11 ;
+  sh:sparql [ sh:message "Cell DEV-D11 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E24> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-D13 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-D13" ; stm:forCell stmd:cell-DEV-D13 ;
+  sh:sparql [ sh:message "Cell DEV-D13 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E18> AS ?field) } UNION { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E27> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-D6 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-D6" ; stm:forCell stmd:cell-DEV-D6 ;
+  sh:sparql [ sh:message "Cell DEV-D6 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E16> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .
+
+stms:Cell-DEV-D7 a sh:NodeShape ; sh:targetClass stm:EvaluationRecord ; rdfs:label "DEV-D7" ; stm:forCell stmd:cell-DEV-D7 ;
+  sh:sparql [ sh:message "Cell DEV-D7 is not fully evidenced: a required evidence field is not present." ;
+    sh:select """SELECT DISTINCT $this ?field WHERE { { BIND(<https://gov.tesseract.academy/id/sociotechnical-matrix/field-E19> AS ?field) }
+      FILTER NOT EXISTS { $this <https://gov.tesseract.academy/def/sociotechnical-matrix#hasEvidence> ?e . ?e <https://gov.tesseract.academy/def/sociotechnical-matrix#field> ?field ; <https://gov.tesseract.academy/def/sociotechnical-matrix#status> "present" . } }""" ] .

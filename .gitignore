@@ -1,0 +1,7 @@
+docs/OUTREACH.md
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/pmc_fulltext/
+data/.oo-store/

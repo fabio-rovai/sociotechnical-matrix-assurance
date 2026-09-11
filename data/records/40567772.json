@@ -1,0 +1,238 @@
+{
+ "study": {
+  "pmid": "40567772",
+  "pmc": "PMC12190591",
+  "doi": "10.7717/peerj-cs.2822",
+  "title": "Validation of automated paper screening for esophagectomy systematic review using large language models",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": [
+   "GPT-4",
+   "gpt-4-1106-preview"
+  ],
+  "task_note": "GPT-4 was called through the OpenAI API to make include or exclude decisions with written justifications on the 1,967 deduplicated title and abstract records of the authors' own systematic review of perioperative risk factors for esophagectomy complications, run twice under a broad perioperative and a narrow preoperative inclusion criterion and compared with the human consensus decision."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/40567772_PMC12190591.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12190591/",
+  "https://peerj.com/articles/cs-2822/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12190591/supplementaryFiles",
+  "https://www.ncbi.nlm.nih.gov/articles/PMC12190591/bin/peerj-cs-11-2822-s001.docx",
+  "https://www.ncbi.nlm.nih.gov/articles/PMC12190591/bin/peerj-cs-11-2822-s002.ipynb"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Abstract, Results",
+   "quote": "In the evaluation of perioperative risk factors, the GPT model demonstrated a high recall for included studies at 89%, a positive predictive value of 74%, and a negative predictive value of 84%, with a low false positive rate of 6% and a macro-F1 score of 0.81.",
+   "note": "Agreement, recall, precision, macro F1, AUC, false positive rate, NPV, kappa and PABAK are all named and defined by formula in Table 2."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Abstract, Methods",
+   "quote": "A literature search was run by a trained librarian to identify studies ( n = 1,967) discussing risk factors to esophagectomy complications. The articles underwent title and abstract screening by three independent human reviewers and GPT-4.",
+   "note": "The review is the authors' own esophagectomy perioperative risk factor systematic review. Records screened are 1,967. Human inclusions are derivable from Table 3 as 596 plus 213 equals 809. The Methods section separately reports 1,763 records entering screening, which conflicts with the 1,967 used in the Results."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Results, Table 3",
+   "quote": "Human Decision Include Exclude GPT-model decision Include 30.36% ( n = 596) 10.85% ( n = 213) Exclude 10.85% ( n = 213) 48.04% ( n = 945)",
+   "note": "Prevalence is derivable: human includes 596 plus 213 equals 809 of 1,967, about 41 percent for the perioperative run. Table 4 gives 402 plus 197 equals 599 of 1,967, about 30 percent, for the preoperative run."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Discussion, Potential of LLMs in streamlining systematic reviews",
+   "quote": "For the GPT model, both runs for peri and preoperative risk factors were completed for a total of just 60.51 USD (82.79 CAD), resulting in savings in research funding.",
+   "note": "The same passage reports manual screening as 50 hours per screener and 100 hours in total, costed at about 1,655 CAD, giving an end-to-end cost comparison. The authors state that actual time savings were not investigated."
+  },
+  "E05": {
+   "status": "present",
+   "location": "Discussion, Comparison to existing models",
+   "quote": "Given these limitations, LLMs are recommended as supportive tools in the systematic review process, particularly to aid in screening large datasets and resolving reviewer discrepancies rather than as standalone decision-makers."
+  },
+  "E06": {
+   "status": "partial",
+   "location": "Length and qualitative assessment",
+   "quote": "These errors emphasize the need for human oversight to verify the justifications provided by GPT.",
+   "note": "Partial: human oversight and the non standalone role are stated, and human to human discrepancies are resolved by discussion with a field expert, but no rule is given for what happens when the model and a human reviewer disagree in the proposed workflow."
+  },
+  "E07": {
+   "status": "partial",
+   "location": "Limitations and future studies",
+   "quote": "Human reviewers might still extract relevant insights from articles without stated outcomes, while the AI may rely more on explicit outcome statements to make inclusion or exclusion decisions.",
+   "note": "Partial: a class of records at risk of differential exclusion by the model is named, namely articles that do not explicitly state outcomes. No population, language, setting or equity goal is named. Non English records were removed before screening, so language effects could not arise."
+  },
+  "E08a": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched Methods and Figure 1 for any planned analysis by subgroup, study type, population, language, source database or topic. The only planned contrast is between two inclusion criteria sets, broad perioperative versus narrow preoperative, which changes the task rather than splitting the records into subgroups."
+  },
+  "E08b": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched Results, Tables 2 to 4 and Figure 2 for performance broken down by record subgroup. Metrics are reported only overall, per run and per decision class (included versus excluded articles)."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched Methods, Results and Limitations for performance by language or region. Non English studies were excluded before screening and no regional or language breakdown is reported."
+  },
+  "E09": {
+   "status": "partial",
+   "location": "Discussion, Comparison to existing models",
+   "quote": "While the LLM achieved accuracy rates of 85.58% and 79.03%, which indicate promising potential, these rates fall short of the 100% accuracy that might be ideal for independent decision-making in systematic reviews ( Hamel et al., 2021 ; Gates, Johnson & Hartling, 2018 )",
+   "note": "Partial: a reference point of 100 percent accuracy for independent decision making is invoked with citations, but it is hedged as what might be ideal and no minimum sensitivity or acceptable error rate was pre-specified for this evaluation by a named party."
+  },
+  "E10": {
+   "status": "partial",
+   "location": "Length and qualitative assessment",
+   "quote": "Qualitative inspection of the justifications provided by the GPT model was considered useful by the participating title and abstract screening reviewers.",
+   "note": "Partial: screener perspectives were collected through preliminary discussions, but no survey, interview schedule, usability instrument or workload measure is described and no structured results are reported."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Length and qualitative assessment",
+   "quote": "Examples included incorrect references to exclusion criteria or the introduction of nonexistent criteria, highlighting the model’s limitations in accurately mapping its decisions to predefined rules.",
+   "note": "Hallucinated eligibility reasoning is named explicitly. Missed eligible studies are also implicit in the reported false negative counts and the recall of 0.67 for the narrow run."
+  },
+  "E12": {
+   "status": "partial",
+   "location": "Discussion, Potential of LLMs in streamlining systematic reviews",
+   "quote": "However, caution is warranted as human reviewers, especially experts in the field, can comprehend terminology and apply clinical gestalt when selecting studies. LLMs like GPT may lack this clinical gestalt component, which could impact decision-making regarding study inclusion/exclusion.",
+   "note": "Partial: over-reliance on the model is cautioned against and human verification of model justifications is recommended, but automation bias or alert fatigue in the human plus model loop is not named, not measured and no design control is built in."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Discussion",
+   "quote": "In the meantime, caution should be advised for the use of LLMs for highly technical systematic reviews.",
+   "note": "Scope limits are also stated in the Conclusion, which restricts the positive finding to broader inclusion criteria and warns against contexts requiring stringent specificity."
+  },
+  "E14": {
+   "status": "present",
+   "location": "Data Availability",
+   "quote": "The code to reproduce the work is available in the Supplemental File .",
+   "note": "Verified: the notebook peerj-cs-11-2822-s002.ipynb resolves and contains the API calling code and the prompt. Stable reference is the article DOI 10.7717/peerj-cs.2822 supplement. No repository, commit or version tag is given."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "In fact, recently, Guo et al. (2024) proposed leveraging the OpenAI for systematic review screening and demonstrated promising results, achieving a macro F1 score of 0.60 and a sensitivity of 0.76 for included articles.",
+   "note": "The following sentence adds the selection rationale: broad acceptance and convenience of LLMs for users were key factors in its selection."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Multi-level analysis",
+   "quote": "In the analysis, the final inclusion or exclusion decision reached by the three human reviewers was regarded as “the ground truth” or as the true positive and true negative values.",
+   "note": "Provenance is stated: dual independent screening in Covidence by named reviewers with discrepancies resolved by discussion and a field expert. The Abstract says three independent human reviewers while the Methods describe two independent screeners per record."
+  },
+  "E17": {
+   "status": "present",
+   "location": "Methods; Table 1 note",
+   "quote": "The GPT model was employed without additional fine-tuning, using default parameters of temperature = 0.7, max tokens = 2,048, top p = 1.0, frequency penalty = 0, and presence penalty = 0.",
+   "note": "Contradiction found: the supplementary code notebook calls the API with temperature=0 and top_p=1 and no max token setting, which conflicts with the temperature of 0.7 reported twice in the paper. No seed and no structured output constraint are reported."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Supplement: Code notebook (peerj-cs-11-2822-s002.ipynb), fetched via https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12190591/supplementaryFiles",
+   "quote": "You are a researcher rigorously screening titles and abstracts of scientific papers for inclusion or exclusion in a review paper. Use the criteria below to inform your decision. Write \"included\" or \"excluded\" to indicate your decision. Explain your reasoning step-by-step.",
+   "note": "The full prompt template is assembled in the notebook as instructions plus title, abstract, inclusion criteria, exclusion criteria and Decision. The criteria strings are also reproduced in the notebook and in Appendix 2 of supplement 1."
+  },
+  "E19": {
+   "status": "absent",
+   "location": "Supplement: Code notebook (peerj-cs-11-2822-s002.ipynb), fetched via https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12190591/supplementaryFiles",
+   "searched": "Read the full prompt template in the supplementary notebook. It offers only the two tokens included and excluded, with no unsure, uncertain or escalate option and no instruction to defer to a human reviewer. The post-processing function maps any other answer to Undecided, but that is code, not prompt content."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods",
+   "quote": "The screening inclusion and exclusion criteria ( Appendix 2 ) was fed to the Python script which would subsequently be fed to the GPT-4 API.",
+   "note": "Appendix 2 of supplement 1 reproduces the review's own inclusion and exclusion criteria for both runs, and the notebook contains the same criteria as literal strings. The notebook criteria differ slightly from Appendix 2, for example esophagectomy for cancer rather than for any indication."
+  },
+  "E21": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched Methods, Table 2 and Discussion for a threshold, configuration or decision rule favouring sensitivity. The AUC threshold of 0.5 is symmetric, precision and recall are given equal weight in the macro F1 score, and high recall is reported as a finding rather than engineered."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched the full text for contamination, leakage, memorisation, knowledge cutoff and training data. Training data is mentioned only as something to refine for domain terminology. The relation between the GPT-4 training cutoff and the February 2023 search window is never discussed."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Length and qualitative assessment",
+   "quote": "However, at times, the rationale provided by the GPT model demonstrated significant shortcomings, such as misinterpreting or misaligning the criteria with its explanations.",
+   "note": "Partial: hallucinated and specious eligibility reasoning is documented and was probed by qualitative inspection of the justifications, but no failure mode is tested systematically, no rate is quantified, and prompt injection and misuse are not considered."
+  },
+  "E24": {
+   "status": "partial",
+   "location": "Introduction",
+   "quote": "This approach enabled us to rigorously evaluate the effectiveness of the GPT-4 model under varied levels of stringency, providing insights into its adaptability and robustness in more challenging conditions.",
+   "note": "Partial: two prompt variants differing in the criteria block were run and compared, but they define two different screening tasks with different reference standards rather than perturbing one task. No wording sensitivity test and no repeat run consistency check are reported."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods",
+   "quote": "The methodology for our systematic review included a comprehensive search of EMBASE, Medline, and the Cochrane Library from inception to February 21, 2023.",
+   "note": "Appendix 1 of supplement 1 gives the complete line by line Ovid search strategy with hit counts and the deduplication line. Limitations of the data set are discussed under internal and external validity."
+  },
+  "E26": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched for model card, system card, documentation, transparency and interpretability in the context of model choice. The stated selection reasons are broad acceptance and convenience. Interpretability is discussed only as a property of the generated justifications, not as documentation consulted."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Supplement: Code notebook (peerj-cs-11-2822-s002.ipynb), fetched via https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12190591/supplementaryFiles",
+   "quote": "model='gpt-4-1106-preview',",
+   "note": "Partial: the exact model snapshot gpt-4-1106-preview appears only in the supplementary code; the paper itself says GPT-4 and GPT-4 API with no version string. No API access date or run date is reported anywhere, only the literature search date of 21 February 2023."
+  },
+  "E28": {
+   "status": "present",
+   "location": "Methods",
+   "quote": "For this investigation, title and abstract screening was conducted by inputting the literature search results into a Python script, created by Guo et al. (2024) , which made automated calls exclusively to the GPT-4 API.",
+   "note": "The complete deduplicated record set of a real review was screened, unbalanced and in full, through the API route intended for practice. The record count is reported inconsistently as 1,763 in the Methods and 1,967 in the Results."
+  },
+  "E29": {
+   "status": "partial",
+   "location": "Results, Preoperative risk factor analysis",
+   "quote": "In the broader run of the model, focused on identifying articles discussing perioperative risk factors, the LLM included 189 cases that it did not include in the narrower preoperative run, which targeted identifying articles that only mentioned preoperative risk factors.",
+   "note": "Partial: disagreement between the two runs is quantified and reasoning errors are described qualitatively, but there is no systematic analysis of the false negatives and false positives against the human reference standard."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods",
+   "quote": "At no point was the ChatGPT interface directly used for screening decisions.",
+   "note": "The environment is described as a Python script making automated OpenAI API calls, taking an Excel input and producing an Excel or CSV output that can be loaded into Covidence. Batching is not described."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Limitations and future studies",
+   "quote": "This study has some limitations regarding both internal and external validity. For internal validity, while the GPT model demonstrated a high agreement rate with human reviewers, the accuracy of human screening decisions was used as the baseline, which may introduce subjectivity",
+   "note": "The section covers reference standard subjectivity, generalisability, and bias from excluding articles without stated outcomes. Failure modes are documented in the qualitative assessment section rather than in the limitations section itself."
+  },
+  "E32": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched Results and Discussion for any characterisation of the missed eligible studies. Only aggregate false negative counts are given, 213 for the perioperative run and 197 for the preoperative run. No missed study is identified, no reason is given, and no tail or worst case metric is reported."
+  },
+  "E33": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched Methods, Results and Conclusion for a pre-specified rule linking a metric to a go, no-go or limited deployment decision. The 0.5 threshold is a classification cut point for the AUC calculation, and the recommendation to use LLMs as supportive tools is stated after the results rather than as a pre-specified rule."
+  },
+  "E34": {
+   "status": "absent",
+   "location": "not found in full text, supplement or linked code",
+   "searched": "Searched for confidence interval, CI, standard error, standard deviation and uncertainty attached to the reported agreement, recall, precision, macro F1, AUC, kappa or PABAK values. None carries an interval. The only 95 percent CIs in the file appear inside quoted abstracts of screened articles reproduced in Table 1, not in this study's own metrics."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Results, Perioperative risk factor analysis",
+   "quote": "The cost for the perioperative risk factor analysis was $29.43 USD, and the run time was 21,130.5 s.",
+   "note": "Partial: compute is disclosed only as monetary API cost and wall clock run time for both runs. No energy use, no token counts, no hardware and no carbon or environmental estimate is given. The Discussion notes qualitatively that GPT has higher computational demands than Abstrackr or DistillerSR."
+  }
+ }
+}

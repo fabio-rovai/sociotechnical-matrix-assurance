@@ -1,0 +1,968 @@
+{
+ "source": "https://www.adalovelaceinstitute.org/resource/sociotechnical-evaluation-matrix/",
+ "sheet_id": "11NIShoLv59ZmlrbaOgQTfKPHVLkwLWefRNcs9yNRBxM",
+ "authors": "Cam Rincon and Rumman Chowdhury, Ada Lovelace Institute, 8 September 2026",
+ "licence": "CC BY-NC 4.0",
+ "cells": [
+  {
+   "id": "DES-B6",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Technical performance and validity",
+   "question": "Does the task specification support clear success metrics, realistic test conditions, and appropriate benchmarks for the intended domain?",
+   "sha256": "d8b4dda5b5cc"
+  },
+  {
+   "id": "DES-C6",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Technical performance and validity",
+   "question": "Are metrics defined at workflow level (e.g. end‑to‑end accuracy, safety, timeliness), not just per‑call model metrics?",
+   "sha256": "abfad10a2b66"
+  },
+  {
+   "id": "DES-D6",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Technical performance and validity",
+   "question": "Do technical evaluations feed into a broader end-to-end design, development and deployment lifcycle assurance framework (incorporating assurance practices such as risk assessments, audits, impact assessments) rather than stand alone?",
+   "sha256": "443df8b0b95f"
+  },
+  {
+   "id": "DES-E6",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Technical performance and validity",
+   "question": "Does the development of the system and evaluation methods incorporate evidence throughout the lifecycle about real‑world use and impacts to the particular context of deployment gathered from stakeholders, including impacted individuals and communities impacted by the system?",
+   "sha256": "2e562e31069f"
+  },
+  {
+   "id": "DES-B7",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Human oversight and control",
+   "question": "Is the LLM framed as assistive, advisory, or autonomous, and are explicit boundaries set on decisions that must remain with humans?",
+   "sha256": "4d725f655317"
+  },
+  {
+   "id": "DES-C7",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Human oversight and control",
+   "question": "Has a process for humans to override, question, or escalate AI outputs been designed and are high‑risk cases always human‑checked?",
+   "sha256": "d7c386dd885b"
+  },
+  {
+   "id": "DES-D7",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Human oversight and control",
+   "question": "Are there clear governance points where humans can pause, adjust, or stop deployment based on new evidence?",
+   "sha256": "0e1d660598d3"
+  },
+  {
+   "id": "DES-E7",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Human oversight and control",
+   "question": "Are oversight mechanisms designed with input from those who will rely on or be affected by the system?",
+   "sha256": "4821f4930683"
+  },
+  {
+   "id": "DES-B8",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals identified and documented for scoping the task, approving deployment, and being answerable for harms from mis‑specification or misuse?",
+   "sha256": "e320ce3da31f"
+  },
+  {
+   "id": "DES-C8",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and RACI for AI‑assisted decisions clearly identified and documented, including responsibility when humans follow or ignore AI suggestions?",
+   "sha256": "4706c2581805"
+  },
+  {
+   "id": "DES-D8",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Accountability and responsibility",
+   "question": "Are responsibilities for governance (boards, committees, risk owners, auditors) defined, resourced and documented?",
+   "sha256": "93ce74fa0d34"
+  },
+  {
+   "id": "DES-E8",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Accountability and responsibility",
+   "question": "Are stakeholders involved in clarifying what roles should be responsible for what, and how accountability should operate?",
+   "sha256": "42d9f69e4a16"
+  },
+  {
+   "id": "DES-B9",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Has it been validated that the use case and task definition algn with the reasonable expectations and potential equity concerns of impacted stakeholders? Does the task definition identify groups who may be disproportionately affected or excluded, and set equity goals accordingly?",
+   "sha256": "a6178a458583"
+  },
+  {
+   "id": "DES-C9",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Does the workflow include checks to detect systematic disadvantages (e.g. repeated negative decisions affecting specific groups)? Does it incorporate processes that encourage active user judgment and the application of system outputs in consideration of the greater use case context and how this may disproportionally impact certain groups?",
+   "sha256": "732ef29bfe99"
+  },
+  {
+   "id": "DES-D9",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Does governance explicitly consider equity, non-discrimination, rights, and societal impacts?",
+   "sha256": "b0a08cec0073"
+  },
+  {
+   "id": "DES-E9",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Are protected or high‑risk groups identified and proportionally included in stakeholder engagement processes to shaping evaluation criteria and mitigations?",
+   "sha256": "627f4e832489"
+  },
+  {
+   "id": "DES-B10",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Professional judgement and work",
+   "question": "How is domain expertise used to define what “good” performance and acceptable error look like, and where judgement is non‑delegable?",
+   "sha256": "3f5266c3b244"
+  },
+  {
+   "id": "DES-C10",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Professional judgement and work",
+   "question": "Are assessments for how the workflow reshapes expertise, autonomy, and workload, and are de‑skilling and over-reliance explicitly addressed?",
+   "sha256": "0c9d1730acd6"
+  },
+  {
+   "id": "DES-D10",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Professional judgement and work",
+   "question": "Are professional bodies or standards‑setting organisations involved where relevant to the domain?",
+   "sha256": "02ac6c060bf3"
+  },
+  {
+   "id": "DES-E10",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Professional judgement and work",
+   "question": "Are professional and user perspectives treated as evidence for evaluation and governance, not only technical metrics?",
+   "sha256": "217caa78f738"
+  },
+  {
+   "id": "DES-B11",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Failure modes and risk management",
+   "question": "Are critical failure modes from task mis‑specification (e.g. dangerous omissions, misleading advice) identified and prioritised?",
+   "sha256": "5b6dd0b04c99"
+  },
+  {
+   "id": "DES-C11",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Failure modes and risk management",
+   "question": "Does the workflow incorporate checks to detect and mitigate interaction-level failure modes such as cognitive and judgmental biases by end users , over-reliance, and alert fatigue?",
+   "sha256": "a56a8b831089"
+  },
+  {
+   "id": "DES-D11",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Failure modes and risk management",
+   "question": "Are there mechanisms to identify risks accross the design, development, and deployment lifecycle with plans for re‑evaluation and adaptation?",
+   "sha256": "34a0e5df903b"
+  },
+  {
+   "id": "DES-E11",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Failure modes and risk management",
+   "question": "Do engagement processes surface context‑specific failure modes and harms that technical tests miss?",
+   "sha256": "f1dd2ca6d6a9"
+  },
+  {
+   "id": "DES-B12",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Is the task definition embedded in risk/impact assessments with clear stage gates (pilot, shadow testing, scale‑up/descoping)?",
+   "sha256": "0bf007f68146"
+  },
+  {
+   "id": "DES-C12",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Is the workflow embedded in a staged design, development, and deployment plan incorporating feasibility, shadow testing, and controlled rollout with exit ramps?",
+   "sha256": "aa52dad0620a"
+  },
+  {
+   "id": "DES-D12",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Is there an end-to-end design development and deployment lifecycle plan (design, feasibility, pilots, deployment, monitoring, retirement) aligned with AI assurance best practice?",
+   "sha256": "1cd31ded874f"
+  },
+  {
+   "id": "DES-E12",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Are participatory activities tied into formal governance and assurance (e.g. committees, review cycles)?",
+   "sha256": "17fee05d8c8d"
+  },
+  {
+   "id": "DES-B13",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Transparency and documentation",
+   "question": "Is intended use, non‑intended uses, and scope documented in model/system cards or similar artefacts?",
+   "sha256": "a9b634ad0967"
+  },
+  {
+   "id": "DES-C13",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Transparency and documentation",
+   "question": "Are workflow rules, routing logic, and QA steps identified, documented and version‑controlled for auditability?",
+   "sha256": "19933df9b877"
+  },
+  {
+   "id": "DES-D13",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Transparency and documentation",
+   "question": "Are governance decisions, rationales, and conditions for use documented and revisitably recorded?",
+   "sha256": "5fd1d6cd478d"
+  },
+  {
+   "id": "DES-E13",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Transparency and documentation",
+   "question": "Are engagement processes and outputs documented (who participated, what changed as a result)?",
+   "sha256": "6c9f892fc1af"
+  },
+  {
+   "id": "DES-B14",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Participation and legitimacy",
+   "question": "Have users and affected stakeholders been involved in the decision to adopt an LLM for this use? If so, have they been involved in framing the problem and acceptable outcomes?",
+   "sha256": "ebd3dc0aeb86"
+  },
+  {
+   "id": "DES-C14",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Participation and legitimacy",
+   "question": "Have users and affected stakeholders been involved in co‑design and iterative refinement of the workflow?",
+   "sha256": "011709e18541"
+  },
+  {
+   "id": "DES-D14",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Participation and legitimacy",
+   "question": "Are external stakeholders (regulators, civil society, affected communities) engaged in proportional oversight and decision-making?",
+   "sha256": "c969a509ce55"
+  },
+  {
+   "id": "DES-E14",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Participation and legitimacy",
+   "question": "Are there ongoing channels for feedback, contestation, and appeals by affected stakeholders?",
+   "sha256": "e6ac391fe508"
+  },
+  {
+   "id": "DES-B15",
+   "stage": "Design",
+   "column": "Use case and task definition",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Has the potential for it to, if scaled, materially change institutional practices, markers, or ethe environment been analysed?",
+   "sha256": "28d22167a975"
+  },
+  {
+   "id": "DES-C15",
+   "stage": "Design",
+   "column": "Human–AI workflow design",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Could this workflow, at scale, shift labour patterns, access to services, or institutional power dynamics, and is that considered?",
+   "sha256": "2cf84933bd16"
+  },
+  {
+   "id": "DES-D15",
+   "stage": "Design",
+   "column": "Governance, assurance, and lifecycle management design",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Does governance consider longer‑term systemic issues (e.g. sectoral dependence on vendors, cumulative environmental impact)?",
+   "sha256": "df1ac7e3defd"
+  },
+  {
+   "id": "DES-E15",
+   "stage": "Design",
+   "column": "Participation, legitimacy, and stakeholder engagement design",
+   "criterion": "Systemic and environmental impacts",
+   "question": "How does stakeholder involvement enhance legitimacy of the product?",
+   "sha256": "de03946db211"
+  },
+  {
+   "id": "DEV-B6",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Technical performance and validity",
+   "question": "Are datasets representative, reliable, and suitable for the task; are prevalence, class imbalance, and domain shift handled in evaluation design?",
+   "sha256": "519e9f68a022"
+  },
+  {
+   "id": "DEV-C6",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Technical performance and validity",
+   "question": "Is there evidence that the chosen model performs adequately on comparable tasks, domains, and input modalities?",
+   "sha256": "dd7c074996fc"
+  },
+  {
+   "id": "DEV-D6",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Technical performance and validity",
+   "question": "Are prompts and decision rules validated empirically for the target tasks, and are thresholds calibrated against robust ground truth?",
+   "sha256": "fc5035b980f1"
+  },
+  {
+   "id": "DEV-B7",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Human oversight and control",
+   "question": "Can humans inspect, contextualise, or correct data‑driven outputs, and are there processes to flag problematic training/eval data?",
+   "sha256": "c49d26499acc"
+  },
+  {
+   "id": "DEV-C7",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Human oversight and control",
+   "question": "Can model behaviour be constrained (e.g. temperature, tools, guardrails) to ensure humans retain effective control?",
+   "sha256": "3ed62bb6f193"
+  },
+  {
+   "id": "DEV-D7",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Human oversight and control",
+   "question": "Do prompts explicitly reinforce human authority (e.g. escalation instructions, uncertainty signalling) rather than encourage automation bias?",
+   "sha256": "7074b4baefcf"
+  },
+  {
+   "id": "DEV-B8",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals identified and documented as being responsible for data selection, labelling, quality control, and compliance (including third‑party data providers)?",
+   "sha256": "2a529c2c798d"
+  },
+  {
+   "id": "DEV-C8",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Accountability and responsibility",
+   "question": "Are responsibilities between base‑model provider, integrator, and deploying organisation deleneated and documented across the lifecycle?",
+   "sha256": "e81f56334920"
+  },
+  {
+   "id": "DEV-D8",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals responsible for prompt and rule design, and those accountable for errors induced by prompt wording or decision thresholds identified and documented?",
+   "sha256": "f4df5856bb43"
+  },
+  {
+   "id": "DEV-B9",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Are minority or high‑risk groups adequately represented, and are differential error rates and harms examined by subgroup?",
+   "sha256": "d703b98a53e5"
+  },
+  {
+   "id": "DEV-C9",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Does model choice disproportionately disadvantage certain languages, regions, or user groups, and is this measured?",
+   "sha256": "4840353ffc33"
+  },
+  {
+   "id": "DEV-D9",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Are prompts reviewed for bias (e.g. language that may systematically exclude or misinterpret certain groups or contexts)?",
+   "sha256": "03e3f537ea03"
+  },
+  {
+   "id": "DEV-B10",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Professional judgement and work",
+   "question": "Do data choices respect professional standards (e.g. evidentiary hierarchies, relevance to practice)?",
+   "sha256": "10e148f4f479"
+  },
+  {
+   "id": "DEV-C10",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Professional judgement and work",
+   "question": "Does configuration align with domain norms (e.g. conservative behaviour where safety‑critical decisions are involved)?",
+   "sha256": "c9cc9d96e666"
+  },
+  {
+   "id": "DEV-D10",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Professional judgement and work",
+   "question": "Are prompts co‑designed with professionals so that outputs match their epistemic standards and workflows?",
+   "sha256": "f0ff8c74f3a2"
+  },
+  {
+   "id": "DEV-B11",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Failure modes and risk management",
+   "question": "Are data‑related failure modes (e.g. outdated data, biased samples, leakage) explicitly identified and mitigated?",
+   "sha256": "5d3ec78e08b2"
+  },
+  {
+   "id": "DEV-C11",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Failure modes and risk management",
+   "question": "Are known failure modes (hallucination, prompt injection, specious plausibility, abuse) documented and stress‑tested?",
+   "sha256": "833e27f2252b"
+  },
+  {
+   "id": "DEV-D11",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Failure modes and risk management",
+   "question": "Are failure modes from prompting (e.g. brittle performance, adversarial prompts, over‑confident exclusions) systematically tested?",
+   "sha256": "875d09f468e5"
+  },
+  {
+   "id": "DEV-B12",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Are data risks integrated into DPIAs/AIAs and organisational risk registers, with plans for re‑assessment?",
+   "sha256": "82ebce2fd771"
+  },
+  {
+   "id": "DEV-C12",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Is model selection tied to a risk tier with corresponding assurance requirements (e.g. external audit, formal approval)?",
+   "sha256": "184752d4fb67"
+  },
+  {
+   "id": "DEV-D12",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Are prompt/rule changes subject to governance (approvals, testing, rollback plans) as part of lifecycle assurance?",
+   "sha256": "3bd011c26ee5"
+  },
+  {
+   "id": "DEV-B13",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Transparency and documentation",
+   "question": "Are data provenance, collection methods, and limitations documented in data cards, registers, or similar tools?",
+   "sha256": "291946a49721"
+  },
+  {
+   "id": "DEV-C13",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Transparency and documentation",
+   "question": "Have models with high degrees of transparency and explainability been considered for this use case? Are system/model cards available with training data summaries, evaluation results, and change logs?",
+   "sha256": "141bd16fd721"
+  },
+  {
+   "id": "DEV-D13",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Transparency and documentation",
+   "question": "Are all prompt and decision‑rule versions logged and documented for audit and reproducibility?",
+   "sha256": "5cc9f7464df2"
+  },
+  {
+   "id": "DEV-B14",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Participation and legitimacy",
+   "question": "Have affected stakeholders been consulted on data use, especially for sensitive or high‑risk data?",
+   "sha256": "1a65d17715c9"
+  },
+  {
+   "id": "DEV-C14",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Participation and legitimacy",
+   "question": "Are users and domain experts involved in evaluating trade‑offs between alternative models/configurations?",
+   "sha256": "e0a74ee96ba8"
+  },
+  {
+   "id": "DEV-D14",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Participation and legitimacy",
+   "question": "Are users or affected stakeholders able to propose changes or flag concerns about prompts and thresholds?",
+   "sha256": "dd0b22a80e79"
+  },
+  {
+   "id": "DEV-B15",
+   "stage": "Development",
+   "column": "Data sources extraction/ procurement and dataset curation",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Do data practices risk systemic harms (e.g. surveillance, chilling effects, environmental load of storage/processing)?",
+   "sha256": "dc9a16249ba1"
+  },
+  {
+   "id": "DEV-C15",
+   "stage": "Development",
+   "column": "Model choice and configuration",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Does dependence on this model/provider create lock‑in, concentration of power, or high environmental cost, and is that managed?",
+   "sha256": "e04291b6a70d"
+  },
+  {
+   "id": "DEV-D15",
+   "stage": "Development",
+   "column": "Prompting and decision rules design",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Could prompt/rule design, if reused elsewhere, have wider systemic effects (e.g. normalising certain framings, exclusionary language)?",
+   "sha256": "2394c5e13ebe"
+  },
+  {
+   "id": "DEP-B6",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Technical performance and validity",
+   "question": "Are metrics conceptually valid for what they claim to measure (e.g. safety, quality, fairness), and tested under realistic conditions?",
+   "sha256": "db5b4cf1bbe1"
+  },
+  {
+   "id": "DEP-C6",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Technical performance and validity",
+   "question": "Is there a plan for systematic error analysis (quantitative and qualitative), including clustering failures and exploring causes?",
+   "sha256": "efbc15e68086"
+  },
+  {
+   "id": "DEP-D6",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Technical performance and validity",
+   "question": "Are tests run in environments that reflect real deployment conditions, including integration with other systems?",
+   "sha256": "514d51d5d0b9"
+  },
+  {
+   "id": "DEP-E6",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Technical performance and validity",
+   "question": "Do evaluations consider how technical performance interacts with broader systemic outcomes (e.g. misinformation, labour markets)?",
+   "sha256": "2ef141166f7f"
+  },
+  {
+   "id": "DEP-F6",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Technical performance and validity",
+   "question": "Is enough technical detail published (or available internally) to interpret performance claims and limitations?",
+   "sha256": "b9cc3bf02221"
+  },
+  {
+   "id": "DEP-B7",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Human oversight and control",
+   "question": "Do thresholds reflect what humans and institutions consider acceptable risk and residual error in practice?",
+   "sha256": "0a834f34fffe"
+  },
+  {
+   "id": "DEP-C7",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Human oversight and control",
+   "question": "Can humans easily report suspected errors, and are they supported and protected in challenging AI outputs?",
+   "sha256": "7fe3bd3d44da"
+  },
+  {
+   "id": "DEP-D7",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Human oversight and control",
+   "question": "Are access controls and permissions designed so that human supervisors can meaningfully oversee use and intervene?",
+   "sha256": "45f472afefcd"
+  },
+  {
+   "id": "DEP-E7",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Human oversight and control",
+   "question": "Are humans given tools and authority to mitigate systemic harms that become visible over time?",
+   "sha256": "398c232fd3fd"
+  },
+  {
+   "id": "DEP-F7",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Human oversight and control",
+   "question": "Are users given clear explanations of what the system does and does not do, and how they can exercise control?",
+   "sha256": "300fee134b10"
+  },
+  {
+   "id": "DEP-B8",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals responsible for setting and approving thresholds, and protocols for how trade‑offs between metrics (e.g. sensitivity vs precision) identified, documented, and revisited?",
+   "sha256": "0181d3dabc2a"
+  },
+  {
+   "id": "DEP-C8",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals that owns incident triage, remediation, and communication with affected individuals or organisation identified, resourced and documented?",
+   "sha256": "fbaf9ac3b6d6"
+  },
+  {
+   "id": "DEP-D8",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals accountable for secure configuration, access governance, and compliance with sectoral rules in the deployment environment identified and documented?",
+   "sha256": "fd348c84769d"
+  },
+  {
+   "id": "DEP-E8",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals responsible for monitoring and addressing systemic or cross‑organisational impacts identified, resourced, and documented?",
+   "sha256": "b999bf930c13"
+  },
+  {
+   "id": "DEP-F8",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Accountability and responsibility",
+   "question": "Are roles and individuals responsible for documentation quality and for communicating changes to stakeholders identified, resourced, and documented?",
+   "sha256": "88e395e3196a"
+  },
+  {
+   "id": "DEP-B9",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Are metrics disaggregated (e.g. by group, region, task type) to detect disparate impacts and distributional harms?",
+   "sha256": "97371e4fbe17"
+  },
+  {
+   "id": "DEP-C9",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Are error impacts analysed across groups to identify disproportionate burdens on marginalised populations/ protected groups?",
+   "sha256": "b2f807166df6"
+  },
+  {
+   "id": "DEP-D9",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Do access patterns or deployment contexts expose particular groups to higher risk (e.g. low‑resource settings, constrained alternatives)?",
+   "sha256": "36890ec5f62e"
+  },
+  {
+   "id": "DEP-E9",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Are distributional impacts across populations, regions, and ecosystems mapped and monitored?",
+   "sha256": "7c5802b5cf46"
+  },
+  {
+   "id": "DEP-F9",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Equity, distribution, and discriminatory non-harm",
+   "question": "Is documentation accessible and understandable to diverse groups, including non‑experts and affected communities?",
+   "sha256": "e8d3609952c9"
+  },
+  {
+   "id": "DEP-B10",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Professional judgement and work",
+   "question": "Do thresholds align with domain professional norms (e.g. prioritising recall in safety‑critical contexts)?",
+   "sha256": "26605ac93097"
+  },
+  {
+   "id": "DEP-C10",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Professional judgement and work",
+   "question": "Are professionals trained and empowered to recognise when to distrust the tool and revert to alternative methods?",
+   "sha256": "abfd249205f2"
+  },
+  {
+   "id": "DEP-D10",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Professional judgement and work",
+   "question": "Are expectations placed on professionals for monitoring, escalation, and safe use clearly stated and resourced?",
+   "sha256": "fb3856de5027"
+  },
+  {
+   "id": "DEP-E10",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Professional judgement and work",
+   "question": "Are professional communities involved in assessing long‑term implications for their field?",
+   "sha256": "95cbe0c75b09"
+  },
+  {
+   "id": "DEP-F10",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Professional judgement and work",
+   "question": "Are professionals provided with guidance, training materials, and documentation aligned with their practice needs?",
+   "sha256": "30f172e2f91b"
+  },
+  {
+   "id": "DEP-B11",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Failure modes and risk management",
+   "question": "Are worst‑case and edge scenarios evaluated, not only averages (e.g. tail risks, rare but severe harms)?",
+   "sha256": "62d67ea288c9"
+  },
+  {
+   "id": "DEP-C11",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Failure modes and risk management",
+   "question": "Are emerging failure modes (e.g. new jailbreaks, misuse patterns) anticipated via red‑teaming and scenario exercises? Are impact assessments incorporated throughout deployment?",
+   "sha256": "7d7dabf41d3e"
+  },
+  {
+   "id": "DEP-D11",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Failure modes and risk management",
+   "question": "Are environment‑specific risks (prompt injection, data exfiltration, integration failures) assessed and mitigated?",
+   "sha256": "53326a00b260"
+  },
+  {
+   "id": "DEP-E11",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Failure modes and risk management",
+   "question": "Are systemic failure scenarios (e.g. widespread adoption amplifying particular harms) explored and mitigated?",
+   "sha256": "db3c1103d842"
+  },
+  {
+   "id": "DEP-F11",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Failure modes and risk management",
+   "question": "Does documentation describe known failure modes, uncertainties, and appropriate risk mitigations?",
+   "sha256": "dafbb27a01e3"
+  },
+  {
+   "id": "DEP-B12",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Are metrics linked to lifecycle decisions (go/no‑go, limited deployment, remediation plans, descoping)?",
+   "sha256": "3edba366af21"
+  },
+  {
+   "id": "DEP-C12",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Is monitoring integrated into organisational risk management, with triggers for re‑evaluation or rollback?",
+   "sha256": "69a45a6f2d4d"
+  },
+  {
+   "id": "DEP-D12",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Is deployment tied to an explicit risk tier with corresponding assurance, audit, and review mechanisms?",
+   "sha256": "55a6061a83c9"
+  },
+  {
+   "id": "DEP-E12",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Are systemic and environmental risks integrated into organisational and sectoral governance (e.g. regulators, industry bodies)?",
+   "sha256": "8b8c4f3964ad"
+  },
+  {
+   "id": "DEP-F12",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Governance and lifecycle assurance",
+   "question": "Are transparency artefacts (model cards, data cards, impact assessments, registers) maintained over time?",
+   "sha256": "a1f6ea001549"
+  },
+  {
+   "id": "DEP-B13",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Transparency and documentation",
+   "question": "Are evaluation methods and results reported with uncertainties, limitations, and confidence intervals, not just headline scores?",
+   "sha256": "2a5b19ebf831"
+  },
+  {
+   "id": "DEP-C13",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Transparency and documentation",
+   "question": "Are logs, incident reports, and post‑mortems documented and, where appropriate, shared internally or publicly?",
+   "sha256": "82ce3436d431"
+  },
+  {
+   "id": "DEP-D13",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Transparency and documentation",
+   "question": "Are environment and configuration documented (e.g. system diagrams, dependency lists, threat models)?",
+   "sha256": "c80255b05be9"
+  },
+  {
+   "id": "DEP-E13",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Transparency and documentation",
+   "question": "Are environmental costs (energy, hardware, lifecycle) measured and disclosed where feasible?",
+   "sha256": "90f53ede7e51"
+  },
+  {
+   "id": "DEP-F13",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Transparency and documentation",
+   "question": "Are logs and decision traces sufficient to reconstruct and audit important decisions or outcomes? Are the development process and system outcomes communicated in a way that is accessible and understandable to impacted individuals and groups?",
+   "sha256": "f721dbd43394"
+  },
+  {
+   "id": "DEP-B14",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Participation and legitimacy",
+   "question": "Have stakeholders been asked which outcomes and errors matter to them and how these should be measured?",
+   "sha256": "6ebfb115a1d9"
+  },
+  {
+   "id": "DEP-C14",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Participation and legitimacy",
+   "question": "Are affected stakeholders involved in incident review or consulted on appropriate remediation for serious harms?",
+   "sha256": "966782c1198f"
+  },
+  {
+   "id": "DEP-D14",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Participation and legitimacy",
+   "question": "Have frontline staff and impacted users been consulted on whether deployment conditions feel safe and trustworthy?",
+   "sha256": "296ea6e84104"
+  },
+  {
+   "id": "DEP-E14",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Participation and legitimacy",
+   "question": "Are communities and civil society groups engaged in discussions about long‑term societal impacts?",
+   "sha256": "706225f38701"
+  },
+  {
+   "id": "DEP-F14",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Participation and legitimacy",
+   "question": "Are there mechanisms for public or stakeholder feedback on documentation and transparency practices?",
+   "sha256": "6a1040507a09"
+  },
+  {
+   "id": "DEP-B15",
+   "stage": "Deployment",
+   "column": "Metrics, thresholds, and evaluation design and execution",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Do metric choices or incentives risk gaming, superficial optimisation, or other systemic distortions?",
+   "sha256": "7a1c09a9abba"
+  },
+  {
+   "id": "DEP-C15",
+   "stage": "Deployment",
+   "column": "System monitoring, error analysis, and incident response design and execution",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Are cumulative effects of errors (trust erosion, chilling effects, environmental cost of retraining and patching) considered?",
+   "sha256": "29ccec364aee"
+  },
+  {
+   "id": "DEP-D15",
+   "stage": "Deployment",
+   "column": "Deployment environment testing, access controls, and security design and execution",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Could deployment architecture create systemic vulnerabilities (e.g. single points of failure, cross‑system cascades, energy intensity)?",
+   "sha256": "8f3dbc2d83e1"
+  },
+  {
+   "id": "DEP-E15",
+   "stage": "Deployment",
+   "column": "Systemic and environmental impact evaluation design and execution",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Is there a plan for de‑scaling, decommissioning, or alternative solutions if systemic or environmental harms are judged too great?",
+   "sha256": "d4e7c978ec09"
+  },
+  {
+   "id": "DEP-F15",
+   "stage": "Deployment",
+   "column": "Transparency, documentation, and communication design and execution",
+   "criterion": "Systemic and environmental impacts",
+   "question": "Does the overall communication strategy risk over‑selling capabilities or obscuring systemic downsides (e.g. labour or environmental costs)?",
+   "sha256": "a997c6764bcb"
+  }
+ ]
+}

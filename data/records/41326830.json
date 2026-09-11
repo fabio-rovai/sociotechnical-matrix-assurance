@@ -1,0 +1,239 @@
+{
+ "study": {
+  "pmid": "41326830",
+  "pmc": "PMC12669451",
+  "doi": "10.1007/s12178-025-10001-y",
+  "title": "Evaluating the Efficacy and Efficiency of GPT-5 for Automated Title and Abstract Screening in Orthopedic Surgery Systematic Reviews",
+  "year": "2025",
+  "selection_route": "sampled",
+  "model_names": ["GPT-5"],
+  "task_note": "GPT-5 was called through the OpenAI API by a custom Python script to make binary include or exclude decisions on the complete PubMed result sets of three orthopedic systematic review topics (668, 1,041 and 1,131 titles and abstracts), benchmarked against two independent human screeners with third-reviewer adjudication."
+ },
+ "extracted_on": "2026-09-11",
+ "extracted_by": "claude-code-evidence-extractor",
+ "sources_consulted": [
+  "data/pmc_fulltext/41326830_PMC12669451.txt",
+  "data/pmc_fulltext/41326830_publisher.txt",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12669451/",
+  "https://link.springer.com/article/10.1007/s12178-025-10001-y",
+  "https://doi.org/10.1007/s12178-025-10001-y",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s12178-025-10001-y%22&resultType=core&format=json",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12669451/fullTextXML",
+  "https://europepmc.org/articles/PMC12669451?pdf=render"
+ ],
+ "evidence": {
+  "E01": {
+   "status": "present",
+   "location": "Methods, Model Performance",
+   "quote": "Performance was evaluated with negative predictive value (NPV), positive predictive value (PPV), sensitivity, specificity, accuracy, and F1 score based on true positives (TP), false positives (FP), true negatives (TN), and false negative (FN).",
+   "note": "Efficiency metrics (cost and time to completion) are named separately under Efficiency Outcomes."
+  },
+  "E02": {
+   "status": "present",
+   "location": "Results, Objective 2: Identifying Specific Study Designs (Trauma)",
+   "quote": "After final adjudication by the third human reviewer, which served as the gold standard for inclusion and exclusion decisions, 17 abstracts met the inclusion criteria and 1,024 were excluded.",
+   "note": "All three evaluation sets are identified by topic and subspecialty with their PubMed search strings and dates in Table 1, their totals (668, 1,041, 1,131) in Methods, and their reference-standard include counts (26, 17, 242) in Results."
+  },
+  "E03": {
+   "status": "present",
+   "location": "Methods, Objective 2: Identifying Specific Study Designs (Trauma)",
+   "quote": "The second objective was to have GPT-5 and human reviewers identify randomized controlled trials (RCTs) comparing operative and nonoperative management of mid-shaft clavicle fractures. PubMed was queried on July 12, 2025, yielding 1,041 total results.",
+   "note": "Prevalence is directly derivable for every topic from the reported denominators and reference-standard include counts: 26 of 668, 17 of 1,041 and 242 of 1,131. No prevalence figure is stated as a percentage."
+  },
+  "E04": {
+   "status": "present",
+   "location": "Results, Objective 1: Identifying a Niche Patient Population (Sports Medicine)",
+   "quote": "The total cost to screen all 668 abstracts was $1.32USD ($0.0020USD/abstract), and the task was completed in 38.5 min (17.4 abstracts/minute)",
+   "note": "Cost and wall-clock time to completion are reported for all three runs in Table 3. No recall after a human verification step is reported, because the proposed workflow has no human step."
+  },
+  "E05": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "performance metrics that are consistently above 90%, specifically for sensitivity and specificity suggest readiness for transition to AI-based screening without human validation",
+   "note": "The role is stated, and it is sole screener with no human validation, so the second component of the definition is not met: nothing is identified as remaining a human decision in the proposed workflow. Human reviewers appear only as the comparator inside the evaluation."
+  },
+  "E06": {
+   "status": "partial",
+   "location": "Methods, Gold-Standard Inclusion and Exclusion Decisions",
+   "quote": "All conflicts between human reviewers and all discrepancies between the LLM and humans were adjudicated by the third reviewer.",
+   "note": "This adjudication is the procedure used to build the reference standard for the evaluation, not a disagreement, override or escalation route in the proposed deployment workflow, which the Discussion describes as screening without human validation. Records where humans and GPT-5 agreed were deliberately not adjudicated."
+  },
+  "E07": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for named populations, languages, settings, countries or study types at risk of differential exclusion, and for any equity goal for screening. Terms checked: English, non-English, language, region, country, equity, underrepresented, low-resource, bias. The only related statement is that the pipeline is cheap enough for low-resource research groups, which is about access to the method rather than differential exclusion of records."
+  },
+  "E08a": {
+   "status": "present",
+   "location": "Methods, Study Design and Overview",
+   "quote": "To increase generalizability, each objective and evaluation was within a distinct orthopedic subspecialty (sports medicine, trauma, and arthroplasty).",
+   "note": "The planned stratification is by review topic and subspecialty and by type of screening objective (niche population, study design, specific outcome). It is not a planned check by language, region, population or setting within a record set."
+  },
+  "E08b": {
+   "status": "present",
+   "location": "Results, Objective 1; Table 3, GPT-5 performance metrics",
+   "quote": "This corresponded to a sensitivity of 100%, specificity of 99.7%, PPV of 92.3%, NPV of 100%, accuracy of 99.7%, and F1 score of 95.9%.",
+   "note": "Table 3 reports sensitivity, specificity, PPV, NPV, accuracy, F1, time and cost separately for each of the three topics, so results are disaggregated by topic and by screening objective type."
+  },
+  "E08c": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for any breakdown of performance by language of the record, by translated or non-English abstracts, or by country, region, database or care setting of the studies screened. Terms checked: English, language, region, country, setting, database, Embase, Scopus. Only PubMed records were used and no language or region variable is recorded or analysed."
+  },
+  "E09": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "While there aren’t established benchmarks for understanding what entails strong AI performance, performance metrics that are consistently above 90%, specifically for sensitivity and specificity suggest readiness for transition to AI-based screening without human validation.",
+   "note": "A numeric target (above 90% sensitivity and specificity) is stated, but the authors say in the same sentence that no established benchmark exists, so no norm is followed and no authority is named as setting it. The threshold appears in the Discussion after the results rather than as an acceptable-error criterion agreed in advance. The Introduction cites ICASR for the principle that automation must not cost accuracy and sensitivity, but with no number."
+  },
+  "E10": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for any survey, interview, focus group, questionnaire, usability test, workload perception measure or reviewer feedback. Terms checked: survey, interview, questionnaire, usability, satisfaction, perception, workload, user. The only human input collected is screening decisions and adjudication decisions used to build the reference standard."
+  },
+  "E11": {
+   "status": "present",
+   "location": "Discussion, limitations",
+   "quote": "Finally, while the number of FNs were low, it is unclear what led to GPT-5 wrongly excluding certains ones.",
+   "note": "Missed eligible studies (false negatives) are named as the critical failure mode and counted per topic; hallucination is named once in the Discussion as a risk the API route is meant to minimise. Inconsistency across runs is never named."
+  },
+  "E12": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for over-reliance, automation bias, complacency, alert fatigue, deskilling, blind trust and for any mitigation in the human and model workflow. Terms checked: over-reliance, automation bias, fatigue, oversight, trust, verification. The only fatigue discussed is human reviewer cognitive fatigue, which is presented as a reason to replace human screeners rather than as an interaction risk, and the Discussion recommends removing human validation entirely."
+  },
+  "E13": {
+   "status": "present",
+   "location": "Discussion; Appendix Table 4, Author's recommendations",
+   "quote": "Given these results, it is possible that systematic review title and abstract screening can be done with LLMs, when used via APIs in a controlled setting, with the aim of minimizing hallucinations.",
+   "note": "Intended use is title and abstract screening through an API in a controlled setting; Appendix Table 4 states the non-intended route explicitly, that an API should be used as opposed to inputting searches into a large language model web-platform. Scope limits are given in the limitations: orthopedic topics only, PubMed-derived abstracts only, and full-text screening not covered."
+  },
+  "E14": {
+   "status": "partial",
+   "location": "Discussion; Table 2, System prompts provided to GPT-5; Data Availability",
+   "quote": "However, this study has disclosed the full prompts for each screening task that resulted in strong performance,",
+   "note": "The three system prompts are reproduced verbatim in Table 2 of the article, which carries a DOI, so the prompt component is met. The Python pre-processing and screening scripts are not deposited in any repository or supplement, no code URL, DOI, commit or version is given, and the Data Availability statement offers data only on reasonable request to the corresponding author."
+  },
+  "E15": {
+   "status": "present",
+   "location": "Introduction",
+   "quote": "GPT-4 was a common high performer amongst LLMs within these studies, yielding the highest levels of accuracy and sensitivity [7].",
+   "note": "Prior evidence for the GPT family is cited, and the choice of GPT-5 is justified by the expectation of heightened performance at release. Appendix Table 4 adds a general rationale that reasoning-focused models are preferred over speed-focused models."
+  },
+  "E16": {
+   "status": "present",
+   "location": "Methods, Human Review Process; Methods, Gold-Standard Inclusion and Exclusion Decisions",
+   "quote": "Two human reviewers independently screened each title and abstract for eligibility based on the previously outlined inclusion and exclusion criteria on Covidence online software (Veritas Health Innovation, Melbourne, Australia).",
+   "note": "The reference standard is dual independent human screening in Covidence with third senior reviewer adjudication of all human conflicts and all human versus model discrepancies. Provenance is stated, but records on which both humans and GPT-5 agreed were explicitly not adjudicated, so the reference standard is partly defined by agreement with the model under test."
+  },
+  "E17": {
+   "status": "partial",
+   "location": "Table 2, System prompts provided to GPT-5",
+   "quote": "OUTPUT INSTRUCTIONS: Respond with EXACTLY one word: YES (if included) or NO (excluded)",
+   "note": "The only constraint reported is the prompt-level single-word output format that fixes the response to YES or NO. No decoding or API parameter is reported anywhere: no temperature, top_p, max tokens, seed, reasoning effort or structured output schema, and no statement about determinism or repeated calls."
+  },
+  "E18": {
+   "status": "present",
+   "location": "Table 2, System prompts provided to GPT-5",
+   "quote": "Based on the abstract below, respond with a one-word decision: **YES** if all inclusion criteria are met, **NO** if not.",
+   "note": "All three system prompts are reproduced in full in Table 2, including the markdown emphasis markers and the tie-break rule for randomization in the trauma prompt."
+  },
+  "E19": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Read all three verbatim system prompts in Table 2 looking for an unsure, uncertain, maybe, unclear or escalate option, a confidence output, or any instruction to defer to or flag for a human reviewer. Terms checked: unsure, uncertain, unclear, maybe, flag, escalate, human, reviewer, confidence. Each prompt forces a binary one-word YES or NO answer and none mentions human review."
+  },
+  "E20": {
+   "status": "present",
+   "location": "Methods, Objective 1: Identifying a Niche Patient Population (Sports Medicine)",
+   "quote": "Inclusion criteria were: 1. Patients undergoing revision ACLR. 2. Patients receiving a quadriceps tendon autograft.",
+   "note": "The review's own inclusion and exclusion criteria are listed in Methods for all three objectives and the same criteria are reproduced inside the system prompts in Table 2, so the criteria supplied to the model are verifiably the review criteria."
+  },
+  "E21": {
+   "status": "partial",
+   "location": "Appendix Table 4, Author's recommendations",
+   "quote": "Optimize for sensitivity, would prefer to minimize false negatives (missing studies) as opposed to minimizing false positives",
+   "note": "The preference for recall is stated explicitly, but only as an author recommendation in the appendix. No configuration, threshold or decision rule in the evaluation implements it: the prompts require every criterion to be clearly true, they include ALWAYS EXCLUDE lists, and no tie-break toward inclusion or recall-favouring cut-off is set."
+  },
+  "E22": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for data leakage, training contamination, knowledge cutoff, memorisation of included studies, and any comparison of the model training date with the search or publication dates of the screened records. Terms checked: contamination, leakage, training data, cutoff, cut-off, memorise, memorize, prior knowledge. Nothing appears in Methods, Discussion or limitations."
+  },
+  "E23": {
+   "status": "partial",
+   "location": "Discussion",
+   "quote": "when used via APIs in a controlled setting, with the aim of minimizing hallucinations",
+   "note": "Hallucination is named once as a known failure mode that the API route is meant to minimise, so the documentation component is thinly met. The testing component is not met: no hallucination check, prompt injection test, plausibility audit or misuse analysis is run, and the model outputs are single words that are never inspected for fabricated reasoning."
+  },
+  "E24": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for prompt variants, prompt engineering experiments, wording sensitivity, ablation, repeat runs, test-retest or run-to-run consistency. Terms checked: prompt engineering, variant, sensitivity analysis, repeat, rerun, consistency, reproducib. The limitations state explicitly that an analysis on how different prompts affect model performance was not performed, and no repeated-run consistency check is reported."
+  },
+  "E25": {
+   "status": "present",
+   "location": "Methods, Data Sources and Abstract Sets; Table 1, PubMed search strategies",
+   "quote": "Abstracts for each task were retrieved from comprehensive literature searches using PubMed. Alternative databases weren’t used as the focus of the study was to evaluate the ability of LLMs to correctly include and exclude titles/abstracts in comparison with humans",
+   "note": "Table 1 gives the exact PubMed search string and search date for each of the three topics, Pre-Processing of Abstracts describes how exports were parsed and which fields were retained, and the single-database limitation is restated in the limitations paragraph."
+  },
+  "E26": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text and reference list for a model card, system card, technical report, OpenAI documentation citation, or any statement that model transparency, openness or documentation influenced the choice of model. Terms checked: model card, system card, technical report, documentation, transparency, open weight. The only selection rationale given is that reasoning-focused models are preferred over speed-focused models, which is about capability rather than transparency."
+  },
+  "E27": {
+   "status": "partial",
+   "location": "Methods, GPT-5 Screening",
+   "quote": "A Python-based NLP script was developed by the primary author to screen titles and abstracts using GPT-5 (OpenAI, San Francisco, California) via the OpenAI Application Programming Interface (API).",
+   "note": "The model is named only as GPT-5, with no snapshot or dated model identifier and no API model string. No date on which the model was run is reported either; the only dates in the paper are the PubMed search dates in July 2025 and the statement that per-token pricing was taken as of August 2025. Per the brief, a model named without a version string or date is partial."
+  },
+  "E28": {
+   "status": "partial",
+   "location": "Methods, Data Sources and Abstract Sets; Results",
+   "quote": "Alternative databases weren’t used as the focus of the study was to evaluate the ability of LLMs to correctly include and exclude titles/abstracts in comparison with humans as opposed to truly simulating the systematic review process.",
+   "note": "The realistic components are met: every record returned by each search was screened (668, 1,041 and 1,131) with no balancing, enrichment or sampling, and screening ran through the production OpenAI API, the route the authors recommend for practice. The missing component is the review itself: a single database with no deduplication, and the authors state the design does not truly simulate the systematic review process."
+  },
+  "E29": {
+   "status": "present",
+   "location": "Results, Objective 1; Results, Objective 2; Results, Objective 3",
+   "quote": "The single abstract excluded by GPT-5 was incorrectly included by reviewers as it described revision ACLR with quadriceps tendon autografts, but only reported on practice trends without clinical outcomes.",
+   "note": "Every discrepancy in all three topics is walked through qualitatively and counted, including which false positives arose from patient-number thresholds and which human inclusions were overturned on adjudication. The analysis is systematic across the discrepancy set, though the causes of the model's false negatives are left unexplained."
+  },
+  "E30": {
+   "status": "present",
+   "location": "Methods, Pre-Processing of Abstracts; Methods, GPT-5 Screening; Methods, Efficiency Outcomes",
+   "quote": "For each topic, database exports from PubMed searches described above were downloaded and parsed using a custom Python script.",
+   "note": "The environment is described end to end: PubMed export, custom Python parsing to a plain-text structure keyed by PMID, DOI, title and abstract, calls to the OpenAI API from a Python NLP script, batch processing timed with start and end timestamps, and Covidence as the separate human screening environment."
+  },
+  "E31": {
+   "status": "present",
+   "location": "Discussion, limitations",
+   "quote": "There are few limitations from this analysis. First, the study focused exclusively on orthopedic topics and PubMed-derived abstracts.",
+   "note": "The limitations paragraph covers single-specialty and single-database scope, the absence of any prompt-sensitivity analysis, coverage of only three of many subspecialties, and the unexplained false negatives, so both failure modes and uncertainties are documented."
+  },
+  "E32": {
+   "status": "partial",
+   "location": "Results, Objective 2; Discussion, limitations",
+   "quote": "However, one study was incorrectly excluded by GPT-5, despite the abstract clearly stating that it was an RCT comparing plate osteosynthesis with figure-of-eight bracing.",
+   "note": "Which eligible studies were missed is identified and described for each topic, and the worst per-topic sensitivity (94.1%) is reported rather than only an average. The missing component is why: the limitations state that it is unclear what led GPT-5 to wrongly exclude them, so no cause is established for any false negative."
+  },
+  "E33": {
+   "status": "absent",
+   "location": "not found",
+   "searched": "Searched the full publisher text for a protocol, registration, pre-specified threshold, stopping rule, go or no-go criterion or limited-deployment condition set before the evaluation. Terms checked: protocol, registered, prespecified, pre-specified, a priori, threshold, criterion for adoption, deployment. No protocol or registration is mentioned, and the only performance threshold (above 90%) is asserted in the Discussion after the results are known."
+  },
+  "E34": {
+   "status": "partial",
+   "location": "Methods, Human Review Process; Results",
+   "quote": "Pre-conflict resolution inter-rater agreement was calculated using Cohen’s kappa with 95% confidence intervals (CI).",
+   "note": "95% confidence intervals are reported, but only for the human inter-rater kappa in each topic (for example 0.859, 95%CI 0.748 to 0.970). No confidence interval or other uncertainty measure is attached to any headline GPT-5 metric: sensitivity, specificity, PPV, NPV, accuracy and F1 are point estimates in the text, in Fig. 1 and in Table 3."
+  },
+  "E35": {
+   "status": "partial",
+   "location": "Methods, Efficiency Outcomes; Results; Table 3",
+   "quote": "To assess efficiency and feasibility, runtime and API usage cost were tracked.",
+   "note": "Monetary cost of compute is measured and disclosed for every run from OpenAI per-token pricing, together with wall-clock runtime. No energy use, carbon footprint or environmental cost is reported, and no compute resource quantity is given either, since even the input and output token counts behind the cost formula are not stated."
+  }
+ }
+}
