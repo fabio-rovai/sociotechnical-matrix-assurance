@@ -66,6 +66,8 @@ things that make a result reproducible a year later or fair across languages.
   Filed as issues [#131](https://github.com/fabio-rovai/open-ontologies/issues/131) and
   [#132](https://github.com/fabio-rovai/open-ontologies/issues/132).
 
+Article: [Which cells of a sociotechnical AI evaluation matrix can anyone check?](https://gov.tesseract.academy/research/sociotechnical-matrix-evidence)
+
 Full tables, every cell with its class and rationale, every study with every field, and the
 per-cell verdicts: [`REPORT.md`](REPORT.md). How it was built, what could not be obtained and
 what went wrong: [`BUILD_REPORT.md`](BUILD_REPORT.md).
@@ -73,7 +75,10 @@ what went wrong: [`BUILD_REPORT.md`](BUILD_REPORT.md).
 ## How it is verified
 
 - Every quote supporting a present or partial field is string-matched against the downloaded full
-  text by `tests/check_record.py`; a quote that does not match rejects the record.
+  text by `tests/check_record.py`; a quote that does not match rejects the record. The full texts
+  are not committed (they are the publishers' copyright); `pipeline/fetch_fulltext.py` regenerates
+  them from keyless endpoints and CI runs it before the tests, so the grounding is reproduced on
+  every push.
 - Every cell verdict is computed set-based in Python and again by SHACL validation with one shape
   per cell (pyshacl); the script exits non-zero on any disagreement.
 - `REPORT.md` and `data/article_numbers.json` are generated from the data, and the test suite
@@ -99,6 +104,7 @@ what went wrong: [`BUILD_REPORT.md`](BUILD_REPORT.md).
 
 ```
 python3 -m venv .venv && ./.venv/bin/pip install rdflib==7.6.0 pyshacl==0.40.1
+./.venv/bin/python pipeline/fetch_fulltext.py        # needs pdftotext (poppler)
 ./.venv/bin/python pipeline/extract_cells.py
 ./.venv/bin/python pipeline/build_matrix_ttl.py
 ./.venv/bin/python pipeline/build_shapes.py
